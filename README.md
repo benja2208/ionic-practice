@@ -1,8 +1,13 @@
-##Getting Started with Ionic Framework
+## Getting Started with Photogram Source Code
 
-[Ionic](http://ionicframework.com/) is a powerful, beautiful and easy to use open source front-end framework built on top of  [AngularJs](https://angularjs.org/) (a client-side javascript framework), [Sass](http://sass-lang.com/) Syntactically Awesome Style Sheets [Apache Cordova](http://cordova.apache.org/) for and developing hybrid (cross platform) mobile apps.   
+> Thank's for purchasing!!!!
 
-> Ionic's ultimate goal is to make it easier to develop native mobile apps with HTML5, also known as Hybrid apps. 
+Let's go and clone this project!
+
+### Full Document and Preview:
+
+[http://movibe.github.io/photogram-docs/](http://movibe.github.io/photogram-docs/)
+
 
 ## Getting Starter  ##
 1) Install nodejs: http://nodejs.org/ 
@@ -45,4 +50,3 @@ www/js/config.parse.js
 > $ sudo npm install -g ios-sim 
 
 > $ ionic run ios
- 
