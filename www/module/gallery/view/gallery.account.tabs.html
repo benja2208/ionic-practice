@@ -1,0 +1,64 @@
+<ion-view cache-view="false"
+          class="gallery-profile">
+
+    <ion-nav-title>
+        <h1 class="title">{{ user.name }}</h1>
+    </ion-nav-title>
+
+    <ion-content>
+        <div class="profile-top">
+            <div class="row">
+                <div class="col-25">
+                    <img class="avatar"
+                         user-avatar
+                         ng-src="{{ user.src }}" />
+                </div>
+                <div class="col col-statics">
+                    <div class="row">
+                        <div class="col">
+                            <span class="text-center">{{ GalleryProfile.form.galleries }}</span>
+
+                            <h3>Publicações</h3>
+                        </div>
+                        <div class="col">
+                            <span class="text-center">{{ GalleryProfile.form.follow }}</span>
+
+                            <h3>Seguidores</h3>
+                        </div>
+                        <div class="col">
+                            <span class="text-center">{{ GalleryProfile.form.follow2 }}</span>
+
+                            <h3>Seguindo</h3>
+                        </div>
+                    </div>
+                    <div class="row col-edit">
+                        <div class="col">
+                            <button gallery-profile-edit
+                                    class="button ">EDITAR SEU PERFIL
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <span class="user-username">{{ user.name }}</span>
+
+                <p class="user-status">{{ user.status }}</p>
+            </div>
+
+            <ion-tabs class="tabs-light">
+                <ion-tab icon="ion-android-apps"
+                         ng-click="tab='grid'"></ion-tab>
+                <ion-tab icon="ion-navicon-round"
+                         ng-click="tab='list'"></ion-tab>
+                <ion-tab icon="ion-ios-location-outline"></ion-tab>
+            </ion-tabs>
+        </div>
+
+        <div class="profile-view">
+            <gallery-photo-grid gallery="GalleryProfile.data"
+                                loading="GalleryProfile.loading"></gallery-photo-grid>
+        </div>
+
+    </ion-content>
+</ion-view>

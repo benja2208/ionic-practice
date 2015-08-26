@@ -1,0 +1,132 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+*/
+@import "material/material";
+
+$light: #fff !default;
+$stable: #f8f8f8 !default;
+$positive: $primaryColor !default;
+
+// $positive : #4B84FA !default;
+//$positive : #40a4c4 !default;
+//$positive : #387ef5 !default;
+$calm: darken($positive, 20) !default;
+$balanced: #33cd5f !default;
+$energized: #ffc900 !default;
+$assertive: #ef473a !default;
+$royal: #886aea !default;
+//$dark: #444 !default;
+$dark: #25272a !default;
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+// $ionicons-font-path : "../lib/ionic/fonts" !default;
+$ionicons-font-path: '../fonts' !default;
+
+// Include all of Ionic
+//@import "www/lib/ionic-material/src/scss/index";
+@import "www/lib/ionic/scss/ionic";
+@import "map";
+@import "form";
+@import "font";
+@import "platform";
+@import "animate";
+@import "www/app/user/style/intro";
+@import "www/app/user/style/user";
+@import "www/app/user/style/profile";
+@import "www/module/gallery/style/photogram";
+
+.spinner svg {
+  stroke: $positive;
+  fill: $positive;
+}
+
+.action-sheet .button {
+  color: $positive;
+}
+
+.no-padding, .nopadding {
+  padding: 0;
+}
+
+.bar .title img {
+  max-height: 40px;
+  margin-top: 0px;
+}
+
+.separator {
+  display: block;
+  border-top: solid 1px rgba(0, 0, 0, 0.12);
+  min-height: 0;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.button-assertive {
+  background: none repeat scroll 0 0 #fff;
+  border: 1px solid #ccc !important;
+  box-shadow: 2px 2px 2px #ccc;
+  width: 100%;
+}
+
+.bg-content {
+  background-color: whitesmoke !important;
+}
+
+.noborder {
+  ion-header-bar {
+    border: none !important;
+    box-shadow: none !important;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+//Scroll Sista
+
+ion-nav-bar.bar.bar-positive.bar-none.nav-bar-container {
+  background: none;
+  border: none;
+}
+
+
+//places subheader underneath top tabs.  Don't forget to import ionic scss before this file!
+.tabs-top .bar-subheader {
+  top: $bar-height + $tabs-height;
+}
+
+//.platform-ios.platform-cordova {
+//  // iOS has a status bar which sits on top of the header.
+//  // Bump down everything to make room for it. However, if
+//  // if its in Cordova, and set to fullscreen, then disregard the bump.
+//  &:not(.fullscreen) {
+//    .tabs-top .bar-subheader {
+//      top: $bar-height + $tabs-height + $ios-statusbar-height;
+//    }
+//  }
+//}
+
+.search-wrapper-light {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  background: none;
+  border-radius: 0;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 90%;
+
+  input, input::-webkit-input-placeholder {
+    color: #fff;
+    width: 100%;
+    background: none;
+    margin-left: 10px;
+  }
+}
+
+pre {
+  color: #333;
+}

@@ -1,0 +1,28 @@
+<ion-modal-view class="modal-profile">
+    <ion-header-bar class="bar-dark">
+        <button class="button button-clear button-icon ion-ios-arrow-thin-left"
+                ng-click="closeModal()"></button>
+        <div class="title">{{ 'Edit Profile' | translate }}</div>
+        <button class="button button-positive"
+                ng-click="submitUpdateProfile()">
+            <i class="icon ion-arrow-right-b"></i>
+        </button>
+    </ion-header-bar>
+    <ion-content class="view-avatar">
+
+        <div class="row step1">
+            <div class="col">
+                <img class="avatar"
+                     user-avatar
+                     ng-src="{{ form.src }}" />
+            </div>
+        </div>
+
+        <div class="step2">
+            <formly-form model="form"
+                         fields="formFields"
+                         form="rForm">
+            </formly-form>
+        </div>
+    </ion-content>
+</ion-modal-view>

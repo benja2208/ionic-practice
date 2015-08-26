@@ -1,0 +1,180 @@
+$color-white: #fff;
+$time: 0.5s;
+.button {
+  -webkit-transition: all $time ease;
+  -moz-transition: all $time ease;
+  -ms-transition: all $time ease;
+  -o-transition: all $time ease;
+  transition: all $time ease;
+}
+
+.view-avatar {
+  .row {
+    .col {
+      img {
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto;
+        width: 130px;
+        height: 130px;
+      }
+    }
+  }
+}
+
+.form-login {
+
+  .scroll-content {
+    padding: 0;
+  }
+
+  .scroll {
+    height: 100%;
+  }
+
+  .user-head {
+    background-color: $positive;
+    background-position: 20%;
+    background: url('../img/intro1.jpg');
+    background-size: cover;
+    position: relative;
+    height: 220px;
+
+    .logo2 {
+      position: relative;
+      display: block;
+      margin: 20px auto;
+      width: 346px;
+
+      img {
+        position: absolute;
+        top: 0px;
+        left: 5%;
+        width: 80px;
+      }
+
+      span.icon2-logo {
+        font-size: 70px;
+        color: #fff;
+        display: block;
+        margin: 22px;
+        text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
+        position: absolute;
+        top: 0px;
+        left: 23%;
+      }
+    }
+
+    h2 {
+      color: #fff;
+      font-size: 16px;
+      text-align: center;
+      display: block;
+      position: absolute;
+      width: 95%;
+      margin: 0 auto;
+      height: 48px;
+      text-shadow: -2px 1px 2px rgba(0, 0, 0, 0.8);
+      top: 130px;
+    }
+
+    .tabs-top {
+      //border: 1px solid red;
+      bottom: 0px;
+      position: absolute;
+      z-index: 2;
+      left: 0px;
+      display: block;
+      width: 100%;
+      height: 49px;
+
+      .tabs {
+        background: none;
+        border: none;
+        top: 0;
+        //border: 1px solid yellow;
+
+        a.tab-item {
+          -webkit-transition: all $time ease;
+          -moz-transition: all $time ease;
+          -ms-transition: all $time ease;
+          -o-transition: all $time ease;
+          transition: all $time ease;
+        }
+
+        a.tab-item.tab-item-active {
+          font-weight: bold;
+          font-size: 18px;
+          border-bottom: 2px solid #fff;
+        }
+
+      }
+    }
+  }
+
+}
+
+.button-facebook {
+  background: none repeat scroll 0 0 #3f569b !important;
+  border: 1px solid darken(#3f569b, 20);
+  color: #fff !important;
+  position: relative;
+  width: 100%;
+  //border-radius : 50px;
+  i {
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    left: 20px;
+    padding-right: 10px;
+    position: absolute;
+  }
+}
+
+.line {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  width: 85%;
+
+  span {
+    font-size: 20px;
+    color: #666;
+  }
+
+  .left {
+    background: #eee;
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    width: 40%;
+  }
+
+  .right {
+    background: #eee;
+    display: block;
+    height: 1px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 40%;
+  }
+
+}
+
+.button-clear.button-right {
+  border-color: transparent;
+  background: none;
+  box-shadow: none;
+  margin-top: 0;
+  color: #b2b2b2;
+  text-align: right;
+}
+
+.platform-ios.platform-cordova:not(.fullscreen) {
+  .form-login {
+    .tabs-top > .tabs {
+      top: 0px !important;
+    }
+  }
+}

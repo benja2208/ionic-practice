@@ -1,0 +1,248 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 1.8.4\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: en_US\n"
+
+#: user/directive/user.forgot.pass.directive.js:31
+msgid "A new password will be sent to your e-mail address"
+msgstr "A new password will be sent to your e-mail address"
+
+#: gallery/view/gallery.popover.home.html:10
+msgid "About"
+msgstr "About"
+
+#: gallery/view/gallery.settings.modal.html:28
+msgid "Account"
+msgstr "Accout"
+
+#: gallery/view/gallery.activity.html:5
+msgid "Activities"
+msgstr ""
+
+#: gallery/view/gallery.photos.list.html:74
+msgid "Add comment"
+msgstr ""
+
+#: user/directive/user.forgot.pass.directive.js:34
+msgid "Cancel"
+msgstr ""
+
+#: gallery/view/gallery.capture.modal.html:5
+msgid "Capture"
+msgstr ""
+
+#: gallery/view/gallery.settings.modal.html:13
+msgid "Change language"
+msgstr ""
+
+#: gallery/view/gallery.photo.html:45
+msgid "Comment"
+msgstr "Comment"
+
+#: gallery/view/gallery.comment.directive.html:5
+msgid "Comments"
+msgstr "Comments"
+
+#: user/view/user.avatar.html:1
+msgid "Complete your Profile"
+msgstr ""
+
+#: user/directive/button.facebook.directive.js:35
+msgid "Conect your Facebook"
+msgstr ""
+
+#: gallery/view/gallery.profile.tabs.html:37
+msgid "EDIT YOUR PROFILE"
+msgstr "EDIT YOUR PROFILE"
+
+#: gallery/view/gallery.profile.edit.modal.html:5
+#: gallery/view/gallery.settings.modal.html:31
+msgid "Edit Profile"
+msgstr ""
+
+#: user/directive/user.forgot.pass.directive.js:25
+msgid "Email"
+msgstr ""
+
+#: user/controller/user.intro.ctrl.js:22
+msgid "Enjoy the most amazing photos"
+msgstr ""
+
+#: user/view/user.intro.html:5 user/view/user.login.html:13
+#: user/view/user.login.html:2 user/view/user.tabs.html:16
+#: user/view/user.tabs.html:2
+msgid "Enter"
+msgstr ""
+
+#: gallery/view/gallery.photo.feedback.modal.html:5
+msgid "Feedback"
+msgstr ""
+
+#: user/controller/user.avatar.ctrl.js:30
+msgid "Fill out the fields in red"
+msgstr ""
+
+#: user/controller/user.intro.ctrl.js:18
+msgid "Find and follow people around"
+msgstr ""
+
+#: gallery/view/gallery.settings.modal.html:19
+msgid "Follow Friends"
+msgstr ""
+
+#: gallery/view/gallery.user.list.html:5
+msgid "Follow Users"
+msgstr ""
+
+#: user/controller/user.intro.ctrl.js:14
+msgid "Follow your friends and relive"
+msgstr ""
+
+#: gallery/view/gallery.view.html:1
+msgid "Gallery preview"
+msgstr ""
+
+#: user/directive/user.forgot.pass.directive.js:46
+msgid "Invalid Email"
+msgstr ""
+
+#: user/controller/user.avatar.ctrl.js:29
+msgid "Invalid form"
+msgstr ""
+
+#: gallery/view/gallery.settings.modal.html:22
+msgid "Invite Facebook Friends"
+msgstr ""
+
+#: gallery/view/gallery.photo.html:23
+msgid "Like"
+msgstr ""
+
+#: gallery/view/gallery.like.directive.html:5
+#: gallery/view/gallery.photos.list.html:58
+msgid "Likes"
+msgstr ""
+
+#: gallery/view/gallery.capture.modal.html:28
+msgid "Location"
+msgstr ""
+
+#: gallery/view/gallery.settings.modal.html:50
+msgid "Logout"
+msgstr ""
+
+#: gallery/view/gallery.search.map.html:2
+msgid "Map"
+msgstr ""
+
+#: gallery/view/gallery.comment.directive.html:34
+msgid "No Comments"
+msgstr ""
+
+#: gallery/view/gallery.profile.photos.html:1
+msgid "Profile"
+msgstr ""
+
+#: user/view/user.register.html:1 user/view/user.register.html:9
+#: user/view/user.tabs.html:18
+msgid "Register"
+msgstr ""
+
+#: gallery/view/gallery.search.grid.html:4
+msgid "Search"
+msgstr ""
+
+#: user/directive/user.forgot.pass.directive.js:38
+msgid "Send"
+msgstr ""
+
+#: gallery/view/gallery.popover.home.html:5
+#: gallery/view/gallery.settings.modal.html:5
+msgid "Settings"
+msgstr ""
+
+#: gallery/view/gallery.capture.html:1
+#: gallery/view/gallery.settings.modal.html:25
+msgid "Share"
+msgstr ""
+
+#: gallery/view/gallery.capture.modal.html:37
+msgid "Share In"
+msgstr ""
+
+#: gallery/view/gallery.capture.html:8
+msgid "Share photo"
+msgstr ""
+
+#: user/controller/user.intro.ctrl.js:10 user/view/user.tabs.html:12
+msgid "Share your most amazing moments"
+msgstr ""
+
+#: gallery/view/gallery.settings.modal.html:37
+msgid "Terms"
+msgstr ""
+
+#: gallery/view/gallery.settings.modal.html:44 user/view/user.register.html:20
+msgid "Terms and Conditions"
+msgstr ""
+
+#: gallery/service/gallery.feedback.model.js:32
+msgid "Thanks"
+msgstr ""
+
+#: gallery/service/gallery.feedback.model.js:33
+msgid "Thanks for your Feedback"
+msgstr ""
+
+#: user/view/user.register.html:20
+msgid "When creating your account, you agree to our"
+msgstr ""
+
+#: gallery/view/gallery.capture.modal.html:24
+msgid "Write a Legend"
+msgstr ""
+
+#: gallery/service/gallery.model.js:885
+msgid "add comment"
+msgstr ""
+
+#: gallery/service/gallery.model.js:884
+msgid "add photo"
+msgstr ""
+
+#: gallery/view/gallery.profile.tabs.html:26
+msgid "followers"
+msgstr ""
+
+#: gallery/service/gallery.model.js:886
+msgid "like photo"
+msgstr ""
+
+#: user/view/user.login.html:24
+msgid "or"
+msgstr ""
+
+#: gallery/view/gallery.profile.tabs.html:21
+msgid "posts"
+msgstr ""
+
+#: gallery/service/gallery.model.js:888
+msgid "register"
+msgstr ""
+
+#: gallery/service/gallery.model.js:889
+msgid "registered"
+msgstr ""
+
+#: gallery/service/gallery.model.js:887
+msgid "unlike photo"
+msgstr ""

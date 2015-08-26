@@ -1,0 +1,26 @@
+<ion-view title="{{ 'Complete your Profile' | translate }}">
+
+    <ion-nav-bar class="bar bar-positive bar-mop"
+                 align-title="left">
+
+        <ion-nav-buttons side="right">
+            <button ng-click="Avatar.submitAvatar()"
+                    class="button button-icon icon ion-arrow-right-b"></button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+
+    <ion-content class="view-avatar">
+
+        <div class="row">
+            <div class="col">
+                <img class="avatar"
+                     user-avatar
+                     ng-src="{{ user.src }}" />
+            </div>
+        </div>
+        <formly-form model="Avatar.form"
+                     fields="Avatar.formFields"
+                     form="Avatar.rForm">
+        </formly-form>
+    </ion-content>
+</ion-view>

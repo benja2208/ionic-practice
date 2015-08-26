@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html ng-app="starter">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">-->
+     <!--<meta http-equiv="Content-Security-Policy" content="script-src 'self' https://maps.googleapis.com/ https://maps.gstatic.com/ https://mts0.googleapis.com/ 'unsafe-inline' 'unsafe-eval'"> -->
+    <title>Photogram</title>
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="lib/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="lib/animate.css/animate.css">
+    <link rel="stylesheet" href="lib/ionic/css/ionic.css">
+    <!-- endinject -->
+    <!-- endbuild -->
+
+    <!-- build:cssvendor styles/main.css -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/ionic.app.css">
+    <!-- endinject -->
+    <!-- endbuild -->
+
+    <!-- build:jsvendor scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-animate/angular-animate.js"></script>
+    <script src="lib/angular-sanitize/angular-sanitize.js"></script>
+    <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="lib/angular-gettext/dist/angular-gettext.js"></script>
+    <script src="lib/lodash/lodash.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="lib/moment/moment.js"></script>
+    <script src="lib/angular-moment/angular-moment.js"></script>
+    <script src="lib/ng-facebook/ngFacebook.js"></script>
+    <script src="lib/ngmap/build/scripts/ng-map.js"></script>
+    <script src="lib/api-check/dist/api-check.js"></script>
+    <script src="lib/parse/parse.min.js"></script>
+    <script src="lib/angular-cache/dist/angular-cache.js"></script>
+    <script src="lib/angular-formly/dist/formly.js"></script>
+    <script src="lib/angular-formly-templates-ionic/dist/angular-formly-templates-ionic.js"></script>
+    <script src="lib/angular-translate/angular-translate.js"></script>
+    <script src="lib/ionic/js/ionic.js"></script>
+    <script src="lib/ionic/js/ionic-angular.js"></script>
+    <script src="lib/angular-google-maps/dist/angular-google-maps.js"></script>
+    <!-- endinject -->
+    <script src="lib/ionic-service-core/ionic-core.js"></script>
+    <script src="lib/ionic-service-analytics/ionic-analytics.js"></script>
+    <script src="lib/angular-translate/angular-translate.js"></script>
+    <!-- endbuild -->
+
+    <script src="cordova.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?libraries=visualization,places&amp;language=en"></script>
+    <!--<link href="https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic" rel="stylesheet">-->
+
+    <!-- build:js scripts/scripts.js -->
+    <!-- inject:js -->
+    <script src="app/core/module.core.js"></script>
+    <script src="app/user/user.module.js"></script>
+    <script src="app/user/config/user.routes.js"></script>
+    <script src="app/user/service/notify.service.js"></script>
+    <script src="app/user/service/user.form.js"></script>
+    <script src="app/user/service/user.model.service.js"></script>
+    <script src="app/user/controller/user.avatar.ctrl.js"></script>
+    <script src="app/user/controller/user.intro.ctrl.js"></script>
+    <script src="app/user/controller/user.login.ctrl.js"></script>
+    <script src="app/user/controller/user.profile.ctrl.js"></script>
+    <script src="app/user/controller/user.recovery.pass.ctrl.js"></script>
+    <script src="app/user/controller/user.register.ctrl.js"></script>
+    <script src="app/user/directive/button.facebook.directive.js"></script>
+    <script src="app/user/directive/user.avatar.directive.js"></script>
+    <script src="app/user/directive/user.forgot.pass.directive.js"></script>
+    <script src="app/user/directive/user.modal.terms.directive.js"></script>
+    <script src="app/core/service/parse.model.js"></script>
+    <script src="app/core/service/parse.service.js"></script>
+    <script src="component/ionic.components.js"></script>
+    <script src="component/ion-affix/ion.affix.js"></script>
+    <script src="component/ion-analytics/ion-analytics.js"></script>
+    <script src="component/ion-loading/ion-loading.js"></script>
+    <script src="component/ion-location/ion-location.js"></script>
+    <script src="component/ion-photo/ion-photo.js"></script>
+    <script src="module/gallery/module.gallery.js"></script>
+    <script src="module/gallery/config/gallery.routes.js"></script>
+    <script src="module/gallery/controller/gallery.account.ctrl.js"></script>
+    <script src="module/gallery/controller/gallery.activity.ctrl.js"></script>
+    <script src="module/gallery/controller/gallery.capture.ctrl.js"></script>
+    <script src="module/gallery/controller/gallery.home.ctrl.js"></script>
+    <script src="module/gallery/controller/gallery.photo.ctrl.js"></script>
+    <script src="module/gallery/controller/gallery.preview.ctrl.js"></script>
+    <script src="module/gallery/controller/gallery.profile.ctrl.js"></script>
+    <script src="module/gallery/controller/gallery.search.grid.ctrl.js"></script>
+    <script src="module/gallery/controller/gallery.search.map.ctrl.js"></script>
+    <script src="module/gallery/controller/gallery.user.list.js"></script>
+    <script src="module/gallery/controller/gallery.view.ctrl.js"></script>
+    <script src="module/gallery/directive/gallery.capture.directive.js"></script>
+    <script src="module/gallery/directive/gallery.comment.directive.js"></script>
+    <script src="module/gallery/directive/gallery.like.directive.js"></script>
+    <script src="module/gallery/directive/gallery.like.modal.directive.js"></script>
+    <script src="module/gallery/directive/gallery.loading.directive.js"></script>
+    <script src="module/gallery/directive/gallery.photo.feedback.js"></script>
+    <script src="module/gallery/directive/gallery.photo.grid.directive.js"></script>
+    <script src="module/gallery/directive/gallery.photo.list.directive.js"></script>
+    <script src="module/gallery/directive/gallery.profile.edit.js"></script>
+    <script src="module/gallery/directive/gallery.settings.modal.js"></script>
+    <script src="module/gallery/directive/ion-search.directive.js"></script>
+    <script src="module/gallery/service/gallery.feedback.form.js"></script>
+    <script src="module/gallery/service/gallery.feedback.model.js"></script>
+    <script src="module/gallery/service/gallery.model.js"></script>
+    <script src="module/gallery/service/gallery.settings.model.js"></script>
+    <script src="module/gallery/service/parse.image.service.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/cacheapp.js"></script>
+    <script src="js/cachemodule.js"></script>
+    <script src="js/config.facebook.js"></script>
+    <script src="js/config.parse.js"></script>
+    <script src="js/debug.error.js"></script>
+    <script src="js/google.analytics.js"></script>
+    <script src="js/momentjs.pt-br.js"></script>
+    <script src="js/translate.form.js"></script>
+    <script src="js/translate.js"></script>
+    <!-- endinject -->
+    <!-- endbuild -->
+
+</head><body class="photogram">
+<ion-nav-view></ion-nav-view>
+<div id="modal" class=""></div>
+<div id="fb-root"></div>
+</body>
+</html>

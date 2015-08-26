@@ -1,0 +1,21 @@
+<ion-modal-view class="modal-profile">
+    <ion-header-bar class="bar-dark">
+        <button class="button button-clear button-icon ion-ios-arrow-thin-left"
+                ng-click="closeModal()"></button>
+        <div class="title">{{ 'Feedback' | translate }}</div>
+        <button class="button button-positive"
+                ng-click="submitFeedback()">
+            <i class="icon ion-arrow-right-b"></i>
+        </button>
+    </ion-header-bar>
+    <ion-content>
+
+        <div class="step2">
+            <formly-form model="form"
+                         form="rForm"
+                         fields="formFields">
+
+            </formly-form>
+        </div>
+    </ion-content>
+</ion-modal-view>

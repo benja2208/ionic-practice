@@ -1,0 +1,56 @@
+<ion-modal-view class="modal-profile">
+    <ion-header-bar class="bar-dark">
+        <button class="button button-clear button-icon ion-ios-arrow-thin-left"
+                ng-click="closeModal()"></button>
+        <div class="title">{{ 'Settings' | translate }}</div>
+    </ion-header-bar>
+    <ion-content>
+
+        <div class="list">
+            <label class="item item-input item-select">
+                <div class="input-label"
+                     style="z-index: 2;">
+                    <h2>{{'Change language' | translate}}</h2>
+                </div>
+                <select ng-model="language"
+                        ng-change="changeLanguage(language)"
+                        ng-options="language.value as language.name for language in languages"> </select> </label>
+
+            <div class="item item-divider"
+                 translate>Follow Friends
+            </div>
+            <div class="item"
+                 translate>Invite Facebook Friends
+            </div>
+            <div class="item"
+                 translate>Share
+            </div>
+            <div class="item item-divider"
+                 translate>Account
+            </div>
+            <div class="item"
+                 ng-click="link('gallery.account')"
+                 translate>Edit Profile
+            </div>
+            <!--<div class="item">Change Password</div>-->
+
+            <div class="item item-divider"
+                 translate>Terms
+            </div>
+            <!--<div class="item"-->
+                 <!--translate>About-->
+            <!--</div>-->
+
+            <div class="item"
+                 open-terms
+                 translate>Terms and Conditions
+            </div>
+        </div>
+        <div class="padding">
+            <button ng-click="link('logout')"
+                    class="button button-block button-positive"
+                    translate>Logout
+            </button>
+        </div>
+    </ion-content>
+</ion-modal-view>

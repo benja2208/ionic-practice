@@ -1,0 +1,25 @@
+#!/bin/bash
+# Usage: prod.sh 'platform'
+#
+
+# Abort if any command returns something else than 0
+set -e
+
+note="$1"
+
+if [[ -z "$1" ]]; then
+    echo "Not note, aborting..."
+    exit 1
+fi
+
+echo "Ionic Upload App"
+echo "Minify app"
+gulp prod
+echo "Rename Folder to Minify Application"
+mv www temp
+mv dist www
+echo "Ionic Upload Start"
+ionic upload --note "$note"
+echo "Rename folder"
+mv www dist
+mv temp www

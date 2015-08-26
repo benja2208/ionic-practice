@@ -1,0 +1,59 @@
+<ion-view cache-view="false"
+          class="profile">
+
+    <ion-nav-title>
+        <h1 class="title">{{ GalleryProfile.form.name }}</h1>
+    </ion-nav-title>
+
+    <ion-content>
+        <div class="profile-top step1">
+            <div class="row">
+                <div class="col-25">
+                    <img class="avatar step1"
+                         user-avatar
+                         ng-src="{{ GalleryProfile.form.img }}" />
+                </div>
+                <div class="col col-statics">
+                    <div class="row">
+                        <div class="col">
+                            <span class="text-center">{{ GalleryProfile.form.galleries }}</span>
+
+                            <h3 translate>posts</h3>
+                        </div>
+                        <div class="col">
+                            <span class="text-center">{{ GalleryProfile.form.follow }}</span>
+
+                            <h3 translate>followers</h3>
+                        </div>
+                        <div class="col">
+                            <span class="text-center">{{ GalleryProfile.form.follow2 }}</span>
+
+                            <h3 tranlsate>following</h3>
+                        </div>
+                    </div>
+                    <div class="row col-edit">
+                        <div class="col">
+                            <button gallery-profile-edit
+                                    class="button "> {{ 'EDIT YOUR PROFILE' | translate }}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <span class="user-username">{{ GalleryProfile.form.name }}</span>
+
+                <p class="user-status">{{ GalleryProfile.form.status }}</p>
+            </div>
+
+            <ion-tabs class="tabs-light">
+                <ion-tab icon="ion-android-apps"></ion-tab>
+                <ion-tab icon="ion-navicon-round"></ion-tab>
+                <ion-tab icon="ion-ios-location-outline"></ion-tab>
+            </ion-tabs>
+        </div>
+
+        <!--<ion-nav-view name="tabProfile"></ion-nav-view>-->
+
+    </ion-content>
+</ion-view>

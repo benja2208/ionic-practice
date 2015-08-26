@@ -1,0 +1,7 @@
+#!/bin/bash
+echo 'Build App'
+ionic build android
+echo 'Installing app in Android'
+adb install platforms/android/ant-build/pilotos-debug-unaligned.apk
+echo 'Log Start'
+adb logcat CordovaLog:D *:S
