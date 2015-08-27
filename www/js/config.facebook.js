@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    var FACEBOOK = 'FACEBOOKKEY'
+    var FACEBOOK = '1024016557617380'
 
     angular
         .module('starter')

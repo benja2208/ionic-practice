@@ -3,9 +3,9 @@
     angular
         .module('starter')
         .value('ParseConfig', {
-            applicationId: 'APP_ID',
-            clientKey    : 'CLIENTE_KEY',
-            javascriptKey: 'JAVASCRIPT_KEY'
+            applicationId: '7lWT9DJntSvMKTetpoT0wL79pTG9dk4ob5pztktX',
+            clientKey    : 'UbrjB5Imc0btrAyoSb83HmCAHmFWc77JEB9AA1to',
+            javascriptKey: 'UbrjB5Imc0btrAyoSb83HmCAHmFWc77JEB9AA1to'
         });
 
 })();

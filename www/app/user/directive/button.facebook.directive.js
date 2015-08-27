@@ -34,7 +34,7 @@
                 link    : function ($scope, elem, attr) {
                     $scope.msg = gettextCatalog.getString('Conect your Facebook');
 
-                    var route = 'gallery.home';
+                    var route = 'gallery.home.normal';
 
                     function loginroute() {
                         Loading.end();

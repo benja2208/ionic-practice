@@ -22,7 +22,7 @@
                         .then(function (resp) {
                             console.log(resp);
                             User.init();
-                            $state.go('gallery.home', {clear: true})
+                            $state.go('gallery.home.normal', {clear: true})
                         });
                 } else {
                     Notify.alert({

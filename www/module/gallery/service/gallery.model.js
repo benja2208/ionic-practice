@@ -263,7 +263,7 @@
                 var data  = [];
 
                 var point       = new Parse.GeoPoint(position);
-                var maxDistance = 1000;
+                var maxDistance = 50;
 
                 Loading.start();
 

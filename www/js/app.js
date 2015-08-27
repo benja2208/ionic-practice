@@ -92,6 +92,8 @@
             // Android Native Scroll
             //var jsScrolling = (ionic.Platform.isAndroid () ) ? false : true;
             //$ionicConfigProvider.scrolling.jsScrolling (jsScrolling);
+            console.log('android: scroll nativo', $ionicConfigProvider.scrolling.jsScrolling());
+            //if(ionic.Platform.isAndroid()) $ionicConfigProvider.scrolling.jsScrolling(false);
             $ionicConfigProvider.views.maxCache(1);
         });
 

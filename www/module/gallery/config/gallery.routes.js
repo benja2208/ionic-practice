@@ -19,11 +19,29 @@
                 })
 
                 .state('gallery.home', {
-                    url  : '/home/:reload',
-                    views: {
+                    url     : '/gallery',
+                    abstract: true,
+                    views   : {
                         tabHome: {
+                            templateUrl: 'module/gallery/view/gallery.home.tabs.html'
+                        }
+                    }
+                })
+                .state('gallery.home.normal', {
+                    url  : '/normal/:reload',
+                    views: {
+                        tabNormal: {
                             controller : 'GalleryHomeCtrl as GalleryHome',
-                            templateUrl: 'module/gallery/view/gallery.home.html'
+                            templateUrl: 'module/gallery/view/gallery.home.normal.html'
+                        }
+                    }
+                })
+                .state('gallery.home.native', {
+                    url  : '/native/:reload',
+                    views: {
+                        tabNative: {
+                            controller : 'GalleryHomeCtrl as GalleryHome',
+                            templateUrl: 'module/gallery/view/gallery.home.native.html'
                         }
                     }
                 })

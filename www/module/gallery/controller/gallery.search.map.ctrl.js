@@ -46,6 +46,11 @@
                             zoom  : 13
                         };
 
+                        vm.user = {
+                            latitude : position.latitude,
+                            longitude: position.longitude,
+                        };
+
                         Gallery
                             .nearby(position.coords)
                             .then(function (resp) {

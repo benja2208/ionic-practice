@@ -10,7 +10,7 @@
                     templateUrl: 'app/core/view/loading.html',
                     controller : function ($state) {
                         if (window.Parse.User.current()) {
-                            $state.go('gallery.home', {clear: true});
+                            $state.go('gallery.home.normal', {clear: true});
                         } else {
                             $state.go('intro', {clear: true});
                         }

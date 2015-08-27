@@ -12,7 +12,7 @@
                 };
 
                 if (window.Parse.User.current()) {
-                    $state.go('gallery.home', {clear: true});
+                    $state.go('gallery.home.normal', {clear: true});
                 }
 
             }
@@ -29,7 +29,7 @@
                         .login(form)
                         .then(function (data) {
                             console.log(data);
-                            $state.go('gallery.home');
+                            $state.go('gallery.home.normal',{clear: true});
                             init();
                             User.init();
                         })
