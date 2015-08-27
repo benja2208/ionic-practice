@@ -28,7 +28,23 @@ Let's go and clone this project!
 5. Gulp dev tas
 > $ gulp  
 
-6. Install Ionic Analytics and Configure your Parse Keys
+## Install Cordova Plugins (Required)
+
+Statusbar 
+> $ ionic plugin add cordova-plugin-statusbar
+
+Camera
+> $ ionic plugin add org.apache.cordova.camera
+
+Image Picker
+> $ ionic plugin add https://github.com/wymsee/cordova-imagePicker.git
+
+Geolocation
+> $ ionic plugin add org.apache.cordova.geolocation
+
+In App Browser
+> $ionic plugin add org.apache.cordova.inappbrowser
+> 
 
 ## Ionic Analytics (required)
 1. Create Account 
