@@ -1,6 +1,6 @@
 {
   "name": "Photogram",
-  "app_id": "ea42829b",
+  "app_id": "",
   "gulpStartupTasks": [
     "inject",
     "sass",

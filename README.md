@@ -9,36 +9,61 @@ Let's go and clone this project!
 [http://movibe.github.io/photogram-docs/](http://movibe.github.io/photogram-docs/)
 
 
-## Getting Starter  ##
-1) Install nodejs: http://nodejs.org/ 
+## Getting Starter
+1. Install nodejs: 
+> [http://nodejs.org/ ](http://nodejs.org/)
 
-2) Install Ionic, Bower, Cordova and Gulp
+2. Install Ionic, Bower, Cordova and Gulp
 > $ npm install -g ionic bower cordova gulp
 
-3) Intall Node Modules
+3. Intall Node Modules
 > $ npm install
 
-or 
-
+ or 
 > $ sudo npm install
 
-4) Install Bower Libs
+4. Install Bower Libs
 > $ bower install
 
-5) Gulp inject before test
-> $ gulp inject
+5. Gulp dev tas
+> $ gulp  
 
-6) Run in Browser
-> $ ionic serve
+6. Install Ionic Analytics and Configure your Parse Keys
 
-## Parse Configuration ##
-1. Create account in Parse [http://parse.com](http://parse.com)
+## Ionic Analytics (required)
+1. Create Account 
+>  [Apps Ionic.io](https://apps.ionic.io/)
+
+2. Configure your app name
+> ionic.project
+> bower.json
+> package.json
+
+3. Enter command in your terminal
+> $ ionic io init
+
+Finished, Ionic Analytics configured!
+
+Access Ionic Apps Dashboard and view your app analytics report
+[https://apps.ionic.io/apps](https://apps.ionic.io/apps)
+
+## Configure Parse 
+1. Create account in Parse 
+> [http://parse.com](http://parse.com)
+
 2. Follow online documentation in Github
-[http://movibe.github.io/photogram-docs/#parse](http://movibe.github.io/photogram-docs/#parse)
-3. Config Your Parse Keys in file
-www/js/config.parse.js
+> [http://movibe.github.io/photogram-docs/#parse](http://movibe.github.io/photogram-docs/#parse)
+
+3. Edit file and set your Parse Keys
+>www/js/config.parse.js
 
 ![enter image description here](http://movibe.github.io/photogram-docs/assets/images/facebook-config.jpg)
+
+
+## Test in Web Browser
+After following the above instructions, type in your terminal for run ionic server
+
+> $ ionic serve
   
 ## Facebook Configuration ##
 
