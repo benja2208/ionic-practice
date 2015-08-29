@@ -1,9 +1,10 @@
-(function(){
+(function () {
     'use strict';
     angular
         .module('module.user')
-        .controller('LoginCtrl', function ($scope, $ionicPopup, UserForm, $state, gettextCatalog, Notify, User) {
-            var vm = this;
+        .controller('LoginCtrl', function ($scope, AppConfig, $ionicPopup, UserForm, $state, gettextCatalog, Notify, User) {
+            var vm         = this;
+            vm.routeLogged = AppConfig.routeLogged;
 
             function init() {
                 vm.form = {
@@ -12,7 +13,7 @@
                 };
 
                 if (window.Parse.User.current()) {
-                    $state.go('gallery.home.normal', {clear: true});
+                    $state.go(vm.routeLogged, {clear: true});
                 }
 
             }
@@ -29,7 +30,7 @@
                         .login(form)
                         .then(function (data) {
                             console.log(data);
-                            $state.go('gallery.home.normal',{clear: true});
+                            $state.go(vm.routeLogged, {clear: true});
                             init();
                             User.init();
                         })

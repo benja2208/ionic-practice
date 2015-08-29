@@ -2,11 +2,9 @@
                  icon="android"></gallery-loading>
 
 <div class="list card animated fadeIn"
-     ng-repeat="gallery in data | orderBy: 'createdAt'">
+     ng-repeat="gallery in data ">
 
-    <div class="item item-avatar"
-         data-affix-within-parent-with-class="card"
-         ion-affix>
+    <div class="item item-avatar">
         <img ng-src="{{gallery.user.src}}">
 
         <h2>{{gallery.user.name}}</h2>
@@ -14,18 +12,6 @@
         <p>{{ gallery.user.status }}</p>
         <span>{{gallery.created | amTimeAgo}}</span>
     </div>
-
-    <!--<div class="item item-avatar"-->
-    <!--ui-sref="gallery.profile({id: gallery.user.id})"-->
-    <!--data-affix-within-parent-with-class="card"-->
-    <!--ion-affix>-->
-    <!--<img ng-src="{{gallery.user.src}}">-->
-
-    <!--<h2>{{gallery.user.name}}</h2>-->
-
-    <!--<p>{{ gallery.user.status }}</p>-->
-    <!--<span>{{gallery.created | amTimeAgo}}</span>-->
-    <!--</div>-->
 
     <div class="item item-body"
          ng-click="like = !like">

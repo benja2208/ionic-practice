@@ -2,7 +2,7 @@
     'use strict';
     angular
         .module('module.user')
-        .controller('UserAvatarCtrl', function (User, $state, gettextCatalog, Notify, UserForm) {
+        .controller('UserAvatarCtrl', function (User, AppConfig, $state, gettextCatalog, Notify, UserForm) {
             var vm = this;
 
             function init() {
@@ -22,7 +22,7 @@
                         .then(function (resp) {
                             console.log(resp);
                             User.init();
-                            $state.go('gallery.home.normal', {clear: true})
+                            $state.go(AppConfig.routeLogged, {clear: true})
                         });
                 } else {
                     Notify.alert({

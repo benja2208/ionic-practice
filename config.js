@@ -37,8 +37,11 @@ module.exports = {
             'www/app/**/**/*.js',
             '!www/app/**/**/*.spec.js',
             'www/app/**/view/*.html',
+
+            'www/component/**/*.js',
             '!www/component/**/**/*.spec.js',
             'www/component/**/view/*.html',
+
             'www/module/**/**/*.js',
             '!www/module/**/*.spec.js',
             'www/module/**/view/*.html'

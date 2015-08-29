@@ -17,5 +17,10 @@
         <gallery-photo-list gallery="GalleryHome.data"
                             loading="GalleryHome.loading"></gallery-photo-list>
 
+        <ion-infinite-scroll
+                ng-if="GalleryHome.data.length>1"
+                on-infinite="GalleryHome.load()">
+        </ion-infinite-scroll>
+
     </ion-content>
 </ion-view>

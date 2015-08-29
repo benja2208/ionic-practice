@@ -28,17 +28,13 @@ msgstr "Conta"
 msgid "Activities"
 msgstr "Atividades"
 
-#: gallery/view/gallery.photos.list.html:74
+#: gallery/view/gallery.photos.list.html:60
 msgid "Add comment"
 msgstr "Adicionar comentário"
 
 #: user/directive/user.forgot.pass.directive.js:34
 msgid "Cancel"
 msgstr "Cancelar"
-
-#: gallery/view/gallery.capture.modal.html:5
-msgid "Capture"
-msgstr "Tirar foto"
 
 #: gallery/view/gallery.settings.modal.html:13
 msgid "Change language"
@@ -56,7 +52,7 @@ msgstr "Comentários"
 msgid "Complete your Profile"
 msgstr "Complete o seu perfil"
 
-#: user/directive/button.facebook.directive.js:14
+#: user/directive/button.facebook.directive.js:35
 msgid "Conect your Facebook"
 msgstr "Conectar com o seu Facebook"
 
@@ -87,6 +83,10 @@ msgstr "Entrar"
 msgid "Feedback"
 msgstr "Feedback"
 
+#: user/controller/user.avatar.ctrl.js:30
+msgid "Fill out the fields in red"
+msgstr "Preencha os campos em vermelho"
+
 #: user/controller/user.intro.ctrl.js:18
 msgid "Find and follow people around"
 msgstr "Encontre e siga pessoas por perto"
@@ -111,6 +111,10 @@ msgstr "Ver Galeria"
 msgid "Invalid Email"
 msgstr "Email inválido"
 
+#: user/controller/user.avatar.ctrl.js:29
+msgid "Invalid form"
+msgstr "Formulário inválido"
+
 #: gallery/view/gallery.settings.modal.html:22
 msgid "Invite Facebook Friends"
 msgstr "Convidar amigos do Facebook"
@@ -120,7 +124,7 @@ msgid "Like"
 msgstr "Curtir"
 
 #: gallery/view/gallery.like.directive.html:5
-#: gallery/view/gallery.photos.list.html:58
+#: gallery/view/gallery.photos.list.html:44
 msgid "Likes"
 msgstr "Curtidas"
 
@@ -171,6 +175,10 @@ msgstr "Compartilhar"
 msgid "Share In"
 msgstr "Compartilhar"
 
+#: gallery/view/gallery.capture.modal.html:5
+msgid "Share Photo"
+msgstr "Compartilhar Foto"
+
 #: gallery/view/gallery.capture.html:8
 msgid "Share photo"
 msgstr "Compartilhar Foto"
@@ -203,11 +211,11 @@ msgstr "Ao criar sua conta, você concorda com nossos"
 msgid "Write a Legend"
 msgstr "Escreva uma legenda"
 
-#: gallery/service/gallery.model.js:885
+#: gallery/service/gallery.model.js:887
 msgid "add comment"
 msgstr "adicionou um comentário"
 
-#: gallery/service/gallery.model.js:884
+#: gallery/service/gallery.model.js:886
 msgid "add photo"
 msgstr "adicionou uma foto"
 
@@ -215,7 +223,7 @@ msgstr "adicionou uma foto"
 msgid "followers"
 msgstr "seguidores"
 
-#: gallery/service/gallery.model.js:886
+#: gallery/service/gallery.model.js:888
 msgid "like photo"
 msgstr "curtiu a foto"
 
@@ -227,17 +235,20 @@ msgstr "ou"
 msgid "posts"
 msgstr "publicações"
 
-#: gallery/service/gallery.model.js:888
+#: gallery/service/gallery.model.js:890
 msgid "register"
 msgstr "se cadastrou"
 
-#: gallery/service/gallery.model.js:889
+#: gallery/service/gallery.model.js:891
 msgid "registered"
 msgstr "se cadastrou"
 
-#: gallery/service/gallery.model.js:887
+#: gallery/service/gallery.model.js:889
 msgid "unlike photo"
 msgstr "tirou o curtir da foto"
+
+#~ msgid "Capture"
+#~ msgstr "Tirar foto"
 
 #~ msgid "Forgot your password?"
 #~ msgstr "Esqueceu sua senha?"

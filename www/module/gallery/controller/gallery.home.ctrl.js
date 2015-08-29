@@ -4,12 +4,16 @@
         .module('module.gallery')
         .controller('GalleryHomeCtrl', function ($scope, $ionicPopover, $stateParams, PhotoService, Gallery, $timeout) {
             var vm      = this;
-            vm.page     = -1;
-            vm.active   = false;
-            vm.data     = [];
             vm.loading  = true;
             $scope.like = false;
 
+
+            function init() {
+                vm.data = [];
+                vm.page = 0;
+            }
+
+            init();
 
             $scope.loadMore = function (force) {
                 console.log('Load More');
@@ -19,12 +23,10 @@
             vm.load = function (force) {
                 console.log('Load ');
                 vm.loading = true;
-                if (force) {
-                    vm.data = [];
-                    vm.page = -1;
-                }
 
-                vm.page = parseInt(vm.page) + 1;
+                if (force) {
+                    init();
+                }
 
                 Gallery
                     .all(vm.page)
@@ -38,6 +40,7 @@
                         $scope.$broadcast('scroll.refreshComplete');
                         $scope.$broadcast('scroll.infiniteScrollComplete');
                         vm.loading = false;
+                        vm.page++;
                     })
                     .catch(function () {
                         vm.loading = false;

@@ -20,10 +20,15 @@ msgstr ""
 msgid "Activities"
 msgstr ""
 
-#: gallery/view/gallery.photos.list.html:74
+#: gallery/view/gallery.photos.list.html:60
 msgid "Add comment"
 msgstr ""
 
+#: ion-photo/ion-photo.js:66
+msgid "Camera"
+msgstr ""
+
+#: ion-photo/ion-photo.js:73
 #: user/directive/user.forgot.pass.directive.js:34
 msgid "Cancel"
 msgstr ""
@@ -61,6 +66,10 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
+#: ion-photo/ion-photo.js:93
+msgid "Enabled your camera"
+msgstr ""
+
 #: user/controller/user.intro.ctrl.js:22
 msgid "Enjoy the most amazing photos"
 msgstr ""
@@ -71,6 +80,10 @@ msgstr ""
 #: user/view/user.tabs.html:16
 #: user/view/user.tabs.html:2
 msgid "Enter"
+msgstr ""
+
+#: ion-photo/ion-photo.js:92
+msgid "Error"
 msgstr ""
 
 #: gallery/view/gallery.photo.feedback.modal.html:5
@@ -97,6 +110,10 @@ msgstr ""
 msgid "Follow your friends and relive"
 msgstr ""
 
+#: ion-photo/ion-photo.js:69
+msgid "Gallery"
+msgstr ""
+
 #: gallery/view/gallery.view.html:1
 msgid "Gallery preview"
 msgstr ""
@@ -118,7 +135,7 @@ msgid "Like"
 msgstr ""
 
 #: gallery/view/gallery.like.directive.html:5
-#: gallery/view/gallery.photos.list.html:58
+#: gallery/view/gallery.photos.list.html:44
 msgid "Likes"
 msgstr ""
 
@@ -132,6 +149,10 @@ msgstr ""
 
 #: gallery/view/gallery.search.map.html:2
 msgid "Map"
+msgstr ""
+
+#: ion-location/ion-location.js:56
+msgid "My Location"
 msgstr ""
 
 #: gallery/view/gallery.comment.directive.html:34
@@ -149,6 +170,7 @@ msgid "Register"
 msgstr ""
 
 #: gallery/view/gallery.search.grid.html:4
+#: ion-location/ion-location.js:57
 msgid "Search"
 msgstr ""
 
@@ -171,6 +193,7 @@ msgid "Share In"
 msgstr ""
 
 #: gallery/view/gallery.capture.modal.html:5
+#: ion-photo/ion-photo.js:72
 msgid "Share Photo"
 msgstr ""
 
@@ -208,11 +231,11 @@ msgstr ""
 msgid "Write a Legend"
 msgstr ""
 
-#: gallery/service/gallery.model.js:884
+#: gallery/service/gallery.model.js:887
 msgid "add comment"
 msgstr ""
 
-#: gallery/service/gallery.model.js:883
+#: gallery/service/gallery.model.js:886
 msgid "add photo"
 msgstr ""
 
@@ -220,7 +243,7 @@ msgstr ""
 msgid "followers"
 msgstr ""
 
-#: gallery/service/gallery.model.js:885
+#: gallery/service/gallery.model.js:888
 msgid "like photo"
 msgstr ""
 
@@ -232,14 +255,14 @@ msgstr ""
 msgid "posts"
 msgstr ""
 
-#: gallery/service/gallery.model.js:887
+#: gallery/service/gallery.model.js:890
 msgid "register"
 msgstr ""
 
-#: gallery/service/gallery.model.js:888
+#: gallery/service/gallery.model.js:891
 msgid "registered"
 msgstr ""
 
-#: gallery/service/gallery.model.js:886
+#: gallery/service/gallery.model.js:889
 msgid "unlike photo"
 msgstr ""

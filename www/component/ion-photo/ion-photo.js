@@ -1,7 +1,10 @@
 (function () {
     'use strict';
     angular
-        .module('ion-photo', ['ionic'])
+        .module('ion-photo', [
+            'ionic',
+            'gettext'
+        ])
         .factory('PhotoService', function ($ionicActionSheet, $window, $ionicPopup, $cordovaCamera, $cordovaImagePicker, gettextCatalog, $q, Notify) {
 
             function capture(type, setting) {
@@ -66,7 +69,7 @@
                             text: '<i class="icon ion-images"></i>' + gettextCatalog.getString('Gallery')
                         }
                     ],
-                    titleText    : gettextCatalog.getString('Send Photo'),
+                    titleText    : gettextCatalog.getString('Share Photo'),
                     cancelText   : gettextCatalog.getString('Cancel'),
                     cancel       : function () {
                         defer.reject('Cancel');

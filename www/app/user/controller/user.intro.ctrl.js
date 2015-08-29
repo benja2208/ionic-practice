@@ -32,7 +32,6 @@
                 vm.slideIndex = index;
             };
 
-
         })
     ;
 })();

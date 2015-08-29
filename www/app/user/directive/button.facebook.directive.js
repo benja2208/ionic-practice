@@ -28,19 +28,18 @@
                 restrict: 'E',
                 template: '<button class="button button-block button-facebook" ><i class="icon ion-social-facebook"></i> {{ msg }} </button>',
                 scope   : {
-                    login   : '@',
+                    login   : '=',
                     register: '@',
                 },
                 link    : function ($scope, elem, attr) {
                     $scope.msg = gettextCatalog.getString('Conect your Facebook');
 
-                    var route = 'gallery.home.normal';
 
                     function loginroute() {
                         Loading.end();
                         User.init();
                         $timeout(function () {
-                            $state.go(route, {clear: true});
+                            $state.go($scope.login, {clear: true});
                         }, 500);
                     }
 

@@ -3,7 +3,7 @@
     angular.module ('ionic.components', [
         'ionic',
         'ionic-loading',
-        'ion-affix',
+        //'ion-affix',
         'ion-location',
         'ion-photo',
     ]);

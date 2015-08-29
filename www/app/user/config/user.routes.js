@@ -2,7 +2,7 @@
     'use strict';
     angular
         .module('module.user')
-        .config(function ($stateProvider, $urlRouterProvider) {
+        .config(function ($stateProvider, $urlRouterProvider, AppConfig) {
             $stateProvider
 
                 .state('router', {
@@ -10,7 +10,7 @@
                     templateUrl: 'app/core/view/loading.html',
                     controller : function ($state) {
                         if (window.Parse.User.current()) {
-                            $state.go('gallery.home.normal', {clear: true});
+                            $state.go(AppConfig.routeLogged, {clear: true});
                         } else {
                             $state.go('intro', {clear: true});
                         }
@@ -51,8 +51,8 @@
                 })
 
                 .state('useravatar', {
-                    url     : '/avatar',
-                    controller: 'UserAvatarCtrl as Avatar',
+                    url        : '/avatar',
+                    controller : 'UserAvatarCtrl as Avatar',
                     templateUrl: 'app/user/view/user.avatar.html'
                 })
 

@@ -27,5 +27,10 @@
             </div>
 
         </div>
+
+        <ion-infinite-scroll
+                ng-if="!GalleryActivity.loading"
+                on-infinite="GalleryActivity.load()">
+        </ion-infinite-scroll>
     </ion-content>
 </ion-view>

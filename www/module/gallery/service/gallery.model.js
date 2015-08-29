@@ -92,7 +92,7 @@
             function loadProfile(response) {
 
                 if (response) {
-                    var user      = processImg(response);
+                    var user = processImg(response);
 
                     console.info(response, user);
                     return user;
@@ -340,7 +340,6 @@
                 var defer = $q.defer();
                 var limit = 10;
                 var data  = new Array();
-                //Loading.start ();
 
                 new Parse
                     .Query('Gallery')
@@ -842,15 +841,19 @@
                 return defer.promise;
             }
 
-            function listActivity() {
+            function listActivity(page) {
                 var defer = $q.defer();
+                var limit = 20;
+
+                console.info(page, limit);
 
                 new Parse
                     .Query('GalleryActivity')
                     .include('user')
                     .include('gallery')
                     .descending('createdAt')
-                    .limit(50)
+                    .limit(limit)
+                    .skip(page * limit)
                     .find()
                     .then(function (resp) {
                         console.log(resp);
