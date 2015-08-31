@@ -81,13 +81,13 @@ After following the above instructions, type in your terminal for run ionic serv
 
 > $ ionic serve
   
-## Facebook Configuration ##
+## Facebook Configuration
 
  1. Create Account in Facebook Developers
  2. Follow  [documentation](http://movibe.github.io/photogram-docs/#facebook)
  2. Edit File with your Keys www/js/config.facebook.js
 
-##Build and run app on iOS (only Mac OS) ##
+## Build and run app on iOS (only Mac OS)
 > $ sudo npm install -g ios-sim 
 
 > $ ionic run ios
