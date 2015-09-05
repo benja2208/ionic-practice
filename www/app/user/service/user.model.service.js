@@ -2,10 +2,9 @@
     'use strict';
     angular
         .module('module.user')
-        .factory('User', function ($q, $filter, $rootScope, $timeout, $location, Parse, $cordovaGeolocation, $cordovaDevice, $window, $facebook, $cordovaFacebook, Loading, $state, ParseConfig, Notify) {
+        .factory('User', function ($q, AppConfig, $rootScope, $timeout, $location, Parse, $cordovaDevice, $window, $facebook, $cordovaFacebook, Loading, $state, Notify) {
 
-            var device = $window.cordova ? true : false;
-            //var facebook = device ? $cordovaFacebook : $window.FB;
+            var device   = $window.cordova ? true : false;
             var facebook = device ? $cordovaFacebook : $facebook;
             var data     = {
                 user    : {},
@@ -14,17 +13,15 @@
 
             function init() {
                 // Parse Start
-                Parse.initialize(ParseConfig.applicationId, ParseConfig.javascriptKey);
+                Parse.initialize(AppConfig.parse.applicationId, AppConfig.parse.javascriptKey);
                 var user = Parse.User.current();
 
                 if (user) {
                     console.log('Logged user');
-                    var obj = user.attributes;
-                    obj.id  = user.id;
-                    return loadProfile(obj);
+                    return loadProfile(user);
                 } else {
                     console.log('Not logged user, go intro');
-                    $state.go('intro');
+                    $state.go(AppConfig.routes.login, {clear: true});
                 }
             }
 
@@ -34,9 +31,10 @@
 
 
             function loadProfile(response) {
-
                 if (response) {
-                    var user        = processImg(response);
+                    var user        = response.attributes;
+                    user.id         = user.id;
+                    user            = processImg(user);
                     delete $rootScope.user;
                     $rootScope.user = user;
                     console.log('load profile', response, user);
@@ -48,7 +46,7 @@
             }
 
             function processImg(obj) {
-                console.log('process image');
+                console.log('process image', obj);
                 if (obj.facebook) {
                     obj.src = (obj.facebookimg) ? obj.facebookimg : 'img/user.png';
                 } else {
@@ -474,51 +472,6 @@
             }
 
 
-            function getLocation() {
-                // Pega a Localização da Pessoa
-                Loading.start();
-                var defer = $q.defer();
-
-                if (data.location) {
-                    $timeout(function () {
-                        defer.resolve(data.location);
-                        Loading.end();
-                    }, 1000);
-                } else {
-                    var posOptions = {
-                        timeout           : 10000,
-                        enableHighAccuracy: false
-                    };
-                    $cordovaGeolocation
-                        .getCurrentPosition(posOptions)
-                        .then(function (position) {
-                            console.log('Fez a requisição', position);
-
-                            data.location = {
-                                latitude : position.coords.latitude,
-                                longitude: position.coords.longitude
-                            };
-                            defer.resolve(data.location);
-                        }, function (err) {
-                            // error
-                            console.log('Pegou da Default');
-
-                            Notify.alert({
-                                title: 'Error',
-                                text : 'Could not get location'
-                            });
-                            defer.reject(err);
-                        })
-                        .then(function (resp) {
-                            console.log('final', resp);
-                            Loading.end();
-                        });
-                }
-
-
-                return defer.promise;
-            }
-
             function addFollow(user) {
                 var defer = $q.defer();
 
@@ -546,6 +499,50 @@
                 return $q.all(promises);
             }
 
+            function getMail(email) {
+                var defer = $q.defer();
+                Loading.start();
+                new Parse
+                    .Query('User')
+                    .equalTo('email', email)
+                    .first()
+                    .then(function (resp) {
+                        Loading.end();
+                        defer.resolve(resp);
+                    }, function (resp) {
+                        Loading.end();
+                        defer.reject(resp);
+                    })
+                return defer.promise;
+            }
+
+            function facebookLink(response, user) {
+                var defer = $q.defer();
+
+                console.log(response);
+                // Faz a Data ficar no formato perfeitoOoO
+                var data = new Date(new Date().getTime() + response['authResponse']['expiresIn'] * 1000);
+
+                Parse
+                    .FacebookUtils
+                    .link(user, {
+                        id             : response['authResponse']['userID'] + '',
+                        access_token   : response['authResponse']['accessToken'],
+                        expiration_date: data
+                    },
+                    {
+                        success: function (user) {
+
+                            defer.resolve(user);
+                        },
+                        error  : function (user, error) {
+                            defer.reject('Não foi possivel associar sua conta :(")');
+                        }
+                    });
+
+                return defer.promise;
+            }
+
 
             return {
                 init              : init,
@@ -561,8 +558,9 @@
                 forgot            : forgot,
                 list              : list,
                 find              : find,
-                location          : getLocation,
+                mail              : getMail,
                 loginParseFacebook: loginParseFacebook,
+                facebookLink      : facebookLink,
                 facebookLogin     : facebookLogin,
                 facebookProfile   : facebookProfile,
                 facebookFriends   : facebookFriends,

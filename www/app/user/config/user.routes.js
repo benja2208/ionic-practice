@@ -10,7 +10,7 @@
                     templateUrl: 'app/core/view/loading.html',
                     controller : function ($state) {
                         if (window.Parse.User.current()) {
-                            $state.go(AppConfig.routeLogged, {clear: true});
+                            $state.go(AppConfig.routes.home, {clear: true});
                         } else {
                             $state.go('intro', {clear: true});
                         }

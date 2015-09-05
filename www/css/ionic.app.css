@@ -9845,9 +9845,16 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   .photogram .item-body {
     padding: 0;
     border: none;
-    min-height: 200px;
+    min-height: 600px;
     position: relative;
-    overflow: hidden; }
+    overflow: hidden;
+    background-color: #ddd;
+    height: 100%; }
+    .photogram .item-body .round-progress-wrapper {
+      display: block;
+      position: absolute !important;
+      left: 40%;
+      top: 37%; }
     .photogram .item-body img {
       width: 100%;
       display: block; }
@@ -10058,7 +10065,9 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   .photogram .gallery-search .row {
     padding: 0; }
     .photogram .gallery-search .row .col {
-      padding: 1px; }
+      padding: 0px;
+      background-color: #ddd;
+      margin: 4px 2px; }
   .photogram .gallery-userlist .item, .photogram .gallery-activity .item {
     border-bottom: 1px solid #ddd;
     margin-bottom: 1px; }

@@ -2,9 +2,12 @@
     'use strict';
     angular
         .module('starter', [
-            'ionic','ionic.service.core','ionic.service.analytics',
+            'ionic',
+            'ionic.service.core',
+            'ionic.service.analytics',
             //'cacheapp',
             //'cachemodule',
+            'ionic-cache-src',
             'formlyIonic',
             'pascalprecht.translate',
             'angularMoment',
@@ -21,7 +24,14 @@
             'module.gallery'
         ])
 
-        .run(function ($ionicPlatform, $ionicAnalytics, $rootScope, $window, $cordovaStatusbar, $timeout, $cordovaSplashscreen, GallerySetting, User) {
+
+        .run(function ($ionicPlatform, $cacheSrc, AppConfig, $ionicAnalytics, $rootScope, $window, $cordovaStatusbar, $timeout, $cordovaSplashscreen, GallerySetting, User) {
+
+            $cacheSrc.color = AppConfig.color;
+            $cacheSrc.bgcolor = '#fff';
+            $cacheSrc.rounded = true;
+            $cacheSrc.radius = 50;
+            //$cacheSrc.interval = 5000;
 
             User.init();
             GallerySetting.init();
@@ -39,7 +49,7 @@
                         $cordovaSplashscreen.hide();
                         $cordovaStatusbar.overlaysWebView(true);
                         $cordovaStatusbar.style(1);
-                        $cordovaStatusbar.styleHex('#00796B');
+                        $cordovaStatusbar.styleHex(AppConfig.color);
                         $cordovaStatusbar.show();
                     }, 500);
                 }
@@ -92,7 +102,7 @@
 
             // Android Native Scroll
             console.log('android: scroll nativo', $ionicConfigProvider.scrolling.jsScrolling());
-            if(ionic.Platform.isAndroid()) $ionicConfigProvider.scrolling.jsScrolling(false);
+            if (ionic.Platform.isAndroid()) $ionicConfigProvider.scrolling.jsScrolling(false);
             $ionicConfigProvider.views.maxCache(1);
         });
 

@@ -1,6 +1,3 @@
-<gallery-loading loading="loading"
-                 icon="android"></gallery-loading>
-
 <div class="list card animated fadeIn"
      ng-repeat="gallery in data ">
 
@@ -16,7 +13,7 @@
     <div class="item item-body"
          ng-click="like = !like">
         <i class="icon"
-           ng-if="like"></i> <img ng-src="{{gallery.src}}">
+           ng-if="like"></i> <img cache-src="{{gallery.src}}">
     </div>
     <div class="item item-buttons">
         <div class="row">

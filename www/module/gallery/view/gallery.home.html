@@ -4,22 +4,30 @@
     </ion-nav-title>
 
     <ion-nav-buttons side="right">
-        <button gallery-settings
-                class="button button-icon icon ion-android-more-vertical"></button>
+        <!-- <button gallery-settings
+                class="button button-icon icon ion-levels"></button> -->
     </ion-nav-buttons>
 
-    <ion-content overflow-scroll="true">
+    <ion-content >
         <ion-refresher ng-if="!GalleryHome.loading"
                        on-refresh="loadMore(true)"></ion-refresher>
 
-        <ion-loading icon="android"></ion-loading>
+        <gallery-loading loading="GalleryHome.loading"></gallery-loading>
+
 
         <gallery-photo-list gallery="GalleryHome.data"
                             loading="GalleryHome.loading"></gallery-photo-list>
 
+        <div class="center-ico"
+             ng-if="GalleryHome.empty">
+            <i class="icon ion-ios-camera"></i>
+
+            <h1 translate>Nenhuma foto postagem por perto</h1>
+        </div>
+
         <ion-infinite-scroll
-                ng-if="GalleryHome.data.length>1"
-                on-infinite="GalleryHome.load()">
+                ng-if="!GalleryHome.loadMore&&GalleryHome.more"
+                on-infinite="loadMore()">
         </ion-infinite-scroll>
 
     </ion-content>

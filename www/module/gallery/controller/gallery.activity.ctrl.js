@@ -7,13 +7,25 @@
             vm.loading = true;
 
             function init() {
-                vm.page = 0;
-                vm.data = [];
+                vm.page     = 0;
+                vm.data     = [];
+                vm.empty    = false;
+                vm.loadMore = false;
             }
 
             init();
 
-            vm.load = function () {
+            $scope.loadMore = function (force) {
+                console.log('Load More');
+                vm.load(force);
+            };
+
+            vm.load = function (force) {
+
+                if (force) {
+                    init();
+                }
+
                 Gallery
                     .listActivity(vm.page)
                     .then(function (resp) {
@@ -21,15 +33,34 @@
                         angular.forEach(resp, function (value, key) {
                             vm.data.push(value);
                         });
+
+                        console.log('qtd', resp.length);
+                        if (resp.length) {
+                            vm.loading = false;
+                            vm.more    = true;
+                            vm.page++;
+                        } else {
+                            vm.empty   = true;
+                            vm.loading = false;
+                            vm.more    = false;
+                        }
                     })
                     .then(function () {
                         $scope.$broadcast('scroll.refreshComplete');
                         $scope.$broadcast('scroll.infiniteScrollComplete');
-                        vm.loading = false;
-                        vm.page++;
+
                     })
                     .catch(function () {
-                        vm.loading = false;
+                        $scope.$broadcast('scroll.refreshComplete');
+                        $scope.$broadcast('scroll.infiniteScrollComplete');
+                        if (vm.data.length) {
+                            vm.loading = false;
+                            vm.page++;
+                        } else {
+                            vm.empty   = true;
+                            vm.loading = false;
+                        }
+                        vm.more = false;
                     });
             };
 

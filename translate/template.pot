@@ -20,7 +20,7 @@ msgstr ""
 msgid "Activities"
 msgstr ""
 
-#: gallery/view/gallery.photos.list.html:60
+#: gallery/view/gallery.photos.list.html:57
 msgid "Add comment"
 msgstr ""
 
@@ -135,7 +135,7 @@ msgid "Like"
 msgstr ""
 
 #: gallery/view/gallery.like.directive.html:5
-#: gallery/view/gallery.photos.list.html:44
+#: gallery/view/gallery.photos.list.html:41
 msgid "Likes"
 msgstr ""
 
@@ -153,6 +153,10 @@ msgstr ""
 
 #: ion-location/ion-location.js:56
 msgid "My Location"
+msgstr ""
+
+#: gallery/view/gallery.home.html:25
+msgid "Nenhuma foto postagem por perto"
 msgstr ""
 
 #: gallery/view/gallery.comment.directive.html:34

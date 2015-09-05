@@ -95,9 +95,18 @@
   .item-body {
     padding: 0;
     border: none;
-    min-height: 200px;
+    min-height: 600px;
     position: relative;
     overflow: hidden;
+    background-color: #ddd;
+    height: 100%;
+
+    .round-progress-wrapper {
+      display: block;
+      position: absolute !important;
+      left: 40%;
+      top: 37%;
+    }
     img {
       width: 100%;
       display: block;
@@ -427,7 +436,9 @@
     .row {
       padding: 0;
       .col {
-        padding: 1px;
+        padding: 0px;
+        background-color: #ddd;
+        margin: 4px 2px;
       }
     }
   }

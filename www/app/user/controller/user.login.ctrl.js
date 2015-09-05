@@ -4,7 +4,7 @@
         .module('module.user')
         .controller('LoginCtrl', function ($scope, AppConfig, $ionicPopup, UserForm, $state, gettextCatalog, Notify, User) {
             var vm         = this;
-            vm.routeLogged = AppConfig.routeLogged;
+            vm.routeLogged = AppConfig.routes.home;
 
             function init() {
                 vm.form = {
