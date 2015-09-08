@@ -46,6 +46,7 @@ angular.module('translate.app',['ionic'])
   "Password": "Senha",
   "Please enter your email": "Por favor, digite seu e-mail",
   "Profile": "Perfil",
+  "Recent": "Recente",
   "Register": "Cadastro",
   "Save Profile": "Salvar Perfil",
   "Search": "Busca",

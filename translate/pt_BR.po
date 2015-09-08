@@ -115,6 +115,14 @@ msgstr "Seguir Amigos"
 msgid "Follow your friends and relive"
 msgstr "Siga seus amigos"
 
+#: gallery/view/gallery.account.tabs.html:30
+msgid "Followers"
+msgstr ""
+
+#: gallery/view/gallery.account.tabs.html:35
+msgid "Followings"
+msgstr ""
+
 #: user/view/user.login.html:13
 msgid "Forgot your password?"
 msgstr "Esqueceu sua senha?"
@@ -188,9 +196,17 @@ msgstr "Senha"
 msgid "Please enter your email"
 msgstr "Por favor, digite seu e-mail"
 
+#: gallery/view/gallery.account.tabs.html:25
+msgid "Posts"
+msgstr ""
+
 #: gallery/view/gallery.profile.photos.html:1
 msgid "Profile"
 msgstr "Perfil"
+
+#: gallery/view/gallery.account.tabs.html:54
+msgid "Recent"
+msgstr "Recente"
 
 #: user/view/user.register.html:1 user/view/user.register.html:9
 #: user/view/user.tabs.html:18
@@ -310,9 +326,6 @@ msgstr "tirou o curtir da foto"
 
 #~ msgid "Terms of User"
 #~ msgstr "Termos do Usuário"
-
-#~ msgid "Recent"
-#~ msgstr "Recente"
 
 #~ msgid "Send Photo"
 #~ msgstr "Enviar Foto"

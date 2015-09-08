@@ -20,11 +20,13 @@
         </div>
 
         <div class="list step2">
-            <label class="item item-input lock">
-                {{ Merge.form.name }}
+            <label class="item item-input">
+                <i class="icon icon-user placeholder-icon"></i>
+                <input type="text" ng-model="Merge.form.name" disabled>
             </label>
-            <label class="item item-input lock">
-                {{ Merge.form.email }}
+            <label class="item item-input">
+                <i class="icon icon-envelope placeholder-icon"></i>
+                <input type="text" ng-model="Merge.form.email" disabled>
             </label>
             <label class="item item-input lock">
                 <input type="password"

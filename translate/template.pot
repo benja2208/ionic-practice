@@ -111,6 +111,14 @@ msgstr ""
 msgid "Follow your friends and relive"
 msgstr ""
 
+#: gallery/view/gallery.account.tabs.html:30
+msgid "Followers"
+msgstr ""
+
+#: gallery/view/gallery.account.tabs.html:35
+msgid "Followings"
+msgstr ""
+
 #: user/view/user.login.html:13
 msgid "Forgot your password?"
 msgstr ""
@@ -145,7 +153,7 @@ msgstr ""
 msgid "Likes"
 msgstr ""
 
-#: gallery/view/gallery.profile.edit.modal.html:27
+#: gallery/view/gallery.profile.edit.modal.html:31
 msgid "Link Facebook"
 msgstr ""
 
@@ -161,7 +169,7 @@ msgstr ""
 msgid "Map"
 msgstr ""
 
-#: user/view/user.merge.html:40
+#: user/view/user.merge.html:42
 msgid "Merge Facebook"
 msgstr ""
 
@@ -177,7 +185,7 @@ msgstr ""
 msgid "No Comments"
 msgstr ""
 
-#: user/view/user.merge.html:31
+#: user/view/user.merge.html:33
 msgid "Password"
 msgstr ""
 
@@ -185,8 +193,16 @@ msgstr ""
 msgid "Please enter your email"
 msgstr ""
 
+#: gallery/view/gallery.account.tabs.html:25
+msgid "Posts"
+msgstr ""
+
 #: gallery/view/gallery.profile.photos.html:1
 msgid "Profile"
+msgstr ""
+
+#: gallery/view/gallery.account.tabs.html:54
+msgid "Recent"
 msgstr ""
 
 #: user/view/user.register.html:1
@@ -195,8 +211,8 @@ msgstr ""
 msgid "Register"
 msgstr ""
 
-#: gallery/view/gallery.profile.edit.modal.html:30
-#: user/view/user.avatar.html:24
+#: gallery/view/gallery.profile.edit.modal.html:34
+#: user/view/user.avatar.html:28
 msgid "Save Profile"
 msgstr ""
 

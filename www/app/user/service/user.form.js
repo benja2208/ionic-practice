@@ -97,19 +97,7 @@
                         icon           : 'icon-list',
                         iconPlaceholder: true
                     }
-                },
-                {
-                    key            : 'email',
-                    type           : 'input',
-                    templateOptions: {
-                        type           : 'email',
-                        placeholder    : $translate.instant('EMAIL'),
-                        icon           : 'icon-envelope',
-                        required       : true,
-                        iconPlaceholder: true
-                    }
                 }
-
             ];
 
             return {

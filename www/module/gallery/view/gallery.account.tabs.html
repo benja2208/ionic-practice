@@ -9,7 +9,7 @@
         <button gallery-settings
                 class="button button-icon icon ion-gear-a"></button>
     </ion-nav-buttons>
-    <ion-content>
+    <ion-content overflow-scroll="false">
         <div class="profile-top">
             <div class="row">
                 <div class="col-25">
@@ -22,17 +22,17 @@
                         <div class="col">
                             <span class="text-center">{{ GalleryProfile.form.galleries }}</span>
 
-                            <h3>Publicações</h3>
+                            <h3 translate>Posts</h3>
                         </div>
                         <div class="col">
                             <span class="text-center">{{ GalleryProfile.form.follow }}</span>
 
-                            <h3>Seguidores</h3>
+                            <h3 translate>Followers</h3>
                         </div>
                         <div class="col">
                             <span class="text-center">{{ GalleryProfile.form.follow2 }}</span>
 
-                            <h3>Seguindo</h3>
+                            <h3 translate>Followings</h3>
                         </div>
                     </div>
                     <div class="row col-edit">
@@ -50,18 +50,12 @@
                 <p class="user-status">{{ user.status }}</p>
             </div>
 
-            <ion-tabs class="tabs-light">
-                <ion-tab icon="ion-android-apps"
-                         ng-click="tab='grid'"></ion-tab>
-                <ion-tab icon="ion-navicon-round"
-                         ng-click="tab='list'"></ion-tab>
-                <ion-tab icon="ion-ios-location-outline"></ion-tab>
-            </ion-tabs>
         </div>
-
+            <div class="item item-divider" translate>Recent</div>
         <div class="profile-view">
-            <gallery-photo-grid gallery="GalleryProfile.data"
-                                loading="GalleryProfile.loading"></gallery-photo-grid>
+            <gallery-loading loading="GalleryProfile.loading"></gallery-loading>
+            <gallery-photo-list gallery="GalleryProfile.data"
+                                loading="GalleryProfile.loading"></gallery-photo-list>
         </div>
 
     </ion-content>

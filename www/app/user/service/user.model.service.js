@@ -2,7 +2,7 @@
     'use strict';
     angular
         .module('module.user')
-        .factory('User', function ($q, AppConfig, $rootScope, $timeout, $location, Parse, $cordovaDevice, $window, $facebook, $cordovaFacebook, Loading, $state, Notify) {
+        .factory('User', function ($q, AppConfig, $rootScope, $timeout, $ionicHistory, $location, Parse, $cordovaDevice, $window, $facebook, $cordovaFacebook, Loading, $state, Notify) {
 
             var device   = $window.cordova ? true : false,
                 facebook = device ? $cordovaFacebook : $facebook;
@@ -112,7 +112,6 @@
                                                             facebookLogIn(response)
                                                                 .then(function (resp) {
                                                                     console.log('Logado', resp);
-                                                                    init();
                                                                     defer.resolve({
                                                                         status: 0
                                                                     });
@@ -121,7 +120,7 @@
                                                         } else {
                                                             console.log('Se ainda não está completo, manda completar o perfil', dados, response);
 
-                                                            $rootScope.tempUser = processImg(user.attributes);
+                                                            $rootScope.tempUser     = processImg(user.attributes);
                                                             $rootScope.tempUser.src = 'https://graph.facebook.com/' + dados.id + '/picture?width=250&height=250';
 
                                                             console.log($rootScope.tempUser);
@@ -261,10 +260,11 @@
             }
 
             function logout() {
-                new Parse.User.logOut();
+                Parse.User.logOut();
                 delete $rootScope.user;
                 //$window.location = '/#/intro';
                 $state.go('intro', {clear: true});
+                $ionicHistory.clearCache();
             }
 
             function update(form) {
@@ -337,7 +337,7 @@
                             currentUser
                                 .save()
                                 .then(function (resp) {
-                                    var user = loadProfile(resp.attributes);
+                                    var user = loadProfile(resp);
                                     console.log(resp);
                                     Loading.end();
                                     defer.resolve(user);
@@ -498,8 +498,9 @@
                     access_token   : response['authResponse']['accessToken'],
                     expiration_date: data
                 }, {
-                    success: function (user) {
+                    success: function (response) {
                         // Função caso tenha logado tanto no face quanto no Parse
+                        var user = loadProfile(response);
                         console.log('User', user);
                         defer.resolve(user);
                     }
@@ -520,6 +521,7 @@
                         facebook
                             .getLoginStatus()
                             .then(function (response) {
+                                console.log('Facebook Status', response);
 
                                 var data = new Date(new Date().getTime() + response['authResponse']['expiresIn'] * 1000);
 
@@ -537,9 +539,12 @@
                                         user.set('facebook', response.id);
                                         user.set('facebook_img', 'https://graph.facebook.com/' + response.id + '/picture?width=250&height=250');
                                         user.set('facebook_complete', Boolean(true));
-                                        user.save();
-                                        init();
-                                        defer.resolve(user);
+                                        user.save()
+                                            .then(function (response) {
+                                                var user = loadProfile(response);
+                                                console.log('User', user);
+                                                defer.resolve(user);
+                                            });
                                     }
                                 });
                             });

@@ -9579,6 +9579,8 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   margin: 0 auto;
   width: 130px;
   height: 130px; }
+.view-avatar .step2 {
+  margin-top: 20px; }
 
 .form-login .scroll-content {
   padding: 0; }
@@ -9845,7 +9847,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   .photogram .item-body {
     padding: 0;
     border: none;
-    min-height: 600px;
+    min-height: 300px;
     position: relative;
     overflow: hidden;
     background-color: #ddd;

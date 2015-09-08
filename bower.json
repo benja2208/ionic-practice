@@ -1,7 +1,7 @@
 {
   "name": "Photogram",
   "appPath": "www",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "private": true,
   "authors": [
     {
@@ -20,6 +20,7 @@
     "angular-translate": "~2.7.2",
     "animate.css": "3.4.0",
     "api-check": "~7.5.0",
+    "caman": "~4.1.2",
     "ionic": "driftyco/ionic-bower#1.1.0",
     "ionic-cache-src": "~0.4.3",
     "moment": "~2.10.6",
@@ -34,11 +35,5 @@
     "angular-scenario": "~1.4.0",
     "ionic-service-analytics": "~0.2.5",
     "ionic-service-core": "~0.1.10"
-  },
-  "resolutions": {
-    "angular": "~1.4.5",
-    "angular-animate": "~1.4.5",
-    "angular-sanitize": "~1.4.3",
-    "ionic": "~1.1.0"
   }
 }
