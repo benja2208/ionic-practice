@@ -4,7 +4,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
-#: user/directive/user.forgot.pass.directive.js:31
+#: user/directive/user.forgot.pass.directive.js:30
 msgid "A new password will be sent to your e-mail address"
 msgstr ""
 
@@ -29,7 +29,7 @@ msgid "Camera"
 msgstr ""
 
 #: ion-photo/ion-photo.js:73
-#: user/directive/user.forgot.pass.directive.js:34
+#: user/directive/user.forgot.pass.directive.js:33
 msgid "Cancel"
 msgstr ""
 
@@ -46,11 +46,12 @@ msgid "Comments"
 msgstr ""
 
 #: user/view/user.avatar.html:1
+#: user/view/user.merge.html:1
 msgid "Complete your Profile"
 msgstr ""
 
-#: user/directive/button.facebook.directive.js:35
-msgid "Conect your Facebook"
+#: user/view/user.login.html:35
+msgid "Connect your Facebook"
 msgstr ""
 
 #: gallery/view/gallery.profile.tabs.html:37
@@ -62,7 +63,7 @@ msgstr ""
 msgid "Edit Profile"
 msgstr ""
 
-#: user/directive/user.forgot.pass.directive.js:25
+#: user/directive/user.forgot.pass.directive.js:24
 msgid "Email"
 msgstr ""
 
@@ -75,7 +76,7 @@ msgid "Enjoy the most amazing photos"
 msgstr ""
 
 #: user/view/user.intro.html:5
-#: user/view/user.login.html:13
+#: user/view/user.login.html:16
 #: user/view/user.login.html:2
 #: user/view/user.tabs.html:16
 #: user/view/user.tabs.html:2
@@ -110,6 +111,10 @@ msgstr ""
 msgid "Follow your friends and relive"
 msgstr ""
 
+#: user/view/user.login.html:13
+msgid "Forgot your password?"
+msgstr ""
+
 #: ion-photo/ion-photo.js:69
 msgid "Gallery"
 msgstr ""
@@ -118,11 +123,12 @@ msgstr ""
 msgid "Gallery preview"
 msgstr ""
 
-#: user/directive/user.forgot.pass.directive.js:46
+#: user/directive/user.forgot.pass.directive.js:45
 msgid "Invalid Email"
 msgstr ""
 
 #: user/controller/user.avatar.ctrl.js:29
+#: user/controller/user.merge.js:45
 msgid "Invalid form"
 msgstr ""
 
@@ -139,6 +145,10 @@ msgstr ""
 msgid "Likes"
 msgstr ""
 
+#: gallery/view/gallery.profile.edit.modal.html:27
+msgid "Link Facebook"
+msgstr ""
+
 #: gallery/view/gallery.capture.modal.html:28
 msgid "Location"
 msgstr ""
@@ -151,16 +161,28 @@ msgstr ""
 msgid "Map"
 msgstr ""
 
+#: user/view/user.merge.html:40
+msgid "Merge Facebook"
+msgstr ""
+
 #: ion-location/ion-location.js:56
 msgid "My Location"
 msgstr ""
 
-#: gallery/view/gallery.home.html:25
+#: gallery/view/gallery.home.html:20
 msgid "Nenhuma foto postagem por perto"
 msgstr ""
 
 #: gallery/view/gallery.comment.directive.html:34
 msgid "No Comments"
+msgstr ""
+
+#: user/view/user.merge.html:31
+msgid "Password"
+msgstr ""
+
+#: user/controller/user.merge.js:46
+msgid "Please enter your email"
 msgstr ""
 
 #: gallery/view/gallery.profile.photos.html:1
@@ -173,12 +195,17 @@ msgstr ""
 msgid "Register"
 msgstr ""
 
+#: gallery/view/gallery.profile.edit.modal.html:30
+#: user/view/user.avatar.html:24
+msgid "Save Profile"
+msgstr ""
+
 #: gallery/view/gallery.search.grid.html:4
 #: ion-location/ion-location.js:57
 msgid "Search"
 msgstr ""
 
-#: user/directive/user.forgot.pass.directive.js:38
+#: user/directive/user.forgot.pass.directive.js:37
 msgid "Send"
 msgstr ""
 
@@ -235,6 +262,10 @@ msgstr ""
 msgid "Write a Legend"
 msgstr ""
 
+#: user/view/user.merge.html:11
+msgid "Your email is already associated with another account, please enter your password"
+msgstr ""
+
 #: gallery/service/gallery.model.js:887
 msgid "add comment"
 msgstr ""
@@ -251,7 +282,7 @@ msgstr ""
 msgid "like photo"
 msgstr ""
 
-#: user/view/user.login.html:24
+#: user/view/user.login.html:27
 msgid "or"
 msgstr ""
 
