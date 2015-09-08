@@ -30,21 +30,45 @@
                         .login(form)
                         .then(function (data) {
                             console.log(data);
-                            $state.go(vm.routeLogged, {clear: true});
-                            init();
-                            User.init();
+                            if (data.name.length) {
+                                $state.go(vm.routeLogged, {clear: true});
+                            } else {
+                                $state.go('useravatar', {clear: true});
+                            }
                         })
                         .catch(function (resp) {
                             Notify.alert({
                                 title: 'Ops',
-                                text : resp
+                                text : resp.message
                             });
-                            init();
                         });
                 } else {
                     return false;
                 }
             };
+
+            vm.facebook = function () {
+                User
+                    .facebookLogin()
+                    .then(function (resp) {
+                        console.log(resp);
+
+                        switch (resp.status) {
+                            case 0:
+                                // logado
+                                $state.go(AppConfig.routes.home, {clear: true})
+                                break;
+                            case 1:
+                                // novo user
+                                $state.go('useravatar', {clear: true});
+                                break;
+                            case 2:
+                                // merge
+                                $state.go('usermerge', {clear: true})
+                                break;
+                        }
+                    });
+            }
 
         });
 })();

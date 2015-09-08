@@ -31,7 +31,15 @@
                     scope.logout = function () {
                         $state.go('logout');
                         scope.closeModal();
-                    }
+                    };
+
+                    scope.linkFacebook = function () {
+                      User
+                          .facebookLink()
+                          .then(function (resp) {
+                              console.log(resp);
+                          })
+                    };
 
                     scope.submitUpdateProfile = function () {
                         var dataForm = angular.copy(scope.form);

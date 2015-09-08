@@ -8,7 +8,10 @@
                          fields="Login.formFields"
                          form="rForm">
 
-                <button-forgot-pass></button-forgot-pass>
+                <button recovery-pass
+                        class="button button-right button-block button-clear"
+                ><span translate>Forgot your password?</span>
+                </button>
 
                 <button class="button button-block button-positive "
                         type="button"
@@ -27,8 +30,11 @@
             </div>
 
 
-            <button-facebook login="Login.routeLogged"
-                             register="userlist"></button-facebook>
+            <button ng-click="Login.facebook()"
+                    class="button button-block button-facebook"><i class="icon ion-social-facebook"></i>
+                <span translate>Connect your Facebook</span>
+            </button>
+
         </div>
         </div>
 

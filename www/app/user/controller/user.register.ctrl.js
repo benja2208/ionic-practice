@@ -42,9 +42,10 @@
                                     $state.go('useravatar', {clear: true});
                                 })
                                 .catch(function (resp) {
+                                    console.log(resp);
                                     Notify.alert({
                                         title: 'Ops',
-                                        text : resp
+                                        text : resp.message
                                     });
                                 });
                         })
@@ -52,7 +53,7 @@
                             console.log(resp);
                             Notify.alert({
                                 title: 'Ops',
-                                text : resp
+                                text : resp.message
                             });
                         });
                 }

@@ -4,12 +4,8 @@
         .module('module.user')
         .factory('User', function ($q, AppConfig, $rootScope, $timeout, $location, Parse, $cordovaDevice, $window, $facebook, $cordovaFacebook, Loading, $state, Notify) {
 
-            var device   = $window.cordova ? true : false;
-            var facebook = device ? $cordovaFacebook : $facebook;
-            var data     = {
-                user    : {},
-                facebook: {}
-            };
+            var device   = $window.cordova ? true : false,
+                facebook = device ? $cordovaFacebook : $facebook;
 
             function init() {
                 // Parse Start
@@ -33,7 +29,7 @@
             function loadProfile(response) {
                 if (response) {
                     var user        = response.attributes;
-                    user.id         = user.id;
+                    user.id         = response.id;
                     user            = processImg(user);
                     delete $rootScope.user;
                     $rootScope.user = user;
@@ -62,7 +58,7 @@
                     .User
                     .logIn(form.email, form.password, {
                         success: function (resp) {
-                            console.log(resp);
+                            console.info(resp);
                             Loading.end();
                             var user = loadProfile(resp);
                             defer.resolve(user);
@@ -71,11 +67,7 @@
                             console.error(user, err);
                             Loading.end();
                             // The login failed. Check error to see why.
-                            if (err.code === 101) {
-                                defer.reject('Invalid login credentials');
-                            } else {
-                                defer.reject('An unexpected error has occurred, please try again.');
-                            }
+                            defer.reject(err);
                         }
                     });
                 return defer.promise;
@@ -84,15 +76,112 @@
             function facebookLogin() {
                 var defer = $q.defer();
 
+                //facebook.logout();
+                console.log('facebook login');
+
+                Loading.start();
+
                 facebook
-                    .login([
-                        'public_profile',
-                        'email',
-                        'user_friends'
-                    ]).then(function (resp) {
-                        defer.resolve(resp);
-                    }, function (resp) {
-                        defer.reject(resp);
+                    .login(['email'])
+                    .then(function (response) {
+
+                        console.log('facebook login', response);
+                        //Pega o Status do Login
+                        facebook
+                            .getLoginStatus()
+                            .then(function (response) {
+                                console.log('facebook status', response);
+                                facebook
+                                    .api('me/?fields=id,name,email,gender,bio', ['user_birthday'])
+                                    .then(function (dados) {
+                                        console.log('facebook api', dados);
+
+
+                                        var query = new Parse.Query(Parse.User);
+                                        query
+                                            .equalTo('email', dados.email)
+                                            .first({
+                                                success: function (user) {
+                                                    console.log(user);
+
+                                                    if (user) {
+                                                        console.log('Já existe um cadastro com esse email', user);
+                                                        if (user.get('facebook_complete') == Boolean(true)) {
+                                                            console.log('Perfil já está completo, faz o login', dados, response);
+
+                                                            facebookLogIn(response)
+                                                                .then(function (resp) {
+                                                                    console.log('Logado', resp);
+                                                                    init();
+                                                                    defer.resolve({
+                                                                        status: 0
+                                                                    });
+                                                                    Loading.end();
+                                                                });
+                                                        } else {
+                                                            console.log('Se ainda não está completo, manda completar o perfil', dados, response);
+
+                                                            $rootScope.tempUser = processImg(user.attributes);
+                                                            $rootScope.tempUser.src = 'https://graph.facebook.com/' + dados.id + '/picture?width=250&height=250';
+
+                                                            console.log($rootScope.tempUser);
+                                                            defer.resolve({
+                                                                status: 2
+                                                            });
+                                                            Loading.end();
+
+                                                        }
+
+                                                    } else {
+                                                        // Se não encontrar nenhum usuário
+                                                        console.log('Novo usuário');
+
+                                                        // Crio uma conta no parse com o Facebook
+                                                        facebookLogIn(response)
+                                                            .then(function (newuser) {
+
+                                                                console.log(newuser);
+
+                                                                // Atualizo o novo perfil
+                                                                var form = {
+                                                                    name             : dados.name,
+                                                                    facebook         : dados.id,
+                                                                    email            : dados.email,
+                                                                    gender           : dados.gender,
+                                                                    facebook_complete: Boolean(true),
+                                                                    facebookimg      : 'https://graph.facebook.com/' + dados.id + '/picture?width=250&height=250'
+                                                                };
+
+                                                                update(form)
+                                                                    .then(function (resp) {
+                                                                        console.warn('me response', resp);
+
+                                                                        defer.resolve({
+                                                                            status: 1
+                                                                        });
+                                                                        Loading.end();
+                                                                    })
+
+
+                                                            });
+
+
+                                                    }
+
+                                                },
+                                                error  : function (error) {
+                                                    alert('Sem conexão');
+                                                    Loading.end();
+
+                                                }
+                                            });
+
+                                    });
+                            });
+                    },
+                    function (response) {
+                        alert(JSON.stringify(response));
+
                     });
 
                 return defer.promise;
@@ -132,7 +221,8 @@
                     .User(formData)
                     .signUp(null, {
                         success: function (resp) {
-                            var user = loadProfile(resp.attributes);
+                            var user = loadProfile(resp);
+                            console.log(resp, user);
                             Loading.end();
                             defer.resolve(user);
                         },
@@ -183,7 +273,7 @@
                 Loading.start();
                 delete form.img;
                 console.info('update user', form);
-
+                delete form.authData;
                 angular.forEach(form, function (value, key) {
                     currentUser.set(key, value);
                 });
@@ -206,13 +296,12 @@
                     currentUser.set('deviceUuiid', cordovaDevice.uuid);
                     currentUser.set('deviceVersion', cordovaDevice.version);
                 }
-                console.log($rootScope.lang);
                 currentUser.set('language', $rootScope.lang.value);
                 currentUser
                     .save()
                     .then(function (resp) {
-
-                        var user = loadProfile(resp.attributes);
+                        console.log('load user', user);
+                        var user = loadProfile(resp);
                         Loading.end();
                         defer.resolve(user);
                     });
@@ -264,123 +353,6 @@
                 return defer.promise;
             }
 
-
-            function facebookUpdateProfile(response) {
-                console.log(response);
-                var defer = $q.defer();
-                var user  = {
-                    facebook    : response.id,
-                    name        : response.first_name + ' ' + response.middle_name + ' ' + response.last_name,
-                    email       : response.email,
-                    relationship: (response.relationship) ? response.relationship : '',
-                    relation    : (response.significant_other) ? response.significant_other.id : '',
-                    site        : response.link,
-                    location    : (response.location) ? response.location.name : '',
-                    facebookimg : 'https://graph.facebook.com/' + response.id + '/picture?width=250&height=250',
-                    idFacebook  : response.id,
-                    gender      : response.gender
-                };
-
-                console.log(response, user);
-
-                update(user)
-                    .then(function (resp) {
-                        console.log(resp);
-                        loadProfile(resp);
-                        defer.resolve(resp);
-                    });
-
-                return defer.promise;
-            }
-
-            function loginParseFacebook() {
-                var defer = $q.defer();
-
-                facebookProfile()
-                    .then(function (resp) {
-
-                        var userData = resp[0];
-                        var profile  = resp[1];
-
-                        if (!userData.authResponse) {
-                            console.log("Cannot find the authResponse");
-                            return;
-                        }
-                        var expDate = new Date(
-                            new Date().getTime() + userData.authResponse.expiresIn * 1000
-                        ).toISOString();
-
-                        var authData = {
-                            id             : String(userData.authResponse.userID),
-                            access_token   : userData.authResponse.accessToken,
-                            expiration_date: expDate
-                        };
-
-                        console.log(resp);
-                        console.log(userData);
-                        console.log(profile);
-
-                        data.facebook = profile;
-
-                        fbLogged.resolve([
-                            authData,
-                            profile
-                        ]);
-
-                    }).catch(function (resp) {
-                        console.log(resp);
-                        Loading.end();
-                        Notify.alert('Ops', resp);
-                    });
-
-                var fbLogged = new Parse.Promise();
-
-                fbLogged
-                    .then(function (resp) {
-                        var authData = resp[0];
-                        var user     = Parse.User.current();
-
-                        console.log(authData, user);
-
-                        if (!user) {
-                            return Parse.FacebookUtils.logIn(authData);
-                        } else {
-                            return Parse.FacebookUtils.link(user, authData);
-                        }
-                    })
-                    .then(function (userObject) {
-                        console.info(userObject);
-                        console.info(data.facebook);
-
-                        defer.resolve(data.facebook);
-
-                    }, function (error) {
-                        Loading.end();
-                        defer.reject(error);
-                    });
-
-                return defer.promise;
-            }
-
-            function loginFacebook() {
-                var defer = $q.defer();
-                Loading.start();
-
-                loginParseFacebook()
-                    .then(function (response) {
-                        console.log(response);
-
-                        facebookUpdateProfile(response)
-                            .then(function (resp) {
-                                console.log(resp);
-                                Loading.end();
-                                defer.resolve(resp);
-                            });
-
-                    });
-
-                return defer.promise;
-            }
 
             function facebookFriends() {
                 var defer = $q.defer();
@@ -516,56 +488,92 @@
                 return defer.promise;
             }
 
-            function facebookLink(response, user) {
+            function facebookLogIn(response) {
                 var defer = $q.defer();
 
-                console.log(response);
-                // Faz a Data ficar no formato perfeitoOoO
                 var data = new Date(new Date().getTime() + response['authResponse']['expiresIn'] * 1000);
 
-                Parse
-                    .FacebookUtils
-                    .link(user, {
-                        id             : response['authResponse']['userID'] + '',
-                        access_token   : response['authResponse']['accessToken'],
-                        expiration_date: data
-                    },
-                    {
-                        success: function (user) {
+                Parse.FacebookUtils.logIn({
+                    id             : response['authResponse']['userID'],
+                    access_token   : response['authResponse']['accessToken'],
+                    expiration_date: data
+                }, {
+                    success: function (user) {
+                        // Função caso tenha logado tanto no face quanto no Parse
+                        console.log('User', user);
+                        defer.resolve(user);
+                    }
+                });
 
-                            defer.resolve(user);
-                        },
-                        error  : function (user, error) {
-                            defer.reject('Não foi possivel associar sua conta :(")');
-                        }
+                return defer.promise;
+            }
+
+            function facebookLink() {
+                var defer = $q.defer();
+
+                facebook
+                    .login(['email'])
+                    .then(function (response) {
+
+                        console.log('facebook login', response);
+                        //Pega o Status do Login
+                        facebook
+                            .getLoginStatus()
+                            .then(function (response) {
+
+                                var data = new Date(new Date().getTime() + response['authResponse']['expiresIn'] * 1000);
+
+                                var user = Parse.User.current();
+                                console.log(user, response, data);
+
+                                Parse.FacebookUtils.link(user, {
+                                    id             : response['authResponse']['userID'],
+                                    access_token   : response['authResponse']['accessToken'],
+                                    expiration_date: data
+                                }, {
+                                    success: function (user) {
+                                        // Função caso tenha logado tanto no face quanto no Parse
+                                        console.log('User', user);
+                                        user.set('facebook', response.id);
+                                        user.set('facebook_img', 'https://graph.facebook.com/' + response.id + '/picture?width=250&height=250');
+                                        user.set('facebook_complete', Boolean(true));
+                                        user.save();
+                                        init();
+                                        defer.resolve(user);
+                                    }
+                                });
+                            });
+                    },
+                    function (response) {
+                        alert(JSON.stringify(response));
+
                     });
+
 
                 return defer.promise;
             }
 
 
             return {
-                init              : init,
-                addFollows        : addFollows,
-                addFollow         : addFollow,
-                currentUser       : currentUser,
-                register          : register,
-                login             : login,
-                loginFacebook     : loginFacebook,
-                logout            : logout,
-                update            : update,
-                updateAvatar      : updateAvatar,
-                forgot            : forgot,
-                list              : list,
-                find              : find,
-                mail              : getMail,
-                loginParseFacebook: loginParseFacebook,
-                facebookLink      : facebookLink,
-                facebookLogin     : facebookLogin,
-                facebookProfile   : facebookProfile,
-                facebookFriends   : facebookFriends,
-                facebookInvite    : facebookInvite,
-                facebookAPI       : facebookAPI
+                init           : init,
+                addFollows     : addFollows,
+                addFollow      : addFollow,
+                currentUser    : currentUser,
+                register       : register,
+                login          : login,
+                logout         : logout,
+                update         : update,
+                updateAvatar   : updateAvatar,
+                forgot         : forgot,
+                list           : list,
+                find           : find,
+                mail           : getMail,
+                facebookLogin  : facebookLogin,
+                facebookLink   : facebookLink,
+                facebookProfile: facebookProfile,
+                facebookFriends: facebookFriends,
+                facebookInvite : facebookInvite,
+                facebookAPI    : facebookAPI
             };
         })
     ;

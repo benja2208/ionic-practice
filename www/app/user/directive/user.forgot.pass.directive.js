@@ -2,14 +2,13 @@
     'use strict';
     angular
         .module('module.user')
-        .directive('buttonForgotPass', function (User, $ionicPopup, gettextCatalog, Notify) {
+        .directive('recoveryPass', function (User, $ionicPopup, gettextCatalog, Notify) {
             return {
-                restrict: 'E',
+                restrict: 'A',
                 scope   : {
                     login   : '@',
                     register: '@',
                 },
-                template: '<button class="button button-right button-block button-clear" ng-click="forgotPass()" translate>Forgot your password?</button>',
                 link    : function ($scope, elem, attr) {
 
                     elem.bind('click', function () {

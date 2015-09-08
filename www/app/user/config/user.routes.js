@@ -56,6 +56,12 @@
                     templateUrl: 'app/user/view/user.avatar.html'
                 })
 
+                .state('usermerge', {
+                    url        : '/merge',
+                    controller : 'UserMergeCtrl as Merge',
+                    templateUrl: 'app/user/view/user.merge.html'
+                })
+
                 .state('logout', {
                     url       : '/logout',
                     template  : '<ion-view view-title="Logout" cache-view="false"><ion-content></ion-content></ion-view>',

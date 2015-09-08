@@ -2,25 +2,27 @@
 
     <ion-nav-bar class="bar bar-positive bar-mop"
                  align-title="left">
-
-        <ion-nav-buttons side="right">
-            <button ng-click="Avatar.submitAvatar()"
-                    class="button button-icon icon ion-arrow-right-b"></button>
-        </ion-nav-buttons>
     </ion-nav-bar>
 
     <ion-content class="view-avatar">
 
-        <div class="row">
+        <div class="row step1">
             <div class="col">
                 <img class="avatar"
                      user-avatar
-                     ng-src="{{ user.src }}" />
+                     ng-src="{{ Avatar.form.src }}" />
             </div>
         </div>
-        <formly-form model="Avatar.form"
-                     fields="Avatar.formFields"
-                     form="Avatar.rForm">
-        </formly-form>
+        <div class="step2">
+            <formly-form model="Avatar.form"
+                         fields="Avatar.formFields"
+                         form="Avatar.rForm">
+            </formly-form>
+        </div>
+
+        <div class="padding step3">
+            <button ng-click="Avatar.submitAvatar()"
+                    class="button button-block button-positive " translate>Save Profile</button>
+        </div>
     </ion-content>
 </ion-view>

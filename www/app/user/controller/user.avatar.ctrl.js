@@ -22,7 +22,7 @@
                         .then(function (resp) {
                             console.log(resp);
                             User.init();
-                            $state.go(AppConfig.routeLogged, {clear: true})
+                            $state.go(AppConfig.routes.home, {clear: true})
                         });
                 } else {
                     Notify.alert({
