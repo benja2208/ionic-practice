@@ -16,7 +16,7 @@
         })
         .factory('Loading', function ($rootScope, $timeout) {
 
-            var seconds = 2;
+            var seconds = 0;
 
             function showLoading() {
                 $rootScope.$broadcast('ionicLoading:true');
