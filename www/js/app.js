@@ -27,10 +27,10 @@
 
         .run(function ($ionicPlatform, $cacheSrc, AppConfig, $ionicAnalytics, $rootScope, $window, $cordovaStatusbar, $timeout, $cordovaSplashscreen, GallerySetting, User) {
 
-            $cacheSrc.color = AppConfig.color;
+            $cacheSrc.color   = AppConfig.color;
             $cacheSrc.bgcolor = '#fff';
             $cacheSrc.rounded = true;
-            $cacheSrc.radius = 50;
+            $cacheSrc.radius  = 50;
             //$cacheSrc.interval = 5000;
 
             User.init();
@@ -101,8 +101,8 @@
             $ionicConfigProvider.platform.android.tabs.style('standard');
 
             // Android Native Scroll
-            console.log('android: scroll nativo', $ionicConfigProvider.scrolling.jsScrolling());
-            if (ionic.Platform.isAndroid()) $ionicConfigProvider.scrolling.jsScrolling(false);
+            var jsScrolling = (ionic.Platform.isAndroid() ) ? false : true;
+            $ionicConfigProvider.scrolling.jsScrolling(jsScrolling);
             $ionicConfigProvider.views.maxCache(1);
         });
 

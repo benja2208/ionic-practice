@@ -2,7 +2,7 @@
     'use strict';
     angular
         .module('module.gallery')
-        .controller('GalleryHomeCtrl', function ($scope, $ionicPopover, $stateParams, PhotoService, Gallery) {
+        .controller('GalleryHomeCtrl', function ($scope, $ionicPopover, GalleryShare, $stateParams, PhotoService, Gallery) {
             var vm     = this;
             vm.loading = true;
 
@@ -20,7 +20,9 @@
                 vm.load(force);
             };
 
-            vm.load = function (force) {
+            vm.openShare = GalleryShare.open;
+
+            vm.load      = function (force) {
                 console.log('Load ');
 
                 if (force) {

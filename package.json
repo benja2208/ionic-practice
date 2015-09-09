@@ -1,6 +1,6 @@
 {
   "name": "Photogram",
-  "version": "1.2.2",
+  "version": "1.2.4",
   "description": "Share your photos",
   "dependencies": {
     "ansi-styles": "^2.1.0",

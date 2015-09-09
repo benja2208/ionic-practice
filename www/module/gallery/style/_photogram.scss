@@ -1,5 +1,11 @@
 .photogram {
 
+  .card {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+
   //General Resets
   font-family: -apple-system, 'Helvetica Neue', 'Segoe WP', sans-serif !important;
   color: #333;

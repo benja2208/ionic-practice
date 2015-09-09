@@ -3,6 +3,11 @@
     angular
         .module('ionic')
         .constant('AppConfig', {
+            app     : {
+                name : 'Photogram',
+                url  : 'http://photogramapp.com',
+                image: 'http://photogramapp.com/social-share.jpg',
+            },
             routes  : {
                 home : 'gallery.home',
                 login: 'intro'

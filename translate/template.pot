@@ -12,10 +12,6 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-#: gallery/view/gallery.settings.modal.html:28
-msgid "Account"
-msgstr ""
-
 #: gallery/view/gallery.activity.html:5
 msgid "Activities"
 msgstr ""
@@ -28,6 +24,7 @@ msgstr ""
 msgid "Camera"
 msgstr ""
 
+#: gallery/service/gallery.share.js:71
 #: ion-photo/ion-photo.js:73
 #: user/directive/user.forgot.pass.directive.js:33
 msgid "Cancel"
@@ -54,15 +51,16 @@ msgstr ""
 msgid "Connect your Facebook"
 msgstr ""
 
+#: gallery/view/gallery.account.tabs.html:41
 #: gallery/view/gallery.profile.tabs.html:37
 msgid "EDIT YOUR PROFILE"
 msgstr ""
 
 #: gallery/view/gallery.profile.edit.modal.html:5
-#: gallery/view/gallery.settings.modal.html:31
 msgid "Edit Profile"
 msgstr ""
 
+#: gallery/service/gallery.share.js:67
 #: user/directive/user.forgot.pass.directive.js:24
 msgid "Email"
 msgstr ""
@@ -87,6 +85,10 @@ msgstr ""
 msgid "Error"
 msgstr ""
 
+#: gallery/service/gallery.share.js:58
+msgid "Facebook"
+msgstr ""
+
 #: gallery/view/gallery.photo.feedback.modal.html:5
 msgid "Feedback"
 msgstr ""
@@ -97,10 +99,6 @@ msgstr ""
 
 #: user/controller/user.intro.ctrl.js:18
 msgid "Find and follow people around"
-msgstr ""
-
-#: gallery/view/gallery.settings.modal.html:19
-msgid "Follow Friends"
 msgstr ""
 
 #: gallery/view/gallery.user.list.html:5
@@ -131,6 +129,14 @@ msgstr ""
 msgid "Gallery preview"
 msgstr ""
 
+#: gallery/service/gallery.share.js:8
+msgid "I'm at"
+msgstr ""
+
+#: gallery/service/gallery.share.js:8
+msgid "Install the application and follow me!"
+msgstr ""
+
 #: user/directive/user.forgot.pass.directive.js:45
 msgid "Invalid Email"
 msgstr ""
@@ -140,8 +146,8 @@ msgstr ""
 msgid "Invalid form"
 msgstr ""
 
-#: gallery/view/gallery.settings.modal.html:22
-msgid "Invite Facebook Friends"
+#: gallery/service/gallery.share.js:7
+msgid "Join me from"
 msgstr ""
 
 #: gallery/view/gallery.photo.html:23
@@ -161,7 +167,7 @@ msgstr ""
 msgid "Location"
 msgstr ""
 
-#: gallery/view/gallery.settings.modal.html:50
+#: gallery/view/gallery.settings.modal.html:63
 msgid "Logout"
 msgstr ""
 
@@ -177,7 +183,7 @@ msgstr ""
 msgid "My Location"
 msgstr ""
 
-#: gallery/view/gallery.home.html:20
+#: gallery/view/gallery.home.html:25
 msgid "Nenhuma foto postagem por perto"
 msgstr ""
 
@@ -230,8 +236,9 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
+#: gallery/service/gallery.share.js:70
 #: gallery/view/gallery.capture.html:1
-#: gallery/view/gallery.settings.modal.html:25
+#: gallery/view/gallery.settings.modal.html:19
 msgid "Share"
 msgstr ""
 
@@ -253,21 +260,34 @@ msgstr ""
 msgid "Share your most amazing moments"
 msgstr ""
 
-#: gallery/view/gallery.settings.modal.html:37
+#: gallery/view/gallery.settings.modal.html:50
 msgid "Terms"
 msgstr ""
 
-#: gallery/view/gallery.settings.modal.html:44
+#: gallery/view/gallery.settings.modal.html:57
 #: user/view/user.register.html:20
 msgid "Terms and Conditions"
 msgstr ""
 
+#: gallery/service/gallery.share.js:17
+msgid "Thank you for sharing!!"
+msgstr ""
+
 #: gallery/service/gallery.feedback.model.js:32
+#: gallery/service/gallery.share.js:16
 msgid "Thanks"
 msgstr ""
 
 #: gallery/service/gallery.feedback.model.js:33
 msgid "Thanks for your Feedback"
+msgstr ""
+
+#: gallery/service/gallery.share.js:61
+msgid "Twitter"
+msgstr ""
+
+#: gallery/service/gallery.share.js:64
+msgid "Whatsapp"
 msgstr ""
 
 #: user/view/user.register.html:20

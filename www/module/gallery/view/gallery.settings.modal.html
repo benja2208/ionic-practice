@@ -17,23 +17,36 @@
                         ng-options="language.value as language.name for language in languages"> </select> </label>
 
             <div class="item item-divider"
-                 translate>Follow Friends
-            </div>
-            <div class="item"
-                 translate>Invite Facebook Friends
-            </div>
-            <div class="item"
                  translate>Share
             </div>
-            <div class="item item-divider"
-                 translate>Account
+            <div class="item item-icon-left  item-icon-right"
+                 ng-click="share('facebook')">
+                <i class="icon ion-social-facebook"></i>
+                Facebook
+                <i class="icon ion-ios-arrow-forward"></i>
             </div>
-            <div class="item"
-                 ng-click="link('gallery.account')"
-                 translate>Edit Profile
+            <div class="item item-icon-left  item-icon-right"
+                 ng-click="share('twitter')">
+                <i class="icon ion-social-twitter"></i>
+                Twitter
+                <i class="icon ion-ios-arrow-forward"></i>
             </div>
-            <!--<div class="item">Change Password</div>-->
 
+            <div class="item item-icon-left  item-icon-right"
+                 ng-click="share('whatsapp')">
+                <i class="icon ion-social-whatsapp"></i>
+                Whatsapp
+                <i class="icon ion-ios-arrow-forward"></i>
+            </div>
+
+            <div class="item item-icon-left item-icon-right"
+                 ng-click="share('email')">
+                <i class="icon ion-email"></i>
+                E-mail
+                <i class="icon ion-ios-arrow-forward"></i>
+            </div>
+
+            <!--  Terms-->
             <div class="item item-divider"
                  translate>Terms
             </div>

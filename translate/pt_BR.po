@@ -20,10 +20,6 @@ msgstr "Uma nova senha será enviada para seu endereço de e-mail"
 msgid "About"
 msgstr "Sobre"
 
-#: gallery/view/gallery.settings.modal.html:28
-msgid "Account"
-msgstr "Conta"
-
 #: gallery/view/gallery.activity.html:5
 msgid "Activities"
 msgstr "Atividades"
@@ -60,12 +56,12 @@ msgstr "Complete o seu perfil"
 msgid "Connect your Facebook"
 msgstr "Conectar com o seu Facebook"
 
+#: gallery/view/gallery.account.tabs.html:40
 #: gallery/view/gallery.profile.tabs.html:37
 msgid "EDIT YOUR PROFILE"
 msgstr "EDITAR SEU PERFIL"
 
 #: gallery/view/gallery.profile.edit.modal.html:5
-#: gallery/view/gallery.settings.modal.html:31
 msgid "Edit Profile"
 msgstr "Editar perfil"
 
@@ -103,10 +99,6 @@ msgstr "Preencha os campos em vermelho"
 msgid "Find and follow people around"
 msgstr "Encontre e siga pessoas por perto"
 
-#: gallery/view/gallery.settings.modal.html:19
-msgid "Follow Friends"
-msgstr "Seguir amigo"
-
 #: gallery/view/gallery.user.list.html:5
 msgid "Follow Users"
 msgstr "Seguir Amigos"
@@ -117,11 +109,11 @@ msgstr "Siga seus amigos"
 
 #: gallery/view/gallery.account.tabs.html:30
 msgid "Followers"
-msgstr ""
+msgstr "Seguidores"
 
 #: gallery/view/gallery.account.tabs.html:35
 msgid "Followings"
-msgstr ""
+msgstr "Seguindo"
 
 #: user/view/user.login.html:13
 msgid "Forgot your password?"
@@ -135,6 +127,14 @@ msgstr "Galeria de Fotos"
 msgid "Gallery preview"
 msgstr "Ver Galeria"
 
+#: gallery/directive/gallery.settings.modal.js:63
+msgid "I'm at"
+msgstr "Eu estou no"
+
+#: gallery/directive/gallery.settings.modal.js:63
+msgid "Install the application and follow me!"
+msgstr "Instale o aplicativo e siga-me!"
+
 #: user/directive/user.forgot.pass.directive.js:45
 msgid "Invalid Email"
 msgstr "Email inválido"
@@ -143,9 +143,9 @@ msgstr "Email inválido"
 msgid "Invalid form"
 msgstr "Formulário inválido"
 
-#: gallery/view/gallery.settings.modal.html:22
-msgid "Invite Facebook Friends"
-msgstr "Convidar amigos do Facebook"
+#: gallery/directive/gallery.settings.modal.js:62
+msgid "Join me from"
+msgstr "Junte-se a mim no"
 
 #: gallery/view/gallery.photo.html:23
 msgid "Like"
@@ -156,7 +156,7 @@ msgstr "Curtir"
 msgid "Likes"
 msgstr "Curtidas"
 
-#: gallery/view/gallery.profile.edit.modal.html:27
+#: gallery/view/gallery.profile.edit.modal.html:31
 msgid "Link Facebook"
 msgstr "Usar Facebook"
 
@@ -164,7 +164,7 @@ msgstr "Usar Facebook"
 msgid "Location"
 msgstr "Localizaçào"
 
-#: gallery/view/gallery.settings.modal.html:50
+#: gallery/view/gallery.settings.modal.html:63
 msgid "Logout"
 msgstr "Sair"
 
@@ -172,7 +172,7 @@ msgstr "Sair"
 msgid "Map"
 msgstr "Mapa"
 
-#: user/view/user.merge.html:40
+#: user/view/user.merge.html:42
 msgid "Merge Facebook"
 msgstr "Usar Facebook"
 
@@ -188,7 +188,7 @@ msgstr ""
 msgid "No Comments"
 msgstr "Nenhum Comentário"
 
-#: user/view/user.merge.html:31
+#: user/view/user.merge.html:33
 msgid "Password"
 msgstr "Senha"
 
@@ -198,7 +198,7 @@ msgstr "Por favor, digite seu e-mail"
 
 #: gallery/view/gallery.account.tabs.html:25
 msgid "Posts"
-msgstr ""
+msgstr "Fotos"
 
 #: gallery/view/gallery.profile.photos.html:1
 msgid "Profile"
@@ -213,8 +213,8 @@ msgstr "Recente"
 msgid "Register"
 msgstr "Cadastro"
 
-#: gallery/view/gallery.profile.edit.modal.html:30
-#: user/view/user.avatar.html:24
+#: gallery/view/gallery.profile.edit.modal.html:34
+#: user/view/user.avatar.html:28
 msgid "Save Profile"
 msgstr "Salvar Perfil"
 
@@ -232,7 +232,7 @@ msgid "Settings"
 msgstr "Configurações"
 
 #: gallery/view/gallery.capture.html:1
-#: gallery/view/gallery.settings.modal.html:25
+#: gallery/view/gallery.settings.modal.html:19
 msgid "Share"
 msgstr "Compartilhar"
 
@@ -252,14 +252,19 @@ msgstr "Compartilhar Foto"
 msgid "Share your most amazing moments"
 msgstr "Compartilhe seus melhores momentos"
 
-#: gallery/view/gallery.settings.modal.html:37
+#: gallery/view/gallery.settings.modal.html:50
 msgid "Terms"
 msgstr "Termos"
 
-#: gallery/view/gallery.settings.modal.html:44 user/view/user.register.html:20
+#: gallery/view/gallery.settings.modal.html:57 user/view/user.register.html:20
 msgid "Terms and Conditions"
 msgstr "Termos e Condições"
 
+#: gallery/directive/gallery.settings.modal.js:72
+msgid "Thank you for sharing!!"
+msgstr "Obrigado por compartilhar!"
+
+#: gallery/directive/gallery.settings.modal.js:71
 #: gallery/service/gallery.feedback.model.js:32
 msgid "Thanks"
 msgstr "Obrigado"
@@ -317,6 +322,15 @@ msgstr "se cadastrou"
 #: gallery/service/gallery.model.js:889
 msgid "unlike photo"
 msgstr "tirou o curtir da foto"
+
+#~ msgid "Account"
+#~ msgstr "Conta"
+
+#~ msgid "Follow Friends"
+#~ msgstr "Seguir amigo"
+
+#~ msgid "Invite Facebook Friends"
+#~ msgstr "Convidar amigos do Facebook"
 
 #~ msgid "Conect your Facebook"
 #~ msgstr "Conectar com o seu Facebook"
