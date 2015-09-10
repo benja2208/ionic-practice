@@ -239,6 +239,7 @@
                         console.log(pos);
                         getGoogleAddress(pos.latitude, pos.longitude)
                             .success(function (resp) {
+                                resp.geolocation = pos;
                                 console.log(resp);
                                 defer.resolve(resp);
                             })
