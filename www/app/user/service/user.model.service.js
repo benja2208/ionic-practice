@@ -293,7 +293,7 @@
           currentUser.set(key, value);
         });
 
-        if ($window.device) {
+        if (cordova) {
 
           var cordovaDevice = {
             device: $cordovaDevice.getDevice(),
