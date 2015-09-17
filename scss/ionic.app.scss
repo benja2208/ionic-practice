@@ -33,10 +33,10 @@ $ionicons-font-path: '../fonts' !default;
 @import "font";
 @import "platform";
 @import "animate";
-@import "www/app/user/style/intro";
-@import "www/app/user/style/user";
-@import "www/app/user/style/profile";
-@import "www/module/gallery/style/photogram";
+@import "photogram/intro";
+@import "photogram/user";
+@import "photogram/profile";
+@import "photogram/photogram";
 
 .spinner svg {
   stroke: $positive;
@@ -49,6 +49,10 @@ $ionicons-font-path: '../fonts' !default;
 
 .no-padding, .nopadding {
   padding: 0;
+}
+
+.has-tabs-top {
+  bottom: 49px;
 }
 
 .bar .title img {

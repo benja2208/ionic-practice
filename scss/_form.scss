@@ -126,10 +126,10 @@ form, .formly {
   color: green;
 }
 
-input[type=text].ng-invalid::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-  color: #F78C8C;
-  text-indent: 0;
-}
+//input[type=text].ng-invalid::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+//  color: #F78C8C;
+//  text-indent: 0;
+//}
 
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   color: #aaa;

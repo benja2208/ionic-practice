@@ -36,7 +36,7 @@
     @include animation(fadeInDown, 1s, .5s)
  */
 
-$animate1: 'fadeInLeft';
+$animate1: 'zoomInLeft';
 
 .item-animate1 {
 
@@ -45,8 +45,8 @@ $animate1: 'fadeInLeft';
   }
 
   &.ng-enter-stagger {
-    -webkit-animation-delay: 200ms;
-    animation-delay: 200ms;
+    -webkit-animation-delay: 100ms;
+    animation-delay: 100ms;
 
     /* override to make sure it's not inherited from other styles */
     -webkit-animation-duration: 0s;
