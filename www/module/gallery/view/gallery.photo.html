@@ -2,9 +2,7 @@
     <ion-content>
         <div class="list card step1">
 
-            <div class="item item-avatar"
-                 data-affix-within-parent-with-class="card"
-                 ion-affix>
+            <div class="item item-avatar" data-affix-within-parent-with-class="card" ion-affix>
                 <img ng-src="{{GalleryPhoto.data.user.img}}">
 
                 <h2>{{GalleryPhoto.data.user.name}}</h2>
@@ -12,22 +10,19 @@
             </div>
 
             <div class="item item-body">
-                <img ng-src="{{GalleryPhoto.data.img._url}}"
-                     style="width: 100%">
+                <img ng-src="{{GalleryPhoto.data.img._url}}" style="width: 100%">
             </div>
             <div class="padding">
                 <p>{{ GalleryPhoto.data.title }}</p>
 
                 <p>
-                    <a class="subdued"
-                       href="#">1 {{ 'Like' | translate}}</a>
+                    <a class="subdued" href="#">1 {{ 'Like' | translate}}</a>
                 </p>
             </div>
         </div>
 
         <div class="list">
-            <div ng-repeat="item in GalleryPhoto.comments"
-                 class="item item-avatar">
+            <div ng-repeat="item in GalleryPhoto.comments" class="item item-avatar">
                 <img ng-src="{{ item.user.img }}" />
 
                 <h2>{{ item.user.name }}</h2>
@@ -37,15 +32,10 @@
         </div>
 
         <div class="step2">
-            <formly-form model="GalleryPhoto.form"
-                         fields="GalleryPhoto.formFields"
-                         form="rForm">
+            <formly-form model="GalleryPhoto.form" fields="GalleryPhoto.formFields" form="rForm">
 
                 <div class="padding">
-                    <button class="button button-block button-positive"
-                            type="button"
-                            ng-click="GalleryPhoto.submitComment(rForm, GalleryPhoto.form)"
-                            translate>Comment
+                    <button class="button button-block button-positive" type="button" ng-click="GalleryPhoto.submitComment(rForm, GalleryPhoto.form)" translate>Comment
                     </button>
                 </div>
 

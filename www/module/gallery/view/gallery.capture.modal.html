@@ -1,45 +1,31 @@
 <ion-modal-view class="modal-capture">
     <ion-header-bar class="bar-dark">
-        <button class="button button-clear button-icon ion-ios-arrow-thin-left"
-                ng-click="closeModal()"></button>
+        <button class="button button-clear button-icon ion-ios-arrow-thin-left" ng-click="closeModal()"></button>
         <div class="title">{{ 'Share Photo' | translate }}</div>
-        <button class="button button-positive"
-                ng-click="submitCapture()">
+        <button class="button button-positive" ng-click="submitCapture()">
             <i class="icon ion-arrow-right-b"></i>
         </button>
     </ion-header-bar>
     <ion-content>
-        <gallery-loading loading="loading"
-                         icon="android"></gallery-loading>
+        <gallery-loading loading="loading" icon="android"></gallery-loading>
         <div class="list">
 
             <div class="item no-padding capture-photo">
-                <img ng-src="{{data}}"
-                     ng-click="open()">
+                <img ng-src="{{data}}" ng-click="open()">
             </div>
             <div class="item item-input">
-                <input type="text"
-                       name="title"
-                       ng-model="form.title"
-                       placeholder="{{ 'Write a Legend'|translate }}">
+                <input type="text" name="title" ng-model="form.title" placeholder="{{ 'Write a Legend'|translate }}">
             </div>
             <div class="item item-input">
-                <input type="text"
-                       placeholder="{{ 'Location' | translate }}"
-                       ion-location
-                       location="form.geo"
-                       ng-model="form.geo.resume">
+                <input type="text" placeholder="{{ 'Location' | translate }}" ion-location location="form.geo" ng-model="form.geo.resume">
             </div>
-            <div class="item nopadding"
-                 ng-show="form.geo.image">
+            <div class="item nopadding" ng-show="form.geo.image">
                 <img ng-src="{{ form.geo.image }}">
             </div>
-            <div class="item item-divider"
-                 translate>
+            <div class="item item-divider" translate>
                 Share In
             </div>
-            <formly-form model="formShare"
-                         fields="formShareFields">
+            <formly-form model="formShare" fields="formShareFields">
             </formly-form>
         </div>
 

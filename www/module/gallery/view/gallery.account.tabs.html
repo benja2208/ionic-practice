@@ -1,21 +1,17 @@
-<ion-view cache-view="false"
-          class="gallery-profile">
+<ion-view cache-view="false" class="gallery-profile">
 
     <ion-nav-title>
         <h1 class="title">{{ user.name }}</h1>
     </ion-nav-title>
 
     <ion-nav-buttons side="right">
-        <button gallery-settings
-                class="button button-icon icon ion-gear-a"></button>
+        <button gallery-settings class="button button-icon icon ion-gear-a"></button>
     </ion-nav-buttons>
     <ion-content overflow-scroll="true">
         <div class="profile-top">
             <div class="row">
                 <div class="col-25">
-                    <img class="avatar"
-                         user-avatar
-                         ng-src="{{ user.src }}" />
+                    <img class="avatar" user-avatar ng-src="{{ user.src }}" />
                 </div>
                 <div class="col col-statics">
                     <div class="row">
@@ -25,7 +21,7 @@
                             <h3 translate>Posts</h3>
                         </div>
                         <div class="col">
-                            <span class="text-center">{{ GalleryProfile.form.follow }}</span>
+                            <span class="text-center">{{ GalleryProfile.form.follow1 }}</span>
 
                             <h3 translate>Followers</h3>
                         </div>
@@ -37,8 +33,7 @@
                     </div>
                     <div class="row col-edit">
                         <div class="col">
-                            <button gallery-profile-edit
-                                    class="button " >{{ 'EDIT YOUR PROFILE' | translate }}
+                            <button gallery-profile-edit class="button ">{{ 'EDIT YOUR PROFILE' | translate }}
                             </button>
                         </div>
                     </div>
@@ -51,11 +46,21 @@
             </div>
 
         </div>
-            <div class="item item-divider" translate>Recent</div>
+
+
+        <div class="item item-divider" translate>Recent
+        </div>
+
+        <div class="center-ico step1" ng-if="GalleryProfile.empty">
+            <i class="icon ion-camera"></i>
+
+            <h1 translate="">No Post</h1>
+        </div>
+
+
         <div class="profile-view">
             <gallery-loading loading="GalleryProfile.loading"></gallery-loading>
-            <gallery-photo-list gallery="GalleryProfile.data"
-                                loading="GalleryProfile.loading"></gallery-photo-list>
+            <gallery-photo-list gallery="GalleryProfile.data" loading="GalleryProfile.loading"></gallery-photo-list>
         </div>
 
     </ion-content>

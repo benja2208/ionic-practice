@@ -1,5 +1,4 @@
-<ion-view cache-view="false"
-          class="gallery-activity">
+<ion-view cache-view="false" class="gallery-activity">
 
     <ion-nav-title>
         <h1 class="title">{{ 'Activities' | translate }}</h1>
@@ -7,30 +6,25 @@
 
     <ion-content overflow-scroll="true">
 
-        <gallery-loading loading="GalleryActivity.loading"
-                         icon="android"></gallery-loading>
+        <gallery-loading loading="GalleryActivity.loading" icon="android"></gallery-loading>
 
         <div class="list">
 
-            <div class="item item-avatar item-animate1"
-                 ng-repeat="item in GalleryActivity.data"><img ng-src="{{ item.user.src }}">
+            <div class="item item-avatar item-animate1" ng-repeat="item in GalleryActivity.data"><img ng-src="{{ item.user.src }}">
 
                 <h2>{{ item.user.name }}</h2>
 
                 <div class="text">{{ item.action | translate }}</div>
                 <p>{{ item.created | amTimeAgo }}</p>
 
-                <div class="img-right"
-                     ng-if="ite.img">
+                <div class="img-right" ng-if="ite.img">
                     <img ng-src="{{ item.img }}">
                 </div>
             </div>
 
         </div>
 
-        <ion-infinite-scroll
-                ng-if="!GalleryActivity.loading"
-                on-infinite="GalleryActivity.load()">
+        <ion-infinite-scroll ng-if="!GalleryActivity.loading" on-infinite="GalleryActivity.load()">
         </ion-infinite-scroll>
     </ion-content>
 </ion-view>

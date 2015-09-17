@@ -9246,10 +9246,6 @@ form .item:first-child, .formly .item:first-child {
 .icon-verde {
   color: green; }
 
-input[type=text].ng-invalid::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-  color: #F78C8C;
-  text-indent: 0; }
-
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   color: #aaa;
   text-indent: 0; }
@@ -9341,38 +9337,38 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
     @include animation(fadeInDown, 1s, .5s)
  */
 .item-animate1.ng-enter {
-  -o-animation-name: 'fadeIn';
+  -o-animation-name: 'zoomInLeft';
   -o-animation-delay: 0.5s;
   -o-animation-duration: 1s;
   -o-animation-timing-function: ease;
   -o-animation-fill-mode: both;
-  -moz-animation-name: 'fadeIn';
+  -moz-animation-name: 'zoomInLeft';
   -moz-animation-delay: 0.5s;
   -moz-animation-duration: 1s;
   -moz-animation-timing-function: ease;
   -moz-animation-fill-mode: both;
-  -webkit-animation-name: 'fadeIn';
+  -webkit-animation-name: 'zoomInLeft';
   -webkit-animation-delay: 0.5s;
   -webkit-animation-duration: 1s;
   -webkit-animation-timing-function: ease;
   -webkit-animation-fill-mode: both;
   -webkit-backface-visibility: hidden;
-  animation-name: 'fadeIn';
+  animation-name: 'zoomInLeft';
   animation-delay: 0.5s;
   animation-duration: 1s;
   animation-timing-function: ease;
   animation-fill-mode: both;
   backface-visibility: hidden; }
 .item-animate1.ng-enter-stagger {
-  -webkit-animation-delay: 200ms;
-  animation-delay: 200ms;
+  -webkit-animation-delay: 100ms;
+  animation-delay: 100ms;
   /* override to make sure it's not inherited from other styles */
   -webkit-animation-duration: 0s;
   animation-duration: 0s; }
 
 .item-animate2.ng-enter {
-  -webkit-animation: 'fadeIn' 1s;
-  animation: 'fadeIn' 1s; }
+  -webkit-animation: 'zoomInLeft' 1s;
+  animation: 'zoomInLeft' 1s; }
 .item-animate2.ng-enter-stagger {
   -webkit-animation-delay: 200ms;
   animation-delay: 200ms;
@@ -9455,8 +9451,10 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 .view-intro .scroll-content {
   background-image: url('../img/intro1.jpg');
   background-size: cover;
+  background-color: #009688;
   height: 100%;
-  color: #fff; }
+  color: #fff;
+  margin: 0; }
   .view-intro .scroll-content .intro-slider {
     display: block;
     height: 100%; }
@@ -9572,6 +9570,15 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   -ms-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease; }
+
+.modal-profile button.button-follow {
+  border: 1px solid #009688;
+  background-color: #fff; }
+.modal-profile img.avatar {
+  display: block;
+  width: 91%;
+  border-radius: 50%;
+  margin: 10px; }
 
 .view-avatar .row .col img {
   border-radius: 50%;
@@ -9839,21 +9846,26 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   .photogram .likes {
     font-weight: bold;
     color: #009688; }
-  .photogram .card {
-    margin: 0;
-    border: none;
-    box-shadow: none;
-    padding: 0; }
+  .photogram .scroll-content {
+    background-color: #f1f1f1; }
   .photogram .list {
     padding: 0;
-    margin: 0; }
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    margin-bottom: 15px; }
+    .photogram .list .card {
+      margin: 0;
+      border: none;
+      box-shadow: none;
+      padding: 0; }
   .photogram .item-body {
     padding: 0;
     border: none;
     min-height: 300px;
     position: relative;
     overflow: hidden;
-    background-color: #ddd;
+    background-color: #fff;
     height: 100%; }
     .photogram .item-body .round-progress-wrapper {
       display: block;
@@ -9967,7 +9979,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
     .photogram .modal-comment .form label.item.item-input {
       display: block;
       float: left;
-      width: 86%;
+      width: 88%;
       border: none; }
     .photogram .modal-comment .form button {
       padding: 7px;
@@ -10000,6 +10012,8 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   .photogram .modal-capture .capture-photo img {
     display: block;
     width: 100%; }
+  .photogram .gallery-profile .scroll-content {
+    background-color: #fff; }
   .photogram .gallery-profile .profile-top {
     display: block;
     position: relative; }
@@ -10042,6 +10056,18 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
         font-weight: bold;
         margin: 0 auto;
         display: block; }
+        .photogram .gallery-profile .profile-top .col-edit .button.button-follow {
+          border: 1px solid #009688;
+          background-color: #fff; }
+          .photogram .gallery-profile .profile-top .col-edit .button.button-follow span {
+            color: #009688;
+            font-size: 14px; }
+        .photogram .gallery-profile .profile-top .col-edit .button.button-unfollow {
+          border: 1px solid #009688;
+          background-color: #009688; }
+          .photogram .gallery-profile .profile-top .col-edit .button.button-unfollow span {
+            color: #fff;
+            font-size: 14px; }
     .photogram .gallery-profile .profile-top .tabs-light {
       background: #fff;
       height: 50px;
@@ -10071,8 +10097,13 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
     padding: 0; }
     .photogram .gallery-search .row .col {
       padding: 0px;
-      background-color: #ddd;
-      margin: 4px 2px; }
+      background-color: #fff;
+      margin: 4px 2px;
+      width: 150px;
+      height: 150px;
+      overflow: hidden; }
+      .photogram .gallery-search .row .col img {
+        min-height: 150px; }
   .photogram .gallery-userlist .item, .photogram .gallery-activity .item {
     border-bottom: 1px solid #ddd;
     margin-bottom: 1px; }
@@ -10129,6 +10160,9 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 
 .no-padding, .nopadding {
   padding: 0; }
+
+.has-tabs-top {
+  bottom: 49px; }
 
 .bar .title img {
   max-height: 40px;

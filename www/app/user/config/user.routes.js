@@ -1,78 +1,91 @@
-(function () {
-    'use strict';
-    angular
-        .module('module.user')
-        .config(function ($stateProvider, $urlRouterProvider, AppConfig) {
-            $stateProvider
+(function (window, angular, undefined) {
+  'use strict';
+  angular
+    .module('module.user')
+    .config(function ($stateProvider, $urlRouterProvider, AppConfig) {
+      $stateProvider
 
-                .state('router', {
-                    url        : '/',
-                    templateUrl: 'app/core/view/loading.html',
-                    controller : function ($state) {
-                        if (window.Parse.User.current()) {
-                            $state.go(AppConfig.routes.home, {clear: true});
-                        } else {
-                            $state.go('intro', {clear: true});
-                        }
-                    }
-                })
+        .state('router', {
+        url: '/',
+        templateUrl: 'app/core/view/loading.html',
+        controller: function ($rootScope, $state) {
+          var user = $rootScope.user;
+          console.log('User', user);
+          if (user) {
+            console.log(user);
+            if (user.name) {
+              $state.go(AppConfig.routes.home, {
+                clear: true
+              });
+            } else {
+              $state.go('useravatar', {
+                clear: true
+              });
+            }
+          } else {
+            $state.go('intro', {
+              clear: true
+            });
+          }
+        }
+      })
 
 
-                .state('intro', {
-                    url        : '/intro',
-                    templateUrl: 'app/user/view/user.intro.html',
-                    controller : 'IntroCtrl as Intro'
-                })
+      .state('intro', {
+        url: '/intro',
+        templateUrl: 'app/user/view/user.intro.html',
+        controller: 'IntroCtrl as Intro'
+      })
 
-                .state('user', {
-                    url        : '/user',
-                    abstract   : true,
-                    templateUrl: 'app/user/view/user.tabs.html'
-                })
+      .state('user', {
+        url: '/user',
+        abstract: true,
+        templateUrl: 'app/user/view/user.tabs.html'
+      })
 
-                .state('user.login', {
-                    url  : '/login',
-                    views: {
-                        tabLogin: {
-                            controller : 'LoginCtrl as Login',
-                            templateUrl: 'app/user/view/user.login.html'
-                        }
-                    }
-                })
+      .state('user.login', {
+        url: '/login',
+        views: {
+          tabLogin: {
+            controller: 'LoginCtrl as Login',
+            templateUrl: 'app/user/view/user.login.html'
+          }
+        }
+      })
 
-                .state('user.register', {
-                    url  : '/register',
-                    views: {
-                        tabLogin: {
-                            controller : 'RegisterCtrl as Register',
-                            templateUrl: 'app/user/view/user.register.html'
-                        }
-                    }
-                })
+      .state('user.register', {
+        url: '/register',
+        views: {
+          tabLogin: {
+            controller: 'RegisterCtrl as Register',
+            templateUrl: 'app/user/view/user.register.html'
+          }
+        }
+      })
 
-                .state('useravatar', {
-                    url        : '/avatar',
-                    controller : 'UserAvatarCtrl as Avatar',
-                    templateUrl: 'app/user/view/user.avatar.html'
-                })
+      .state('useravatar', {
+        url: '/avatar',
+        controller: 'UserAvatarCtrl as Avatar',
+        templateUrl: 'app/user/view/user.avatar.html'
+      })
 
-                .state('usermerge', {
-                    url        : '/merge',
-                    controller : 'UserMergeCtrl as Merge',
-                    templateUrl: 'app/user/view/user.merge.html'
-                })
 
-                .state('logout', {
-                    url       : '/logout',
-                    template  : '<ion-view view-title="Logout" cache-view="false"><ion-content></ion-content></ion-view>',
-                    controller: function (User, $state) {
-                        User.logout();
-                    }
-                })
-            ;
 
-            $urlRouterProvider.otherwise('/');
+      .state('usermerge', {
+        url: '/merge',
+        controller: 'UserMergeCtrl as Merge',
+        templateUrl: 'app/user/view/user.merge.html'
+      })
 
-        });
+      .state('logout', {
+        url: '/logout',
+        template: '<ion-view view-title="Logout" cache-view="false"><ion-content></ion-content></ion-view>',
+        controller: function (User, $state) {
+          User.logout();
+        }
+      });
 
-})();
+      $urlRouterProvider.otherwise('/');
+
+    });
+})(window, window.angular);

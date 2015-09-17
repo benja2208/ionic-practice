@@ -1,7 +1,6 @@
 <ion-view title="{{ 'Complete your Profile' | translate }}">
 
-    <ion-nav-bar class="bar bar-positive bar-mop"
-                 align-title="left">
+    <ion-nav-bar class="bar bar-positive bar-mop" align-title="left">
 
     </ion-nav-bar>
 
@@ -13,9 +12,7 @@
 
         <div class="row step1">
             <div class="col">
-                <img class="avatar"
-                     user-avatar
-                     ng-src="{{ Merge.form.src }}" />
+                <img class="avatar" user-avatar ng-src="{{ Merge.form.src }}" />
             </div>
         </div>
 
@@ -29,16 +26,12 @@
                 <input type="text" ng-model="Merge.form.email" disabled>
             </label>
             <label class="item item-input lock">
-                <input type="password"
-                       placeholder="{{ 'Password' | translate }}"
-                       ng-model="Merge.form.password">
+                <input type="password" placeholder="{{ 'Password' | translate }}" ng-model="Merge.form.password">
             </label>
         </div>
 
         <div class="padding step3">
-            <button ng-click="Merge.submitMerge(Merge.form)"
-                    ng-disabled="form.facebook"
-                    class="button button-block button-facebook"><i class="icon ion-social-facebook"></i>
+            <button ng-click="Merge.submitMerge(Merge.form)" ng-disabled="form.facebook" class="button button-block button-facebook"><i class="icon ion-social-facebook"></i>
                 <span translate>Merge Facebook</span>
             </button>
         </div>

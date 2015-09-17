@@ -1,0 +1,57 @@
+<ion-modal-view class="modal-profile gallery-profile">
+    <ion-header-bar class="bar-positive">
+        <button class="button button-clear button-icon ion-ios-arrow-thin-left" ng-click="closeModal()"></button>
+        <div class="title">{{ form.name }}</div>
+    </ion-header-bar>
+    <ion-content>
+
+        <div class="profile-top">
+            <div class="row">
+                <div class="col-25">
+                    <img class="avatar" user-avatar ng-src="{{ form.src }}" />
+                </div>
+                <div class="col col-statics">
+                    <div class="row">
+                        <div class="col">
+                            <span class="text-center">{{ form.galleries }}</span>
+
+                            <h3 translate>Posts</h3>
+                        </div>
+                        <div class="col">
+                            <span class="text-center">{{ form.follow1 }}</span>
+
+                            <h3 translate>Followers</h3>
+                        </div>
+                        <div class="col">
+                            <span class="text-center">{{ form.follow2 }}</span>
+
+                            <h3 translate>Followings</h3>
+                        </div>
+                    </div>
+                    <div class="row col-edit">
+                        <div class="col">
+                            <button ng-class="{'button-unfollow': form.follow, 'button-follow': !form.follow}" ng-click="follow(!form.follow)" class="button">
+                                <span ng-show="!form.follow" translate>Follow</span>
+                                <span ng-show="form.follow" translate>Following</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <span class="user-username">{{ user.name }}</span>
+
+                <p class="user-status">{{ user.status }}</p>
+            </div>
+
+        </div>
+        <div class="item item-divider" translate>Recent
+        </div>
+        <div class="profile-view">
+            <gallery-loading loading="loading"></gallery-loading>
+            <gallery-photo-list gallery="data" loading="loading"></gallery-photo-list>
+        </div>
+
+
+    </ion-content>
+</ion-modal-view>

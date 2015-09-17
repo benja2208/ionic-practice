@@ -1,14 +1,16 @@
-<ion-view>
-    <ion-nav-title>
-        <ion-search class="search-wrapper-light"
-                    placeholder="{{ 'Search' | translate }}"
-                    min-length="1"
-                    model="GallerySearchGrid.data"
-                    source="GallerySearchGrid.search(str)"></ion-search>
-    </ion-nav-title>
+<ion-view cache-view="false" title="{{ 'Popular' | translate }}">
+    <!--<ion-nav-title>-->
+    <!--<ion-search class="search-wrapper-light"-->
+    <!--placeholder="{{ 'Search' | translate }}"-->
+    <!--min-length="1"-->
+    <!--model="GallerySearchGrid.data"-->
+    <!--source="GallerySearchGrid.load"></ion-search>-->
+    <!--</ion-nav-title>-->
     <ion-content class="gallery-search">
 
-        <gallery-photo-grid gallery="GallerySearchGrid.data"
-                            loading="GallerySearchGrid.loading"></gallery-photo-grid>
+        <gallery-photo-grid gallery="GallerySearchGrid.data" loading="GallerySearchGrid.loading"></gallery-photo-grid>
+
+
+        <ion-infinite-scroll ng-if="GallerySearchGrid.more" on-infinite="loadMore()"></ion-infinite-scroll>
     </ion-content>
 </ion-view>

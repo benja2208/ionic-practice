@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget xmlns="http://www.w3.org/ns/widgets" id="com.ionic.photogram" version="1.2.4">
+<widget xmlns="http://www.w3.org/ns/widgets" id="com.agenciafoccus.photogram" version="1.2.5">
   <name>Photogram</name>
   <description>
         Share photos of your moments
     </description>
-  <author email="ionic@gmail.com" href="http://ionic.io/">
-        Photogram
+  <author email="agfoccus@gmail.com" href="http://agenciafoccus.com.br/">
+        Agencia Foccus
     </author>
   <content src="index.html"/>
   <access origin="*"/>
@@ -18,6 +18,8 @@
   <preference name="orientation" value="portrait"/>
   <preference name="loadUrlTimeoutValue" value="99999999"/>
   <preference name="android-minSdkVersion" value="16"/>
+  <preference name="SplashScreen" value="screen"/>
+  <preference name="SplashScreenDelay" value="3000"/>
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>

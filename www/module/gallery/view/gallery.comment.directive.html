@@ -1,19 +1,15 @@
 <ion-modal-view class="modal-comment">
     <ion-header-bar class="bar-dark">
-        <button class="button button-clear button-icon ion-ios-arrow-thin-left"
-                ng-click="closeModal()"></button>
+        <button class="button button-clear button-icon ion-ios-arrow-thin-left" ng-click="closeModal()"></button>
         <div class="title">{{ 'Comments' | translate }} ({{ comments.length }})
         </div>
     </ion-header-bar>
     <ion-content>
 
-        <gallery-loading loading="loading"
-                         icon="android"></gallery-loading>
+        <gallery-loading loading="loading" icon="android"></gallery-loading>
 
-        <div class="list step1"
-             ng-show="comments.length">
-            <div ng-repeat="item in comments"
-                 class="item item-avatar">
+        <div class="list step1" ng-show="comments.length">
+            <div ng-repeat="item in comments" class="item item-avatar">
                 <img ng-src="{{ item.user.src }}" />
 
                 <div class="row">
@@ -27,8 +23,7 @@
             </div>
         </div>
 
-        <div class="center-ico step1"
-             ng-show="nocomments">
+        <div class="center-ico step1" ng-show="nocomments">
             <i class="icon ion-ios-chatbubble-outline"></i>
 
             <h1 translate="">No Comments</h1>
@@ -36,13 +31,9 @@
     </ion-content>
     <ion-footer class="step2">
         <div class="form">
-            <formly-form model="form"
-                         fields="formFields"
-                         form="rForm">
+            <formly-form model="form" fields="formFields" form="rForm">
 
-                <button class="button button-positive"
-                        type="button"
-                        ng-click="submitComment(rForm, form)">
+                <button class="button button-positive" type="button" ng-click="submitComment(rForm, form)">
                     <i class="icon ion-arrow-right-b"></i>
                 </button>
 

@@ -1,21 +1,21 @@
-(function () {
-    'use strict';
-    angular
-        .module('module.gallery')
-        .controller('GalleryProfileCtrl', function ($rootScope, $stateParams, Gallery, UserForm, User) {
+(function (window, angular, undefined) {
+  'use strict';
+  angular
+    .module('module.gallery')
+    .controller('GalleryProfileCtrl', function ($rootScope, $stateParams, Gallery, UserForm, User) {
 
-            console.log($stateParams);
+      console.log($stateParams);
 
-            var vm = this;
+      var vm = this;
 
-            function init() {
-                Gallery
-                    .getUser($stateParams.id)
-                    .then(function (resp) {
-                        vm.form = resp;
-                    });
-            }
+      function init() {
+        Gallery
+          .getUser($stateParams.id)
+          .then(function (resp) {
+            vm.form = resp;
+          });
+      }
 
-            init();
-        });
-})();
+      init();
+    });
+})(window, window.angular);

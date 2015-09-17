@@ -1,41 +1,28 @@
 <ion-view>
 
-    <ion-nav-bar class="bar bar-positive bar-mop"
-                 align-title="left">
+    <ion-nav-bar class="bar bar-positive bar-mop" align-title="left">
         <ion-nav-back-button></ion-nav-back-button>
     </ion-nav-bar>
-
     <ion-tabs class="tabs-dark tabs-photogram">
 
-        <ion-tab title="Home"
-                 icon="ion-android-home"
-                 ui-sref="gallery.home">
+        <ion-tab title="Home" icon="ion-android-home" ui-sref="gallery.home">
             <ion-nav-view name="tabHome"></ion-nav-view>
         </ion-tab>
 
-        <ion-tab title="Search"
-                 icon="ion-search"
-                 ui-sref="gallery.search.grid">
+        <ion-tab title="Search" icon="ion-search" ui-sref="gallery.search.grid">
             <ion-nav-view name="tabSearch"></ion-nav-view>
         </ion-tab>
 
-        <ion-tab title="Capture"
-                 icon="ion-camera"
-                 class="middle"
-                 ui-sref="gallery.capture">
+        <ion-tab title="Capture" icon="ion-camera" class="middle" ui-sref="gallery.capture">
             <ion-nav-view name="tabCapture"></ion-nav-view>
         </ion-tab>
 
-        <ion-tab title="Notify"
-                 icon="ion-chatbubble"
-                 ui-sref="gallery.activity">
+        <ion-tab title="Notify" icon="ion-chatbubble" ui-sref="gallery.activity">
             <ion-nav-view name="tabActivity"></ion-nav-view>
         </ion-tab>
 
 
-        <ion-tab title="Perfil"
-                 icon="ion-person"
-                 ui-sref="gallery.account">
+        <ion-tab title="Perfil" icon="ion-person" ui-sref="gallery.account">
             <ion-nav-view name="tabProfile"></ion-nav-view>
         </ion-tab>
 

@@ -17,7 +17,6 @@
 
     <!-- build:cssvendor styles/main.css -->
     <!-- inject:css -->
-    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/ionic.app.css">
     <!-- endinject -->
     <!-- endbuild -->
@@ -25,6 +24,7 @@
     <!-- build:jsvendor scripts/vendor.js -->
     <!-- bower:js -->
     <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-animate/angular-animate.js"></script>
     <script src="lib/angular-cache/dist/angular-cache.js"></script>
     <script src="lib/api-check/dist/api-check.js"></script>
     <script src="lib/angular-gettext/dist/angular-gettext.js"></script>
@@ -41,7 +41,6 @@
     <script src="lib/ng-facebook/ngFacebook.js"></script>
     <script src="lib/ngmap/build/scripts/ng-map.js"></script>
     <script src="lib/parse/parse.min.js"></script>
-    <script src="lib/angular-animate/angular-animate.js"></script>
     <script src="lib/angular-formly/dist/formly.js"></script>
     <script src="lib/angular-formly-templates-ionic/dist/angular-formly-templates-ionic.js"></script>
     <script src="lib/angular-google-maps/dist/angular-google-maps.js"></script>
@@ -62,8 +61,7 @@
     <!-- inject:js -->
     <script src="app/core/module.core.js"></script>
     <script src="app/user/user.module.js"></script>
-    <script src="app/core/service/parse.model.js"></script>
-    <script src="app/core/service/parse.service.js"></script>
+    <script src="app/core/service/parse.push.service.js"></script>
     <script src="app/user/config/user.routes.js"></script>
     <script src="app/user/controller/user.avatar.ctrl.js"></script>
     <script src="app/user/controller/user.intro.ctrl.js"></script>
@@ -91,6 +89,7 @@
     <script src="module/gallery/controller/gallery.activity.ctrl.js"></script>
     <script src="module/gallery/controller/gallery.capture.ctrl.js"></script>
     <script src="module/gallery/controller/gallery.home.ctrl.js"></script>
+    <script src="module/gallery/controller/gallery.notify.js"></script>
     <script src="module/gallery/controller/gallery.photo.ctrl.js"></script>
     <script src="module/gallery/controller/gallery.preview.ctrl.js"></script>
     <script src="module/gallery/controller/gallery.profile.ctrl.js"></script>
@@ -98,14 +97,9 @@
     <script src="module/gallery/controller/gallery.search.map.ctrl.js"></script>
     <script src="module/gallery/controller/gallery.user.list.js"></script>
     <script src="module/gallery/controller/gallery.view.ctrl.js"></script>
-    <script src="module/gallery/service/gallery.feedback.form.js"></script>
-    <script src="module/gallery/service/gallery.feedback.model.js"></script>
-    <script src="module/gallery/service/gallery.model.js"></script>
-    <script src="module/gallery/service/gallery.settings.model.js"></script>
-    <script src="module/gallery/service/gallery.share.js"></script>
-    <script src="module/gallery/service/parse.image.service.js"></script>
     <script src="module/gallery/directive/gallery.capture.directive.js"></script>
     <script src="module/gallery/directive/gallery.comment.directive.js"></script>
+    <script src="module/gallery/directive/gallery.follow.modal.js"></script>
     <script src="module/gallery/directive/gallery.like.directive.js"></script>
     <script src="module/gallery/directive/gallery.like.modal.directive.js"></script>
     <script src="module/gallery/directive/gallery.loading.directive.js"></script>
@@ -113,8 +107,15 @@
     <script src="module/gallery/directive/gallery.photo.grid.directive.js"></script>
     <script src="module/gallery/directive/gallery.photo.list.directive.js"></script>
     <script src="module/gallery/directive/gallery.profile.edit.js"></script>
+    <script src="module/gallery/directive/gallery.profile.modal.js"></script>
     <script src="module/gallery/directive/gallery.settings.modal.js"></script>
     <script src="module/gallery/directive/ion-search.directive.js"></script>
+    <script src="module/gallery/service/gallery.feedback.form.js"></script>
+    <script src="module/gallery/service/gallery.feedback.model.js"></script>
+    <script src="module/gallery/service/gallery.model.js"></script>
+    <script src="module/gallery/service/gallery.settings.model.js"></script>
+    <script src="module/gallery/service/gallery.share.js"></script>
+    <script src="module/gallery/service/parse.image.service.js"></script>
     <script src="js/app.js"></script>
     <script src="js/cacheapp.js"></script>
     <script src="js/cachemodule.js"></script>
