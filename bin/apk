@@ -34,15 +34,16 @@ if [[ -z "$3" ]]; then
     exit 1
 fi
 
-echo ""
-echo ""
-echo "---> Gulp Production"
-gulp prod
+echo "       $2      Version: $3 " 
+# echo ""
+# echo ""
+# echo "---> Gulp Production"
+# gulp prod
 
-echo ""
-echo ""
-echo "---> Rename Folders for Production"
-./bin/folderprod
+# echo ""
+# echo ""
+# echo "---> Rename Folders for Production"
+# ./bin/folderprod
 
 echo "---> Starting build v$version"
 
@@ -57,10 +58,10 @@ mkdir -p releases/
 zipalign -v 4 platforms/android/build/outputs/apk/android-release.apk releases/com.$company.$appname.v$version.apk
 
 
-echo ""
-echo ""
-echo "---> Restore name Folders for Development"
-./bin/folderdev
+# echo ""
+# echo ""
+# echo "---> Restore name Folders for Development"
+# ./bin/folderdev
 
 echo ""
 echo ""

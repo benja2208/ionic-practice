@@ -1,0 +1,21 @@
+#!/bin/bash
+# Usage: prod.sh 'platform'
+# 
+echo "---> Compilation Application"
+gulp prod
+
+echo ""
+echo ""
+echo "---> Rename Folder to Minify Application"
+./bin/folderprod
+
+echo ""
+echo ""
+echo "---> Build Debug" $*
+cordova build  $*
+
+echo ""
+echo ""
+echo "---> Restore Folder"
+./bin/folderdev
+

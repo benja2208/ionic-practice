@@ -4,12 +4,13 @@
 #
 # Place your keystore in the root of your project and name it <company>.keystore
 # Use this script as following :
-# $ ./release.sh [company] [version]
+# $ ./bin/release [company] [version]
 #
-# Don't forget to gitignore your key and your compiled apks.
 #
 # Original at https://gist.github.com/th3m4ri0/acc2003adc7dffdbbad6
 # Author : Erwan d'Orgeville<info@erwandorgeville.com>
+#
+# Features : Willian Ribeiro Angelo<agfoccus@gmail.com>
 
 # Abort if any command returns something else than 0
 set -e
@@ -28,23 +29,33 @@ if [[ -z "$2" ]]; then
     exit 1
 fi
 
+echo ""
+echo ""
+echo "---> Gulp Production"
+gulp prod
+
+echo ""
+echo ""
+echo "---> Rename Folders for Production"
+./bin/folderprod
+
 echo "---> Starting build v$version"
 
-ionic build --release android
-
-echo ""
-echo ""
-echo "---> Input the password for the key"
-jarsigner -sigalg SHA1withRSA -digestalg SHA1 -keystore $company.keystore platforms/android/ant-build/MainActivity-release-unsigned.apk $company
-cp platforms/android/ant-build/MainActivity-release-unsigned.apk platforms/android/ant-build/com.$company.$appname.v$version-unaligned.apk
+cordova build android --release
 
 echo ""
 echo ""
 echo "---> Zipaligning"
 
 mkdir -p releases/
+# rm releases/com.$company.$appname.v$version.apk
+zipalign -v 4 platforms/android/build/outputs/apk/android-release.apk releases/com.$company.$appname.v$version.apk
 
-zipalign -v 4 platforms/android/ant-build/com.$company.$appname.v$version-unaligned.apk releases/com.$company.$appname.v$version.apk
+
+echo ""
+echo ""
+echo "---> Restore name Folders for Development"
+./bin/folderdev
 
 echo ""
 echo ""
