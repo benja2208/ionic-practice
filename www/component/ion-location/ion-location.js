@@ -5,7 +5,7 @@
       'ionic',
       'gettext'
     ])
-    .directive('ionLocation', function (gettextCatalog, $ionicModal, GeoService) {
+    .directive('ionLocation', function (gettextCatalog, $ionicPopup, $ionicModal, GeoService) {
       return {
         restrict: 'A',
         scope: {
@@ -223,6 +223,10 @@
             }, function (err) {
               // error
               console.log('Error na geolocalização', err);
+              $ionicPopup.alert({
+                title: 'Geo Error',
+                template: err.message
+              });
               Loading.end();
               defer.reject(err);
             });

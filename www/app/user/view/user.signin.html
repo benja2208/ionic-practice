@@ -1,0 +1,42 @@
+<ion-view class="view-login"
+          view-title="{{ 'Enter' | translate }}">
+
+    <ion-content padding="false">
+        <div class="padding">
+
+            <formly-form model="UserSignin.form"
+                         fields="UserSignin.formFields"
+                         form="UserSignin.rForm">
+
+                <button recovery-pass
+                        class="button button-right button-block button-clear">
+                    <span translate>Forgot your password?</span>
+                </button>
+
+                <button class="button button-block button-positive "
+                        type="button"
+                        ng-disabled="UserSignin.rForm.$invalid"
+                        ng-click="UserSignin.submitLogin(UserSignin.rForm, UserSignin.form)"
+                        translate>Enter
+                </button>
+
+            </formly-form>
+
+            <div class="line">
+                <div class="left"></div>
+                <span translate>or</span>
+
+                <div class="right"></div>
+            </div>
+
+
+            <button ng-click="UserSignin.facebook()"
+                    class="button button-block button-facebook"><i class="icon ion-social-facebook"></i>
+                <span translate>Connect your Facebook</span>
+            </button>
+
+        </div>
+        </div>
+
+    </ion-content>
+</ion-view>

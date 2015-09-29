@@ -1,0 +1,27 @@
+.jr-crop {
+  background-color: #000;
+  overflow: hidden;
+}
+
+.jr-crop-center-container {
+  @include display-flex();
+  @include justify-content(center);
+  @include align-items(center);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.jr-crop-img {
+  opacity: 0.6;
+}
+
+.bar.jr-crop-footer {
+  border: none;
+  background: none;
+}
+
+.jr-crop-footer button {
+  background: none !important;
+  color: #fff !important;
+}

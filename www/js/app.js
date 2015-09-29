@@ -16,7 +16,6 @@
       'translate.app',
       'translate.form',
       'angular-cache',
-      'uiGmapgoogle-maps',
       'ngCordova',
       'gettext',
       'module.core',

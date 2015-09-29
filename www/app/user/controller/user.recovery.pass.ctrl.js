@@ -2,7 +2,7 @@
   'use strict';
   angular
     .module('module.user')
-    .controller('RecoveryPassCtrl', function (User, $state, Notify) {
+    .controller('UserRecoveryPassCtrl', function (User, $state, Notify) {
       var vm = this;
       vm.form = {};
       vm.submitForgot = function () {

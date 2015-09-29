@@ -1,0 +1,27 @@
+<ion-view view-title="{{ 'Register' | translate }}">
+
+    <ion-content padding="true">
+        <formly-form model="UserSignup.form"
+                     fields="UserSignup.formFields"
+                     form="UserSignup.rForm">
+
+            <div class="padding">
+                <button class="button button-block button-positive"
+                        type="button"
+                        ng-disabled="rForm.$invalid"
+                        ng-click="UserSignup.submitRegister(UserSignup.rForm, UserSignup.form)"
+                        translate>Register
+                </button>
+            </div>
+
+        </formly-form>
+
+        <div class="padding">
+            <p class="text-center">
+                <span translate>When creating your account, you agree to our</span> <b open-terms
+                                                                                       translate>Terms and
+                                                                                                 Conditions</b></p>
+        </div>
+
+    </ion-content>
+</ion-view>

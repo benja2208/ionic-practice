@@ -1,110 +1,114 @@
 (function (window, angular, undefined) {
-  'use strict';
-  angular
-    .module('module.gallery')
-    .directive('galleryProfile', function ($ionicModal, $q, Gallery, Loading, $timeout, User, UserForm, $state) {
-      return {
-        restrict: 'A',
-        scope: false,
-        link: function (scope, elem, attr) {
+    'use strict';
+    angular
+        .module('module.gallery')
+        .directive('galleryProfile', function ($ionicModal, $q, Gallery, Loading, $timeout, User) {
+            return {
+                restrict: 'A',
+                scope   : {
+                    user: '='
+                },
+                link    : function (scope, elem, attr) {
 
-          function init() {
+                    function init() {
+                        var defer            = $q.defer();
+                        scope.loadingGallery = true;
 
-            var userId = attr.profile;
-            var defer = $q.defer();
-            console.log(userId);
+                        Gallery
+                            .getUserGallery(scope.user.id)
+                            .then(function (resp) {
+                                scope.data = resp;
+                                console.log(resp);
+                                scope.$broadcast('scroll.refreshComplete');
+                                scope.$broadcast('scroll.infiniteScrollComplete');
+                                scope.loadingGallery = false;
+                                defer.resolve(scope.data);
+                            });
 
-            Loading.start();
+                        return defer.promise;
+                    }
 
-            Gallery
-              .getUser(userId)
-              .then(function (resp) {
-                scope.form = resp;
+                    function getFollower(userId) {
+                        scope.loadingFollowers = true;
+                        scope.loadingFollowing = true;
+                        scope.loadingPhotos    = true;
 
-                Gallery
-                  .getUserGallery(userId)
-                  .then(function (resp) {
-                    scope.data = resp;
-                    console.log(resp);
-                  })
-                  .then(function () {
-                    scope.$broadcast('scroll.refreshComplete');
-                    scope.$broadcast('scroll.infiniteScrollComplete');
-                    scope.loading = false;
+                        Gallery
+                            .getUserGalleryQtd(userId)
+                            .then(function (qtdPhotos) {
+                                scope.user.qtdPhotos = qtdPhotos;
+                                scope.loadingPhotos  = false;
+                            });
 
-                    $timeout(function () {
-                      Loading.end();
-                    }, 1000);
+                        User
+                            .getFollowers(userId)
+                            .then(function (qtdFollowers) {
+                                console.log('qtdFollower: seguindo', qtdFollowers);
+                                scope.user.qtdFollowers = qtdFollowers;
+                                scope.loadingFollowers  = false;
+                            });
 
-                    defer.resolve(scope.data);
-                  });
+                        User
+                            .getFollowing(userId)
+                            .then(function (qtdFollowing) {
+                                console.log('qtdFollowing: seguidores', qtdFollowing);
+                                scope.user.qtdFollowing = qtdFollowing;
+                                scope.loadingFollowing  = false;
+                            });
+                    }
 
-              });
+                    elem.bind('click', function () {
 
-            return defer.promise;
+                        $ionicModal
+                            .fromTemplateUrl('module/gallery/view/gallery.profile.modal.html', {
+                                scope: scope
+                            })
+                            .then(function (modal) {
+                                scope.modalProfile = modal;
+                                scope.modalProfile.show();
 
+                                init();
+                                getFollower(scope.user.id);
 
-          }
+                                scope.loadingFollow = true;
+                                User
+                                    .isFollow(scope.user.id)
+                                    .then(function (resp) {
+                                        console.info('follow user?', resp);
+                                        scope.user.follow   = resp;
+                                        scope.loadingFollow = false;
+                                    });
 
-          elem.bind('click', function () {
+                                scope.follow = function () {
 
-            $ionicModal.fromTemplateUrl('module/gallery/view/gallery.profile.modal.html', {
-              scope: scope
-            }).then(function (modal) {
-              scope.modalProfile = modal;
+                                    scope.loadingFollow = true;
+                                    var status;
 
-              init()
-                .then(function () {
-                  scope.modalProfile.show();
-                });
-            });
-          });
+                                    if (scope.user.follow) {
+                                        status = false;
+                                    } else {
+                                        status = true;
+                                    }
 
-          scope.follow = function (status) {
-            Loading.start();
-            User
-              .follow(status, attr.profile)
-              .then(function (resp) {
-                Loading.end();
-                scope.form.follow = !scope.form.follow;
-                if (status) {
-                  scope.form.follow1++;
-                } else {
-                  scope.form.follow1--;
+                                    User
+                                        .follow(status, scope.user)
+                                        .then(function (resp) {
+
+                                            console.log('Follow result', resp);
+                                            scope.user.follow   = status;
+                                            scope.loadingFollow = false;
+                                            getFollower(scope.user.id);
+                                        });
+                                };
+
+                                scope.closeModal = function () {
+                                    delete scope.data;
+                                    scope.modalProfile.hide();
+                                    scope.modalProfile.remove();
+                                };
+                            });
+                    });
                 }
-              });
-          };
-
-
-          scope.logout = function () {
-            $state.go('logout');
-            scope.closeModal();
-          };
-
-          scope.linkFacebook = function () {
-            User
-              .facebookLink()
-              .then(function (resp) {
-                console.log(resp);
-              })
-          };
-
-          scope.submitUpdateProfile = function () {
-            var dataForm = angular.copy(scope.form);
-            User
-              .update(dataForm)
-              .then(function (resp) {
-                console.log(resp);
-                init();
-                scope.closeModal();
-              });
-          };
-
-          scope.closeModal = function () {
-            scope.modalProfile.hide();
-            scope.modalProfile.remove();
-          };
-        }
-      }
-    });
+            }
+        });
 })(window, window.angular);

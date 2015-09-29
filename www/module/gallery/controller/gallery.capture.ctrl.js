@@ -2,8 +2,7 @@
   'use strict';
   angular
     .module('module.gallery')
-    .controller('GalleryCaptureCtrl', function ($scope, User, $ionicModal, PhotoService, GallerySetting,
-      ParseImageService, $state, Gallery, Loading) {
+    .controller('GalleryCaptureCtrl', function ($scope, User, $ionicModal, PhotoService, GallerySetting, ParseImageService, $state, Gallery, GalleryForm, Loading) {
 
       $scope.map = {
         center: {
@@ -55,7 +54,7 @@
       };
 
       $scope.formFields = Gallery.form;
-      $scope.formShareFields = Gallery.formShare;
+      $scope.formShareFields = GalleryForm.formShare;
 
       $scope.open = function () {
         init();

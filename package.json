@@ -1,7 +1,10 @@
 {
   "name": "Photogram",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Share your photos",
+  "scripts": {
+    "postinstall": "bower install && gulp inject"
+  },
   "dependencies": {
     "ansi-styles": "^2.1.0",
     "clone": "^1.0.2",
@@ -56,6 +59,7 @@
     "gulp-strip-debug": "^1.0.2",
     "gulp-usemin": "^0.3.11",
     "gulp-util": "^2.2.14",
+    "node-sass": "^3.3.3",
     "shelljs": "^0.3.0"
   },
   "cordovaPlugins": [
@@ -73,7 +77,7 @@
     "cordova-plugin-file"
   ],
   "cordovaPlatforms": [
-    "ios",
-    "android"
+    "android",
+    "ios"
   ]
 }

@@ -2,7 +2,7 @@
   'use strict';
   angular
     .module('module.gallery')
-    .directive('galleryComment', function ($ionicModal, $timeout, Gallery) {
+    .directive('galleryComment', function ($ionicModal, $timeout, Gallery, GalleryForm) {
       return {
         restrict: 'A',
         scope: {
@@ -54,7 +54,7 @@
           }
 
 
-          scope.formFields = Gallery.formComment;
+          scope.formFields = GalleryForm.formComment;
           scope.submitComment = function (rForm, form) {
             if (rForm.$valid) {
               var dataForm = angular.copy(form);

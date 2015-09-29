@@ -89,7 +89,7 @@ gulp.task('inject', function () {
 // Sass
 gulp.task('sass', function (done) {
     gulp.src('./scss/ionic.app.scss')
-        .pipe(sass())
+        .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('./www/css/'))
         .on('end', done);
 });

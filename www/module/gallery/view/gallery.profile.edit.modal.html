@@ -1,30 +1,41 @@
 <ion-modal-view class="modal-profile">
     <ion-header-bar class="bar-positive">
-        <button class="button button-clear button-icon ion-ios-arrow-thin-left" ng-click="closeModal()"></button>
+        <button class="button button-clear button-icon ion-ios-arrow-thin-left"
+                ng-click="closeModal()"></button>
         <div class="title">{{ 'Edit Profile' | translate }}</div>
     </ion-header-bar>
     <ion-content class="view-avatar">
 
         <div class="row step1">
             <div class="col">
-                <img class="avatar" user-avatar ng-src="{{ form.src }}" />
+                <img class="avatar"
+                     user-avatar
+                     ng-src="{{ form.src }}" />
             </div>
         </div>
 
         <div class="step2">
             <label class="item item-input">
                 <i class="icon icon-envelope placeholder-icon"></i>
-                <input type="text" ng-model="form.email" disabled>
+                <input type="text"
+                       ng-model="form.email"
+                       disabled>
             </label>
-            <formly-form model="form" fields="formFields" form="rForm">
+            <formly-form model="form"
+                         fields="formFields"
+                         form="rForm">
             </formly-form>
         </div>
         <div class="padding step3">
-            <button ng-click="linkFacebook()" ng-disabled="form.facebook" class="button button-block button-facebook"><i class="icon ion-social-facebook"></i>
+            <button ng-click="linkFacebook()"
+                    ng-disabled="form.facebook"
+                    class="button button-block button-facebook"><i class="icon ion-social-facebook"></i>
                 <span translate>Link Facebook</span>
             </button>
 
-            <button class="button button-block button-positive" ng-click="submitUpdateProfile()" translate>
+            <button class="button button-block button-positive"
+                    ng-click="submitUpdateProfile()"
+                    translate>
                 Save Profile
             </button>
         </div>

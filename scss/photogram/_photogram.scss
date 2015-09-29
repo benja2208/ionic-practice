@@ -1,10 +1,5 @@
 .photogram {
 
-  .card {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-
   //General Resets
   font-family: -apple-system, 'Helvetica Neue', 'Segoe WP', sans-serif !important;
   color: #333;
@@ -13,6 +8,39 @@
     color: #333;
   }
 
+  //.scroll-content {
+  //  background-color: #f1f1f1;
+  //}
+
+  .card {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  gallery-photo-grid {
+
+    .row {
+
+      .col {
+
+        height: 150px;
+        position: relative;
+        overflow: hidden;
+        background-color: #f1f1f1;
+        border: 2px solid #fff;
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          min-width: 150px;
+          min-height: 150px;
+        }
+
+      }
+    }
+
+  }
   .item {
     border: none;
   }
@@ -85,10 +113,6 @@
     color: $positive;
   }
 
-  .scroll-content {
-    background-color: #f1f1f1;
-  }
-
   .list {
     padding: 0;
     border: none;
@@ -111,7 +135,7 @@
     min-height: 300px;
     position: relative;
     overflow: hidden;
-    background-color: #fff;
+    background-color: #f1f1f1;
     height: 100%;
 
     .round-progress-wrapper {
@@ -366,6 +390,7 @@
       }
 
       .col-statics {
+        margin-left: 5px;
         span {
           font-weight: bold;
           color: #000;

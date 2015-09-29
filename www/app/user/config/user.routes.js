@@ -43,29 +43,29 @@
         templateUrl: 'app/user/view/user.tabs.html'
       })
 
-      .state('user.login', {
-        url: '/login',
+      .state('user.signin', {
+        url: '/signin',
         views: {
           tabLogin: {
-            controller: 'LoginCtrl as Login',
-            templateUrl: 'app/user/view/user.login.html'
+            controller: 'UserSigninCtrl as UserSignin',
+            templateUrl: 'app/user/view/user.signin.html'
           }
         }
       })
 
-      .state('user.register', {
-        url: '/register',
+      .state('user.signup', {
+        url: '/signup',
         views: {
           tabLogin: {
-            controller: 'RegisterCtrl as Register',
-            templateUrl: 'app/user/view/user.register.html'
+            controller: 'UserSignupCtrl as UserSignup',
+            templateUrl: 'app/user/view/user.signup.html'
           }
         }
       })
 
       .state('useravatar', {
         url: '/avatar',
-        controller: 'UserAvatarCtrl as Avatar',
+        controller: 'UserAvatarCtrl as UserAvatar',
         templateUrl: 'app/user/view/user.avatar.html'
       })
 
@@ -73,7 +73,7 @@
 
       .state('usermerge', {
         url: '/merge',
-        controller: 'UserMergeCtrl as Merge',
+        controller: 'UserMergeCtrl as UserMerge',
         templateUrl: 'app/user/view/user.merge.html'
       })
 

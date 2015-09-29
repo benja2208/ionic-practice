@@ -35,8 +35,10 @@
         }
 
         Gallery
-          .all(vm.page)
+          .home(vm.page)
           .then(function (resp) {
+
+              console.log(resp);
 
             vm.loading = false;
 
