@@ -1,51 +1,71 @@
 .view-intro {
 
   .scroll-content {
-    background-image: url('../img/intro1.jpg');
+    background-image: url('../img/bg.jpg');
     background-size: cover;
     background-color: $positive;
     height: 100%;
     color: #fff;
     margin: 0;
 
+    button.button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: #fff;
+      z-index: 3;
+      padding: 0 20px;
+    }
+
     .intro-slider {
       display: block;
       height: 100%;
 
-      button.button {
-        position: absolute;
-        top: 0;
-        right: 0;
-        color: #fff;
-        z-index: 3;
-        padding: 0 20px;
-      }
+      .content {
+        position: relative;
+        height: 100%;
 
-      span.top {
-        color: #fff;
-        display: block;
-        text-align: center;
-        font-size: 20px;
-        padding: 0;
-        margin: 25px 15px;
-        top: 20px;
-
-        //  animation
-        @include animate(fadeInDown, 1s, .5s);
-      }
-
-      .phone {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 50px;
-        @include animate(fadeInUp, 1s, 0.1s);
-
-        img {
-          width: 70%;
+        span.top {
+          color: #fff;
           display: block;
-          margin: 0 auto;
+          text-align: center;
+          font-size: 20px;
+          padding: 0;
+          margin: 25px 15px;
+          height: 14%;
+          position: relative;
 
+          //  animation
+          @include animate(fadeInDown, 1s, .5s);
+        }
+
+        .phone {
+          position: relative;
+          width: 80%;
+          height: 736px;
+          max-width: 414px;
+          margin: 0 auto;
+          @include animate(fadeInUp, 1s, 0.1s);
+
+          &.iphone {
+            background-image: url('../img/devices/iphone.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+          }
+
+          &.android {
+            background-image: url('../img/devices/android.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+          }
+
+          img {
+            display: block;
+            margin: 0 auto;
+            position: relative;
+            width: 87%;
+            top: 8.7%;
+          }
         }
       }
 
@@ -69,21 +89,7 @@
           color: #fff !important;
         }
       }
-
     }
 
-  }
-}
-
-.platform-ios {
-  .view-intro {
-    .scroll-content {
-      padding-top: 20px;
-    }
-    .intro-slider {
-      .button.button {
-        top: 20px;
-      }
-    }
   }
 }

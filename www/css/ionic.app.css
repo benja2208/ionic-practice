@@ -11058,83 +11058,98 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   backface-visibility: hidden; }
 
 .view-intro .scroll-content {
-  background-image: url("../img/intro1.jpg");
+  background-image: url("../img/bg.jpg");
   background-size: cover;
   background-color: #009688;
   height: 100%;
   color: #fff;
   margin: 0; }
+  .view-intro .scroll-content button.button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    z-index: 3;
+    padding: 0 20px; }
   .view-intro .scroll-content .intro-slider {
     display: block;
     height: 100%; }
-    .view-intro .scroll-content .intro-slider button.button {
-      position: absolute;
-      top: 0;
-      right: 0;
-      color: #fff;
-      z-index: 3;
-      padding: 0 20px; }
-    .view-intro .scroll-content .intro-slider span.top {
-      color: #fff;
-      display: block;
-      text-align: center;
-      font-size: 20px;
-      padding: 0;
-      margin: 25px 15px;
-      top: 20px;
-      -o-animation-name: fadeInDown;
-      -o-animation-delay: 0.5s;
-      -o-animation-duration: 1s;
-      -o-animation-timing-function: ease;
-      -o-animation-fill-mode: both;
-      -moz-animation-name: fadeInDown;
-      -moz-animation-delay: 0.5s;
-      -moz-animation-duration: 1s;
-      -moz-animation-timing-function: ease;
-      -moz-animation-fill-mode: both;
-      -webkit-animation-name: fadeInDown;
-      -webkit-animation-delay: 0.5s;
-      -webkit-animation-duration: 1s;
-      -webkit-animation-timing-function: ease;
-      -webkit-animation-fill-mode: both;
-      -webkit-backface-visibility: hidden;
-      animation-name: fadeInDown;
-      animation-delay: 0.5s;
-      animation-duration: 1s;
-      animation-timing-function: ease;
-      animation-fill-mode: both;
-      backface-visibility: hidden; }
-    .view-intro .scroll-content .intro-slider .phone {
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 50px;
-      -o-animation-name: fadeInUp;
-      -o-animation-delay: 0.1s;
-      -o-animation-duration: 1s;
-      -o-animation-timing-function: ease;
-      -o-animation-fill-mode: both;
-      -moz-animation-name: fadeInUp;
-      -moz-animation-delay: 0.1s;
-      -moz-animation-duration: 1s;
-      -moz-animation-timing-function: ease;
-      -moz-animation-fill-mode: both;
-      -webkit-animation-name: fadeInUp;
-      -webkit-animation-delay: 0.1s;
-      -webkit-animation-duration: 1s;
-      -webkit-animation-timing-function: ease;
-      -webkit-animation-fill-mode: both;
-      -webkit-backface-visibility: hidden;
-      animation-name: fadeInUp;
-      animation-delay: 0.1s;
-      animation-duration: 1s;
-      animation-timing-function: ease;
-      animation-fill-mode: both;
-      backface-visibility: hidden; }
-      .view-intro .scroll-content .intro-slider .phone img {
-        width: 70%;
+    .view-intro .scroll-content .intro-slider .content {
+      position: relative;
+      height: 100%; }
+      .view-intro .scroll-content .intro-slider .content span.top {
+        color: #fff;
         display: block;
-        margin: 0 auto; }
+        text-align: center;
+        font-size: 20px;
+        padding: 0;
+        margin: 25px 15px;
+        height: 14%;
+        position: relative;
+        -o-animation-name: fadeInDown;
+        -o-animation-delay: 0.5s;
+        -o-animation-duration: 1s;
+        -o-animation-timing-function: ease;
+        -o-animation-fill-mode: both;
+        -moz-animation-name: fadeInDown;
+        -moz-animation-delay: 0.5s;
+        -moz-animation-duration: 1s;
+        -moz-animation-timing-function: ease;
+        -moz-animation-fill-mode: both;
+        -webkit-animation-name: fadeInDown;
+        -webkit-animation-delay: 0.5s;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-timing-function: ease;
+        -webkit-animation-fill-mode: both;
+        -webkit-backface-visibility: hidden;
+        animation-name: fadeInDown;
+        animation-delay: 0.5s;
+        animation-duration: 1s;
+        animation-timing-function: ease;
+        animation-fill-mode: both;
+        backface-visibility: hidden; }
+      .view-intro .scroll-content .intro-slider .content .phone {
+        position: relative;
+        width: 80%;
+        height: 736px;
+        max-width: 414px;
+        margin: 0 auto;
+        -o-animation-name: fadeInUp;
+        -o-animation-delay: 0.1s;
+        -o-animation-duration: 1s;
+        -o-animation-timing-function: ease;
+        -o-animation-fill-mode: both;
+        -moz-animation-name: fadeInUp;
+        -moz-animation-delay: 0.1s;
+        -moz-animation-duration: 1s;
+        -moz-animation-timing-function: ease;
+        -moz-animation-fill-mode: both;
+        -webkit-animation-name: fadeInUp;
+        -webkit-animation-delay: 0.1s;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-timing-function: ease;
+        -webkit-animation-fill-mode: both;
+        -webkit-backface-visibility: hidden;
+        animation-name: fadeInUp;
+        animation-delay: 0.1s;
+        animation-duration: 1s;
+        animation-timing-function: ease;
+        animation-fill-mode: both;
+        backface-visibility: hidden; }
+        .view-intro .scroll-content .intro-slider .content .phone.iphone {
+          background-image: url("../img/devices/iphone.png");
+          background-repeat: no-repeat;
+          background-size: contain; }
+        .view-intro .scroll-content .intro-slider .content .phone.android {
+          background-image: url("../img/devices/android.png");
+          background-repeat: no-repeat;
+          background-size: contain; }
+        .view-intro .scroll-content .intro-slider .content .phone img {
+          display: block;
+          margin: 0 auto;
+          position: relative;
+          width: 87%;
+          top: 8.7%; }
     .view-intro .scroll-content .intro-slider .slider {
       display: block;
       height: 100%;
@@ -11167,12 +11182,6 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
       .view-intro .scroll-content .intro-slider .slider-pager span.slider-pager-page {
         top: 15px;
         color: #fff !important; }
-
-.platform-ios .view-intro .scroll-content {
-  padding-top: 20px; }
-
-.platform-ios .view-intro .intro-slider .button.button {
-  top: 20px; }
 
 .button {
   -webkit-transition: all 0.5s ease;
@@ -11211,7 +11220,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 .view-login .user-head {
   background-color: #009688;
   background-position: 20%;
-  background: url("../img/intro1.jpg");
+  background: url("../img/bg.jpg");
   background-size: cover;
   position: relative;
   height: 200px; }
@@ -11391,6 +11400,10 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   color: #333; }
   .photogram h1, .photogram h2, .photogram h3, .photogram h4, .photogram h5, .photogram h6, .photogram .h1, .photogram .h2, .photogram .h3, .photogram .h4, .photogram .h5, .photogram .h6 {
     color: #333; }
+  .photogram .backdrop {
+    background-color: rgba(5, 58, 53, 0.7); }
+  .photogram .popup-container .popup {
+    border-radius: 10px; }
   .photogram .card {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0); }

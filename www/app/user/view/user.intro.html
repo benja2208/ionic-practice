@@ -2,15 +2,21 @@
 
     <ion-content scroll="false">
         <div class="intro-slider">
-            <button class="button button-clear" ui-sref="user.signin" translate>Enter
+            <button class="button button-clear"
+                    ui-sref="user.signin"
+                    translate>Enter
             </button>
-            <ion-slide-box active-slide="slideIndex" show-pager="true" on-slide-changed="Intro.slideChanged($index)">
+            <ion-slide-box active-slide="slideIndex"
+                           show-pager="true"
+                           on-slide-changed="Intro.slideChanged($index)">
 
                 <ion-slide ng-repeat="item in Intro.slides">
 
-                    <div class="content" ng-if="$index == Intro.slideIndex">
+                    <div class="content"
+                         ng-if="$index == Intro.slideIndex">
                         <span class="top">{{ item.top }}</span>
-                        <div class="phone">
+
+                        <div class="phone {{ Intro.device }}">
                             <img ng-src="{{ item.img }}">
                         </div>
                     </div>
