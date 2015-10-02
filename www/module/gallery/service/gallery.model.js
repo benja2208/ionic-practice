@@ -904,10 +904,10 @@
                 return defer.promise;
             }
 
-            function getUserGallery(userId) {
+            function getUserGallery(userId, page) {
                 var defer = $q.defer();
                 var data  = new Array();
-                //Loading.start ();
+                var limit = 9;
 
                 if (userId === undefined) {
                     userId = currentUser.id;
@@ -920,7 +920,12 @@
                         new Parse
                             .Query('Gallery')
                             .equalTo('user', user)
+                            .descending('createdAt')
+                            //.containedIn('ref', following)
+                            //.containsAll('ref', following)
                             .include('user')
+                            .limit(limit)
+                            .skip(page * limit)
                             .find()
                             .then(function (resp) {
 
