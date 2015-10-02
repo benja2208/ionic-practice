@@ -1,6 +1,6 @@
 {
   "name": "Photogram",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "Share your photos",
   "scripts": {
     "postinstall": "bower install && gulp inject"

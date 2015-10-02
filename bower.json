@@ -1,7 +1,7 @@
 {
   "name": "Photogram",
   "appPath": "www",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "private": true,
   "authors": [
     {
@@ -35,7 +35,8 @@
     "angular-mocks": "~1.4.0",
     "angular-scenario": "~1.4.0",
     "ionic-service-analytics": "~0.2.5",
-    "ionic-service-core": "~0.1.10"
+    "ionic-service-core": "~0.1.10",
+    "ionic-platform-web-client": "~0.1.0"
   },
   "resolutions": {
     "angular": "~1.4.6",
