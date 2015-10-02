@@ -5,6 +5,7 @@ angular.module('translate.app',['ionic'])
   gettextCatalog.setStrings('pt_BR', {
   "A new password will be sent to your e-mail address": "Uma nova senha será enviada para seu endereço de e-mail",
   "About": "Sobre",
+  "Access your accout mail": "Acessar com seu email",
   "Activities": "Atividades",
   "add comment": "adicionou um comentário",
   "Add comment": "Adicionar comentário",
@@ -68,7 +69,6 @@ angular.module('translate.app',['ionic'])
   "Send": "Enviar",
   "Settings": "Configurações",
   "Share": "Compartilhar",
-  "Share In": "Compartilhar",
   "Share photo": "Compartilhar Foto",
   "Share Photo": "Compartilhar Foto",
   "Share your most amazing moments": "Compartilhe seus melhores momentos",

@@ -40,7 +40,7 @@
           NAME: 'Nome',
           BIRTHDAY: 'Data de Nascimento',
           STATUS: 'Status',
-          GENDER: 'Genêro',
+          GENDER: 'Gênero',
           MAN: 'Homem',
           WOMAN: 'Mulher',
           SITE: 'Site',
