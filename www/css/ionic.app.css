@@ -11139,17 +11139,27 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
         .view-intro .scroll-content .intro-slider .content .phone.iphone {
           background-image: url("../img/devices/iphone.png");
           background-repeat: no-repeat;
-          background-size: contain; }
+          background-size: contain;
+          width: 407px;
+          max-width: 407px; }
+          .view-intro .scroll-content .intro-slider .content .phone.iphone img {
+            display: block;
+            margin: 0 auto;
+            position: relative;
+            width: 79%;
+            top: 11.1%; }
         .view-intro .scroll-content .intro-slider .content .phone.android {
           background-image: url("../img/devices/android.png");
           background-repeat: no-repeat;
-          background-size: contain; }
-        .view-intro .scroll-content .intro-slider .content .phone img {
-          display: block;
-          margin: 0 auto;
-          position: relative;
-          width: 87%;
-          top: 8.7%; }
+          background-size: contain;
+          width: 376px;
+          max-width: 376px; }
+          .view-intro .scroll-content .intro-slider .content .phone.android img {
+            display: block;
+            margin: 0 auto;
+            position: relative;
+            width: 90%;
+            top: 8%; }
     .view-intro .scroll-content .intro-slider .slider {
       display: block;
       height: 100%;

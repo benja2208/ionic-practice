@@ -20,11 +20,11 @@
                     img: 'img/intro1.jpg'
                 },
                 {
-                    top: gettextCatalog.getString('Follow your friends and relive'),
+                    top: gettextCatalog.getString('Follow your friends and relive their moments'),
                     img: 'img/intro2.jpg'
                 },
                 {
-                    top: gettextCatalog.getString('Find and follow people around'),
+                    top: gettextCatalog.getString('Find people around you and enjoy your photos'),
                     img: 'img/intro3.jpg'
                 },
                 {

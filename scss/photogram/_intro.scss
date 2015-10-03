@@ -51,21 +51,34 @@
             background-image: url('../img/devices/iphone.png');
             background-repeat: no-repeat;
             background-size: contain;
+            width: 407px;
+            max-width: 407px;
+
+            img {
+              display: block;
+              margin: 0 auto;
+              position: relative;
+              width: 79%;
+              top: 11.1%;
+            }
           }
 
           &.android {
             background-image: url('../img/devices/android.png');
             background-repeat: no-repeat;
             background-size: contain;
+            width: 376px;
+            max-width: 376px;
+
+            img {
+              display: block;
+              margin: 0 auto;
+              position: relative;
+              width: 90%;
+              top: 8%;
+            }
           }
 
-          img {
-            display: block;
-            margin: 0 auto;
-            position: relative;
-            width: 87%;
-            top: 8.7%;
-          }
         }
       }
 
