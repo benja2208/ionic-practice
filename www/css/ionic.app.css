@@ -11140,8 +11140,9 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
           background-image: url("../img/devices/iphone.png");
           background-repeat: no-repeat;
           background-size: contain;
-          width: 407px;
-          max-width: 407px; }
+          width: 98%;
+          max-width: 407px;
+          min-width: 330px; }
           .view-intro .scroll-content .intro-slider .content .phone.iphone img {
             display: block;
             margin: 0 auto;
@@ -11152,8 +11153,9 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
           background-image: url("../img/devices/android.png");
           background-repeat: no-repeat;
           background-size: contain;
-          width: 376px;
-          max-width: 376px; }
+          width: 98%;
+          max-width: 376px;
+          min-width: 330px; }
           .view-intro .scroll-content .intro-slider .content .phone.android img {
             display: block;
             margin: 0 auto;

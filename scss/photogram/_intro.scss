@@ -51,8 +51,9 @@
             background-image: url('../img/devices/iphone.png');
             background-repeat: no-repeat;
             background-size: contain;
-            width: 407px;
+            width: 98%;
             max-width: 407px;
+            min-width: 330px;
 
             img {
               display: block;
@@ -67,8 +68,9 @@
             background-image: url('../img/devices/android.png');
             background-repeat: no-repeat;
             background-size: contain;
-            width: 376px;
+            width: 98%;
             max-width: 376px;
+            min-width: 330px;
 
             img {
               display: block;
