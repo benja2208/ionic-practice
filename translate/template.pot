@@ -70,6 +70,7 @@ msgstr ""
 msgid "Complete your Profile"
 msgstr ""
 
+#: user/view/user.intro.html:41
 #: user/view/user.signin.html:26
 msgid "Connect your Facebook"
 msgstr ""
@@ -115,6 +116,7 @@ msgstr ""
 msgid "Facebook"
 msgstr ""
 
+#: user/controller/user.intro.ctrl.js:76
 #: user/controller/user.signin.ctrl.js:91
 msgid "Facebook error"
 msgstr ""
@@ -236,7 +238,7 @@ msgstr ""
 msgid "My Location"
 msgstr ""
 
-#: gallery/view/gallery.home.html:21
+#: gallery/view/gallery.home.html:20
 #: gallery/view/gallery.popular.html:20
 msgid "Nenhuma foto postagem por perto"
 msgstr ""

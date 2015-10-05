@@ -10935,6 +10935,10 @@ a.button {
       border: none; }
     .photogram .modal-comment .form form .item, .photogram .modal-comment .form .formly .item {
       border-bottom: none; }
+  .photogram .view-intro ion-footer-bar {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 0 10px;
+    height: 60px; }
   .photogram .view-intro .scroll-content {
     background-image: url("../img/bg.jpg");
     background-size: cover;

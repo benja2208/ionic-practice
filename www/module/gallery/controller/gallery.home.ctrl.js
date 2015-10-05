@@ -38,8 +38,7 @@
           url = 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FT5W6FJW5RAEN'
         }
 
-        $cordovaInAppBrowser.open(url, '_blank',
-          options);
+        $cordovaInAppBrowser.open(url, '_blank', options);
       };
 
       vm.load = function (force) {

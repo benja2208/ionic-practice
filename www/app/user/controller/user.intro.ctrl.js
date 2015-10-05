@@ -2,7 +2,7 @@
   'use strict';
   angular
     .module('module.user')
-    .controller('IntroCtrl', function (gettextCatalog) {
+    .controller('IntroCtrl', function (User, Notify, Loading, $state, AppConfig, gettextCatalog) {
       var vm = this;
 
       var currentPlatform = ionic.Platform.platform();
@@ -39,6 +39,44 @@
       vm.slideChanged = function (index) {
         vm.slideIndex = index;
       };
+
+      vm.facebook = function () {
+        Loading.start();
+        User
+          .facebookLogin()
+          .then(function (resp) {
+            console.log(resp);
+
+            Loading.end();
+            switch (resp.status) {
+            case 0:
+              // logado
+              $state.go(AppConfig.routes.home, {
+                clear: true
+              });
+              break;
+            case 1:
+              // novo user
+              $state.go('useravatar', {
+                clear: true
+              });
+              break;
+            case 2:
+              // merge
+              $state.go('usermerge', {
+                clear: true
+              })
+              break;
+            }
+          })
+          .catch(function () {
+            Loading.end();
+            Notify.alert({
+              title: 'Ops',
+              text: gettextCatalog.getString('Facebook error')
+            });
+          });
+      }
 
     });
 })(window, window.angular, window.ionic);

@@ -2,7 +2,7 @@
   'use strict';
   angular
     .module('module.gallery')
-    .directive('gallerySettings', function ($ionicModal, $rootScope, AppConfig, $cordovaInAppBrowser, Notify,
+    .directive('gallerySettings', function ($ionicModal, $cordovaInAppBrowser, $rootScope, AppConfig, Notify,
       GalleryShare, User, UserForm,
       $state) {
       return {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget xmlns="http://www.w3.org/ns/widgets" id="com.agenciafoccus.photogram" version="1.2.9">
+<widget xmlns="http://www.w3.org/ns/widgets" id="com.agenciafoccus.photogram" version="1.2.10">
   <name>Photogram</name>
   <description>
         Share photos of your moments
@@ -8,9 +8,11 @@
         Agencia Foccus
     </author>
   <content src="index.html"/>
+  <!-- Don't block any requests -->
   <access origin="*"/>
-  <allow-navigation href="*"/>
-  <allow-intent href="*"/>
+  <!-- Allow links to web pages to open in a browser -->
+  <allow-intent href="http://*/*"/>
+  <allow-intent href="https://*/*"/>
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>

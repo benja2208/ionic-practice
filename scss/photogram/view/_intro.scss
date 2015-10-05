@@ -1,5 +1,9 @@
 .view-intro {
-
+  ion-footer-bar {
+    background-color: rgba(255, 255, 255, 0.8);;
+    padding: 0 10px;
+    height: 60px;
+  }
   .scroll-content {
     background-image: url('../img/bg.jpg');
     background-size: cover;

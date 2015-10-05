@@ -34,7 +34,7 @@ if [[ -z "$3" ]]; then
     exit 1
 fi
 
-echo "       $2      Version: $3 " 
+echo "       $2      Version: $3 "
 # echo ""
 # echo ""
 # echo "---> Gulp Production"
@@ -55,7 +55,7 @@ echo "---> Zipaligning"
 
 mkdir -p releases/
 # rm releases/com.$company.$appname.v$version.apk
-zipalign -v 4 platforms/android/build/outputs/apk/android-release.apk releases/com.$company.$appname.v$version.apk
+$HOME/Library/Android/sdk/build-tools/23.0.1/zipalign -v 4 platforms/android/build/outputs/apk/android-release.apk releases/com.$company.$appname.v$version.apk
 
 
 # echo ""
