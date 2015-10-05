@@ -1,26 +1,35 @@
-<ion-view class="view-intro">
+<ion-view class="view-intro" can-swipe-back="false">
 
     <ion-content scroll="false">
         <div class="intro-slider">
-            <button class="button button-clear"
-                    ui-sref="user.signin"
-                    translate>Enter
-            </button>
-            <ion-slide-box active-slide="slideIndex"
-                           show-pager="true"
-                           on-slide-changed="Intro.slideChanged($index)">
+            <ion-slide-box active-slide="slideIndex" show-pager="true" on-slide-changed="Intro.slideChanged($index)">
 
                 <ion-slide ng-repeat="item in Intro.slides">
 
-                    <div class="content"
-                         ng-if="$index == Intro.slideIndex">
-                        <span class="top">{{ item.top }}</span>
+                    <div class="content" ng-if="$index == Intro.slideIndex">
+                        <span class="top"><h2>{{ item.top }}</h2></span>
 
                         <div class="phone {{ Intro.device }}">
                             <img ng-src="{{ item.img }}">
                         </div>
                     </div>
 
+                </ion-slide>
+
+                <ion-slide>
+                    <div class="content" ng-if="Intro.slides.length == Intro.slideIndex">
+
+                        <div class="last">
+                            <div class="logo2 step1">
+                                <img src="img/icon.png">
+                                <span class="icon2-logo"></span>
+                            </div>
+
+                            <button class="button button-block button-clear step2" ui-sref="user.signin" translate>Enter
+                            </button>
+                        </div>
+
+                    </div>
                 </ion-slide>
 
             </ion-slide-box>
