@@ -2,7 +2,8 @@
   'use strict';
   angular
     .module('module.gallery')
-    .directive('gallerySettings', function ($ionicModal, $rootScope, AppConfig, Notify, GalleryShare, User, UserForm,
+    .directive('gallerySettings', function ($ionicModal, $rootScope, AppConfig, $cordovaInAppBrowser, Notify,
+      GalleryShare, User, UserForm,
       $state) {
       return {
         restrict: 'A',
@@ -34,6 +35,16 @@
             $state.go(sref)
             scope.closeModal();
           };
+
+          scope.openLink = function (url) {
+            var options = {
+              location: 'yes',
+              clearcache: 'yes',
+              toolbar: 'yes'
+            };
+
+            $cordovaInAppBrowser.open(url, '_blank', options);
+          }
 
           scope.changeLanguage = function (language) {
             scope.form.language = language;

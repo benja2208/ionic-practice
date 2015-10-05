@@ -3,9 +3,9 @@
         <button class="button button-clear button-icon ion-ios-arrow-thin-left" ng-click="closeModal()"></button>
         <div class="title">{{ 'Settings' | translate }}</div>
     </ion-header-bar>
-    <ion-content>
+    <ion-content class="animated fadeIn">
 
-        <div class="list step1">
+        <div class="list">
             <label class="item item-input item-select">
                 <div class="input-label" style="z-index: 2;">
                     <h2>{{'Change language' | translate}}</h2>
@@ -13,38 +13,73 @@
                 <select ng-model="language" ng-change="changeLanguage(language)" ng-options="language.value as language.name for language in languages"> </select>
             </label>
 
-            <div class="item item-divider" translate>Share
-            </div>
-            <div class="item item-icon-left  item-icon-right" ng-click="share('facebook')">
-                <i class="icon ion-social-facebook"></i> Facebook
-                <i class="icon ion-ios-arrow-forward"></i>
-            </div>
-            <div class="item item-icon-left  item-icon-right" ng-click="share('twitter')">
-                <i class="icon ion-social-twitter"></i> Twitter
-                <i class="icon ion-ios-arrow-forward"></i>
-            </div>
+            <ion-toggle class="toggle-positive" ng-model="form.push">
+                <h3>
+                    <small translate>Notification</small>
+                </h3>
+                <p ng-if="!setting_preview" translate>Off</p>
 
-            <div class="item item-icon-left  item-icon-right" ng-click="share('whatsapp')">
-                <i class="icon ion-social-whatsapp"></i> Whatsapp
-                <i class="icon ion-ios-arrow-forward"></i>
-            </div>
+                <p ng-if="setting_preview" translate>On</p>
+            </ion-toggle>
 
-            <div class="item item-icon-left item-icon-right" ng-click="share('email')">
-                <i class="icon ion-email"></i> E-mail
-                <i class="icon ion-ios-arrow-forward"></i>
-            </div>
 
-            <!--  Terms-->
-            <div class="item item-divider" translate>Terms
-            </div>
-            <!--<div class="item"-->
-            <!--translate>About-->
-            <!--</div>-->
+            <!--<ion-item class="item-icon-right" ng-click="showSync();">-->
+            <!--<h3>-->
+            <!--<small translate>Synced Contacts</small>-->
+            <!--</h3>-->
+            <!--<p translate>On</p>-->
+            <!--<i class="icon ion-ios-arrow-right"></i>-->
+            <!--</ion-item>-->
+            <!--<ion-item class="item-icon-right" ng-click="show();">-->
+            <!--<h3>-->
+            <!--<small translate>Invite Friends</small>-->
+            <!--</h3>-->
+            <!--<i class="icon ion-ios-arrow-right"></i>-->
+            <!--</ion-item>-->
+            <!--<ion-toggle ng-modal="form.camera">-->
+            <!--<h3>-->
+            <!--<small translate>Save Photos to the Camera Roll</small>-->
+            <!--</h3>-->
+            <!--<p ng-if="!setting_camera" translate>Off</p>-->
 
-            <div class="item" open-terms translate>Terms and Conditions
-            </div>
+            <!--<p ng-if="setting_camera" translate>On</p>-->
+            <!--</ion-toggle>-->
+
+            <ion-item class="item-icon-right" ng-click="openLink('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FAW4JZS7KJM5S')">
+                <h3>
+                    <small translate>Buy Source Code</small>
+                </h3>
+                <i class="icon ion-ios-arrow-right"></i>
+            </ion-item>
+
+            <ion-item class="item-icon-right" ng-click="openLink('http://photogramapp.com')">
+                <h3>
+                    <small translate>Help</small>
+                </h3>
+                <i class="icon ion-ios-arrow-right"></i>
+            </ion-item>
+
+            <ion-item class="item-icon-right" ng-click="openLink('http://photogramapp.com')">
+                <h3>
+                    <small translate>Privacy Policy</small>
+                </h3>
+                <i class="icon ion-ios-arrow-right"></i>
+            </ion-item>
+            <ion-item class="item-icon-right" ng-click="openLink('http://photogramapp.com')">
+                <h3>
+                    <small translate>Terms of Service</small>
+                </h3>
+                <i class="icon ion-ios-arrow-right"></i>
+            </ion-item>
+            <ion-item class="item-icon-right" ng-click="show();">
+                <h3>
+                    <small translate>Report a Problem</small>
+                </h3>
+                <i class="icon ion-ios-arrow-right"></i>
+            </ion-item>
+
         </div>
-        <div class="padding step2">
+        <div class="padding">
             <button ng-click="link('logout')" class="button button-block button-positive" translate>Logout
             </button>
         </div>
