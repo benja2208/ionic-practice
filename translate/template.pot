@@ -4,41 +4,64 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
-#: user/directive/user.forgot.pass.directive.js:30
+#: user/directive/user.forgot.pass.directive.js:31
 msgid "A new password will be sent to your e-mail address"
 msgstr ""
 
-#: gallery/view/gallery.popover.home.html:10
+#: gallery/view/gallery.popover.home.html:8
 msgid "About"
 msgstr ""
 
-#: gallery/view/gallery.activity.html:5
+#: user/directive/user.forgot.pass.directive.js:63
+msgid "Access your accout mail"
+msgstr ""
+
+#: gallery/view/gallery.activity.html:4
 msgid "Activities"
 msgstr ""
 
-#: gallery/view/gallery.photos.list.html:57
+#: gallery/service/gallery.model.js:1046
+msgid "add comment"
+msgstr ""
+
+#: gallery/view/gallery.photos.list.html:44
+#: gallery/view/gallery.profile.modal.html:100
 msgid "Add comment"
+msgstr ""
+
+#: gallery/service/gallery.model.js:1045
+msgid "add photo"
+msgstr ""
+
+#: gallery/view/gallery.settings.modal.html:50
+msgid "Buy Source Code"
 msgstr ""
 
 #: ion-photo/ion-photo.js:66
 msgid "Camera"
 msgstr ""
 
-#: gallery/service/gallery.share.js:71
-#: ion-photo/ion-photo.js:73
+#: gallery/service/gallery.share.js:67
+#: ion-crop/elements/ion-crop.js:108
+#: ion-crop/elements/ion-crop.js:60
+#: ion-photo/ion-photo.js:71
 #: user/directive/user.forgot.pass.directive.js:33
 msgid "Cancel"
 msgstr ""
 
-#: gallery/view/gallery.settings.modal.html:13
+#: ion-crop/elements/ion-crop.js:59
+msgid "Change Image"
+msgstr ""
+
+#: gallery/view/gallery.settings.modal.html:11
 msgid "Change language"
 msgstr ""
 
-#: gallery/view/gallery.photo.html:45
+#: gallery/view/gallery.photo.html:38
 msgid "Comment"
 msgstr ""
 
-#: gallery/view/gallery.comment.directive.html:5
+#: gallery/view/gallery.comment.directive.html:4
 msgid "Comments"
 msgstr ""
 
@@ -47,41 +70,44 @@ msgstr ""
 msgid "Complete your Profile"
 msgstr ""
 
-#: user/view/user.login.html:35
+#: user/view/user.signin.html:26
 msgid "Connect your Facebook"
 msgstr ""
 
-#: gallery/view/gallery.account.tabs.html:41
-#: gallery/view/gallery.profile.tabs.html:37
-msgid "EDIT YOUR PROFILE"
+#: user/controller/user.intro.ctrl.js:30
+msgid "Create your Social Photo Share with Ionic Framework!"
 msgstr ""
 
-#: gallery/view/gallery.profile.edit.modal.html:5
+#: gallery/view/gallery.profile.edit.modal.html:4
 msgid "Edit Profile"
 msgstr ""
 
-#: gallery/service/gallery.share.js:67
+#: gallery/view/gallery.account.html:39
+msgid "EDIT YOUR PROFILE"
+msgstr ""
+
+#: gallery/service/gallery.share.js:64
 #: user/directive/user.forgot.pass.directive.js:24
 msgid "Email"
 msgstr ""
 
-#: ion-photo/ion-photo.js:93
+#: ion-photo/ion-photo.js:91
 msgid "Enabled your camera"
 msgstr ""
 
-#: user/controller/user.intro.ctrl.js:22
+#: user/controller/user.intro.ctrl.js:27
 msgid "Enjoy the most amazing photos"
 msgstr ""
 
-#: user/view/user.intro.html:5
-#: user/view/user.login.html:16
-#: user/view/user.login.html:2
-#: user/view/user.tabs.html:16
-#: user/view/user.tabs.html:2
+#: user/view/user.intro.html:28
+#: user/view/user.signin.html:1
+#: user/view/user.signin.html:12
+#: user/view/user.tabs.html:1
+#: user/view/user.tabs.html:14
 msgid "Enter"
 msgstr ""
 
-#: ion-photo/ion-photo.js:92
+#: ion-photo/ion-photo.js:90
 msgid "Error"
 msgstr ""
 
@@ -89,44 +115,66 @@ msgstr ""
 msgid "Facebook"
 msgstr ""
 
-#: gallery/view/gallery.photo.feedback.modal.html:5
+#: user/controller/user.signin.ctrl.js:91
+msgid "Facebook error"
+msgstr ""
+
+#: gallery/view/gallery.photo.feedback.modal.html:4
 msgid "Feedback"
 msgstr ""
 
-#: user/controller/user.avatar.ctrl.js:30
+#: user/controller/user.avatar.ctrl.js:35
 msgid "Fill out the fields in red"
 msgstr ""
 
-#: user/controller/user.intro.ctrl.js:18
-msgid "Find and follow people around"
+#: user/controller/user.intro.ctrl.js:24
+msgid "Find people around you and enjoy your photos"
 msgstr ""
 
-#: gallery/view/gallery.user.list.html:5
+#: gallery/view/gallery.profile.modal.html:38
+msgid "Follow"
+msgstr ""
+
+#: gallery/view/gallery.user.list.html:4
 msgid "Follow Users"
 msgstr ""
 
-#: user/controller/user.intro.ctrl.js:14
-msgid "Follow your friends and relive"
+#: user/controller/user.intro.ctrl.js:21
+msgid "Follow your friends and relive their moments"
 msgstr ""
 
-#: gallery/view/gallery.account.tabs.html:30
+#: gallery/view/gallery.account.html:28
+#: gallery/view/gallery.profile.modal.html:25
 msgid "Followers"
 msgstr ""
 
-#: gallery/view/gallery.account.tabs.html:35
+#: gallery/view/gallery.profile.modal.html:39
+msgid "Following"
+msgstr ""
+
+#: gallery/view/gallery.account.html:34
+#: gallery/view/gallery.profile.modal.html:31
 msgid "Followings"
 msgstr ""
 
-#: user/view/user.login.html:13
+#: user/directive/user.forgot.pass.directive.js:62
+msgid "Forgot your password"
+msgstr ""
+
+#: user/view/user.signin.html:9
 msgid "Forgot your password?"
 msgstr ""
 
-#: ion-photo/ion-photo.js:69
+#: ion-photo/ion-photo.js:68
 msgid "Gallery"
 msgstr ""
 
 #: gallery/view/gallery.view.html:1
 msgid "Gallery preview"
+msgstr ""
+
+#: gallery/view/gallery.settings.modal.html:57
+msgid "Help"
 msgstr ""
 
 #: gallery/service/gallery.share.js:8
@@ -137,12 +185,12 @@ msgstr ""
 msgid "Install the application and follow me!"
 msgstr ""
 
-#: user/directive/user.forgot.pass.directive.js:45
+#: user/directive/user.forgot.pass.directive.js:44
 msgid "Invalid Email"
 msgstr ""
 
-#: user/controller/user.avatar.ctrl.js:29
-#: user/controller/user.merge.js:45
+#: user/controller/user.avatar.ctrl.js:34
+#: user/controller/user.merge.js:47
 msgid "Invalid form"
 msgstr ""
 
@@ -150,24 +198,29 @@ msgstr ""
 msgid "Join me from"
 msgstr ""
 
-#: gallery/view/gallery.photo.html:23
+#: gallery/view/gallery.photo.html:19
 msgid "Like"
 msgstr ""
 
-#: gallery/view/gallery.like.directive.html:5
-#: gallery/view/gallery.photos.list.html:41
+#: gallery/service/gallery.model.js:1047
+msgid "like photo"
+msgstr ""
+
+#: gallery/view/gallery.like.directive.html:4
+#: gallery/view/gallery.photos.list.html:31
+#: gallery/view/gallery.profile.modal.html:86
 msgid "Likes"
 msgstr ""
 
-#: gallery/view/gallery.profile.edit.modal.html:31
+#: gallery/view/gallery.profile.edit.modal.html:24
 msgid "Link Facebook"
 msgstr ""
 
-#: gallery/view/gallery.capture.modal.html:28
+#: gallery/view/gallery.capture.modal.html:20
 msgid "Location"
 msgstr ""
 
-#: gallery/view/gallery.settings.modal.html:63
+#: gallery/view/gallery.settings.modal.html:83
 msgid "Logout"
 msgstr ""
 
@@ -175,7 +228,7 @@ msgstr ""
 msgid "Map"
 msgstr ""
 
-#: user/view/user.merge.html:42
+#: user/view/user.merge.html:35
 msgid "Merge Facebook"
 msgstr ""
 
@@ -183,42 +236,98 @@ msgstr ""
 msgid "My Location"
 msgstr ""
 
-#: gallery/view/gallery.home.html:25
+#: gallery/view/gallery.home.html:21
+#: gallery/view/gallery.popular.html:20
 msgid "Nenhuma foto postagem por perto"
 msgstr ""
 
-#: gallery/view/gallery.comment.directive.html:34
+#: gallery/view/gallery.comment.directive.html:29
 msgid "No Comments"
 msgstr ""
 
-#: user/view/user.merge.html:33
+#: gallery/view/gallery.account.html:59
+msgid "No Post"
+msgstr ""
+
+#: gallery/view/gallery.settings.modal.html:18
+msgid "Notification"
+msgstr ""
+
+#: gallery/view/gallery.settings.modal.html:20
+msgid "Off"
+msgstr ""
+
+#: gallery/view/gallery.settings.modal.html:22
+msgid "On"
+msgstr ""
+
+#: user/view/user.signin.html:19
+msgid "or"
+msgstr ""
+
+#: user/view/user.merge.html:29
 msgid "Password"
 msgstr ""
 
-#: user/controller/user.merge.js:46
+#: ion-crop/elements/ion-crop.js:56
+msgid "Photo Album"
+msgstr ""
+
+#: ion-crop/elements/ion-crop.js:54
+msgid "Photo Camera"
+msgstr ""
+
+#: user/controller/user.merge.js:48
 msgid "Please enter your email"
 msgstr ""
 
-#: gallery/view/gallery.account.tabs.html:25
+#: gallery/view/gallery.popular.html:3
+#: gallery/view/gallery.search.grid.html:1
+msgid "Popular"
+msgstr ""
+
+#: gallery/view/gallery.account.html:22
+#: gallery/view/gallery.profile.modal.html:19
 msgid "Posts"
+msgstr ""
+
+#: gallery/view/gallery.settings.modal.html:64
+msgid "Privacy Policy"
 msgstr ""
 
 #: gallery/view/gallery.profile.photos.html:1
 msgid "Profile"
 msgstr ""
 
-#: gallery/view/gallery.account.tabs.html:54
+#: gallery/view/gallery.account.html:53
+#: gallery/view/gallery.profile.modal.html:52
 msgid "Recent"
 msgstr ""
 
-#: user/view/user.register.html:1
-#: user/view/user.register.html:9
-#: user/view/user.tabs.html:18
+#: gallery/service/gallery.model.js:1049
+msgid "register"
+msgstr ""
+
+#: user/view/user.signup.html:1
+#: user/view/user.signup.html:7
+#: user/view/user.tabs.html:15
 msgid "Register"
 msgstr ""
 
-#: gallery/view/gallery.profile.edit.modal.html:34
-#: user/view/user.avatar.html:28
+#: gallery/service/gallery.model.js:1050
+msgid "registered"
+msgstr ""
+
+#: gallery/view/gallery.settings.modal.html:76
+msgid "Report a Problem"
+msgstr ""
+
+#: ion-crop/elements/ion-crop.js:109
+msgid "Save"
+msgstr ""
+
+#: gallery/view/gallery.profile.edit.modal.html:27
+#: user/view/user.avatar.html:23
 msgid "Save Profile"
 msgstr ""
 
@@ -227,54 +336,50 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: user/directive/user.forgot.pass.directive.js:37
+#: user/directive/user.forgot.pass.directive.js:36
 msgid "Send"
 msgstr ""
 
 #: gallery/view/gallery.popover.home.html:5
-#: gallery/view/gallery.settings.modal.html:5
+#: gallery/view/gallery.settings.modal.html:4
 msgid "Settings"
 msgstr ""
 
-#: gallery/service/gallery.share.js:70
+#: gallery/service/gallery.share.js:66
 #: gallery/view/gallery.capture.html:1
-#: gallery/view/gallery.settings.modal.html:19
 msgid "Share"
 msgstr ""
 
-#: gallery/view/gallery.capture.modal.html:37
-msgid "Share In"
-msgstr ""
-
-#: gallery/view/gallery.capture.modal.html:5
-#: ion-photo/ion-photo.js:72
-msgid "Share Photo"
-msgstr ""
-
-#: gallery/view/gallery.capture.html:8
+#: gallery/view/gallery.capture.html:7
 msgid "Share photo"
 msgstr ""
 
-#: user/controller/user.intro.ctrl.js:10
-#: user/view/user.tabs.html:12
+#: gallery/view/gallery.capture.modal.html:4
+#: ion-photo/ion-photo.js:70
+msgid "Share Photo"
+msgstr ""
+
+#: user/controller/user.intro.ctrl.js:18
+#: user/view/user.tabs.html:11
 msgid "Share your most amazing moments"
 msgstr ""
 
-#: gallery/view/gallery.settings.modal.html:50
-msgid "Terms"
+#: user/view/user.signup.html:15
+msgid ""
+"Terms and\n"
+"                                                                                                 Conditions"
 msgstr ""
 
-#: gallery/view/gallery.settings.modal.html:57
-#: user/view/user.register.html:20
-msgid "Terms and Conditions"
+#: gallery/view/gallery.settings.modal.html:70
+msgid "Terms of Service"
 msgstr ""
 
-#: gallery/service/gallery.share.js:17
+#: gallery/service/gallery.share.js:18
 msgid "Thank you for sharing!!"
 msgstr ""
 
 #: gallery/service/gallery.feedback.model.js:32
-#: gallery/service/gallery.share.js:16
+#: gallery/service/gallery.share.js:17
 msgid "Thanks"
 msgstr ""
 
@@ -282,58 +387,26 @@ msgstr ""
 msgid "Thanks for your Feedback"
 msgstr ""
 
-#: gallery/service/gallery.share.js:61
+#: gallery/service/gallery.share.js:60
 msgid "Twitter"
 msgstr ""
 
-#: gallery/service/gallery.share.js:64
+#: gallery/service/gallery.model.js:1048
+msgid "unlike photo"
+msgstr ""
+
+#: gallery/service/gallery.share.js:62
 msgid "Whatsapp"
 msgstr ""
 
-#: user/view/user.register.html:20
+#: user/view/user.signup.html:15
 msgid "When creating your account, you agree to our"
 msgstr ""
 
-#: gallery/view/gallery.capture.modal.html:24
+#: gallery/view/gallery.capture.modal.html:17
 msgid "Write a Legend"
 msgstr ""
 
-#: user/view/user.merge.html:11
+#: user/view/user.merge.html:10
 msgid "Your email is already associated with another account, please enter your password"
-msgstr ""
-
-#: gallery/service/gallery.model.js:887
-msgid "add comment"
-msgstr ""
-
-#: gallery/service/gallery.model.js:886
-msgid "add photo"
-msgstr ""
-
-#: gallery/view/gallery.profile.tabs.html:26
-msgid "followers"
-msgstr ""
-
-#: gallery/service/gallery.model.js:888
-msgid "like photo"
-msgstr ""
-
-#: user/view/user.login.html:27
-msgid "or"
-msgstr ""
-
-#: gallery/view/gallery.profile.tabs.html:21
-msgid "posts"
-msgstr ""
-
-#: gallery/service/gallery.model.js:890
-msgid "register"
-msgstr ""
-
-#: gallery/service/gallery.model.js:891
-msgid "registered"
-msgstr ""
-
-#: gallery/service/gallery.model.js:889
-msgid "unlike photo"
 msgstr ""
