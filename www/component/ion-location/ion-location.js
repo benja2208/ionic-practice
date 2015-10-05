@@ -66,7 +66,6 @@
               '</ion-header-bar>' +
               '<ion-content padding="false">' +
               '<ion-list>' +
-              '<ion-item ng-click="findMe()" ng-hide="search.suggestions.length">{{ \'My Location\' | translate }}</ion-item>' +
               '<ion-item ng-repeat="suggestion in search.suggestions" ng-click="choosePlace(suggestion)" ng-bind="suggestion.description"></ion-item>' +
               '<ion-item class="item-divider"><img src="https://developers.google.com/maps/documentation/places/images/powered-by-google-on-white.png"alt=""/></ion-item>' +
               '</ion-list>' +
@@ -83,6 +82,14 @@
               $scope.modalLocation.hide();
               $scope.modalLocation.remove();
             };
+
+
+            GeoService
+              .searchAddress('São Paulo')
+              .then(function (result) {
+                console.log(result);
+                $scope.search.suggestions = result;
+              });
 
 
             $scope.$watch('search.query', function (newValue) {
@@ -291,15 +298,16 @@
       }
 
       function parseAddress(place) {
-        console.log(place);
+        console.log('parseAddress', place);
         var address = {
           resume: '',
           geo: {
-            latitude: (place.geometry.location.k) ? place.geometry.location.k : place.geometry.location.G,
-            longitude: (place.geometry.location.D) ? place.geometry.location.D : place.geometry.location.K
+            latitude: place.geometry.location.H,
+            longitude: place.geometry.location.L
           }
         };
         var image = src(address.geo.latitude, address.geo.longitude, 16, 900, 200);
+
         for (var i = 0; i < place.address_components.length; i++) {
           var addressType = place.address_components[i].types[0];
           if (componentForm[addressType]) {
@@ -334,6 +342,8 @@
       };
 
       function src(lat, lng, zoom, w, h) {
+        console.log('src latitude', lat, lng, zoom, w, h);
+
         var link = 'http://maps.googleapis.com/maps/api/staticmap?center=' + lat + ',' + lng + '&zoom=' + zoom +
           '&scale=1&size=' + w + 'x' + h +
           '&maptype=roadmap&format=jpg&visual_refresh=true&markers=size:small%7Ccolor:0xff2600%7Clabel:0%7C' + lat +
