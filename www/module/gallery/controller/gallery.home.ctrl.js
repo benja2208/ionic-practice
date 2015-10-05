@@ -2,7 +2,7 @@
   'use strict';
   angular
     .module('module.gallery')
-    .controller('GalleryHomeCtrl', function ($scope, $rootScope, $ionicPopover, GalleryShare, $stateParams,
+    .controller('GalleryHomeCtrl', function ($scope, $rootScope, $cordovaInAppBrowser, $ionicPopover, $stateParams,
       PhotoService, Gallery) {
       var vm = this;
       vm.loading = true;
@@ -25,7 +25,22 @@
         vm.load(force);
       };
 
-      vm.openShare = GalleryShare.open;
+      vm.buySource = function () {
+        var options = {
+          location: 'yes',
+          clearcache: 'yes',
+          toolbar: 'yes'
+        };
+
+        var lang = $rootScope.lang.value;
+        var url = 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FAW4JZS7KJM5S';
+        if (lang === 'pt_BR') {
+          url = 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FT5W6FJW5RAEN'
+        }
+
+        $cordovaInAppBrowser.open(url, '_blank',
+          options);
+      };
 
       vm.load = function (force) {
         console.log('Load ');
@@ -38,7 +53,7 @@
           .home(vm.page)
           .then(function (resp) {
 
-              console.log(resp);
+            console.log(resp);
 
             vm.loading = false;
 

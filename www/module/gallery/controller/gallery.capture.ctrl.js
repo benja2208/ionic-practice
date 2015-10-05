@@ -2,7 +2,8 @@
   'use strict';
   angular
     .module('module.gallery')
-    .controller('GalleryCaptureCtrl', function ($scope, User, $ionicModal, PhotoService, GallerySetting, ParseImageService, $state, Gallery, GalleryForm, Loading) {
+    .controller('GalleryCaptureCtrl', function ($scope, User, $ionicModal, PhotoService, GallerySetting,
+      ParseImageService, $state, Gallery, GalleryForm, Loading) {
 
       $scope.map = {
         center: {

@@ -2,7 +2,9 @@
   'use strict';
   angular
     .module('module.user')
-    .controller('UserSigninCtrl', function ($scope, AppConfig, $ionicPopup, UserForm, $state, gettextCatalog, Notify, User) {
+    .controller('UserSigninCtrl', function ($scope, AppConfig, $ionicPopup, UserForm, Loading, $state, gettextCatalog,
+      Notify,
+      User) {
       var vm = this;
       vm.routeLogged = AppConfig.routes.home;
 
@@ -54,17 +56,19 @@
       };
 
       vm.facebook = function () {
+        Loading.start();
         User
           .facebookLogin()
           .then(function (resp) {
             console.log(resp);
 
+            Loading.end();
             switch (resp.status) {
             case 0:
               // logado
               $state.go(AppConfig.routes.home, {
                 clear: true
-              })
+              });
               break;
             case 1:
               // novo user
@@ -79,6 +83,13 @@
               })
               break;
             }
+          })
+          .catch(function () {
+            Loading.end();
+            Notify.alert({
+              title: 'Ops',
+              text: gettextCatalog.getString('Facebook error')
+            });
           });
       }
 

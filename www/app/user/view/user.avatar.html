@@ -1,35 +1,26 @@
 <ion-view title="{{ 'Complete your Profile' | translate }}">
 
-    <ion-nav-bar class="bar bar-positive bar-mop"
-                 align-title="left">
+    <ion-nav-bar class="bar bar-positive bar-mop" align-title="left">
     </ion-nav-bar>
 
     <ion-content class="view-avatar">
 
         <div class="row step1">
             <div class="col">
-                <img class="avatar"
-                     user-avatar
-                     ng-src="{{ UserAvatar.form.src }}" />
+                <img class="avatar" user-avatar ng-src="{{ UserAvatar.form.src }}" />
             </div>
         </div>
         <div class="step2">
             <label class="item item-input">
                 <i class="icon icon-envelope placeholder-icon"></i>
-                <input type="text"
-                       ng-model="UserAvatar.form.email"
-                       disabled>
+                <input type="text" ng-model="UserAvatar.form.email" disabled>
             </label>
-            <formly-form model="UserAvatar.form"
-                         fields="UserAvatar.formFields"
-                         form="UserAvatar.rForm">
+            <formly-form model="UserAvatar.form" fields="UserAvatar.formFields" form="UserAvatar.rForm">
             </formly-form>
         </div>
 
         <div class="padding step3">
-            <button ng-click="UserAvatar.submitAvatar()"
-                    class="button button-block button-positive "
-                    translate>Save Profile
+            <button ng-click="UserAvatar.submitAvatar()" class="button button-block button-positive " translate>Save Profile
             </button>
         </div>
     </ion-content>

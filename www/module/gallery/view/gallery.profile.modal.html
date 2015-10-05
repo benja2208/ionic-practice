@@ -1,7 +1,6 @@
 <ion-modal-view class="modal-profile gallery-profile">
     <ion-header-bar class="bar-positive">
-        <button class="button button-clear button-icon ion-ios-arrow-thin-left"
-                ng-click="closeModal()"></button>
+        <button class="button button-clear button-icon ion-ios-arrow-thin-left" ng-click="closeModal()"></button>
         <div class="title">{{ user.name }}</div>
     </ion-header-bar>
     <ion-content overflow-scroll="true">
@@ -9,30 +8,25 @@
         <div class="profile-top">
             <div class="row">
                 <div class="col-25">
-                    <img class="avatar"
-                         user-avatar
-                         ng-src="{{ user.src }}" />
+                    <img class="avatar" user-avatar ng-src="{{ user.src }}" />
                 </div>
                 <div class="col col-statics">
                     <div class="row">
                         <div class="col">
                             <gallery-loading loading="loadingPhotos"></gallery-loading>
-                            <span ng-if="!loadingPhotos"
-                                  class="text-center">{{ user.qtdPhotos  }}</span>
+                            <span ng-if="!loadingPhotos" class="text-center">{{ user.qtdPhotos  }}</span>
 
                             <h3 translate>Posts</h3>
                         </div>
                         <div class="col">
                             <gallery-loading loading="loadingFollowers"></gallery-loading>
-                            <span ng-if="!loadingFollowers"
-                                  class="text-center">{{ user.qtdFollowers }}</span>
+                            <span ng-if="!loadingFollowers" class="text-center">{{ user.qtdFollowers }}</span>
 
                             <h3 translate>Followers</h3>
                         </div>
                         <div class="col">
                             <gallery-loading loading="loadingFollowing"></gallery-loading>
-                            <span ng-if="!loadingFollowing"
-                                  class="text-center">{{ user.qtdFollowing  }}</span>
+                            <span ng-if="!loadingFollowing" class="text-center">{{ user.qtdFollowing  }}</span>
 
                             <h3 translate>Followings</h3>
                         </div>
@@ -40,15 +34,9 @@
                     <div class="row col-edit">
                         <div class="col">
                             <gallery-loading loading="loadingFollow"></gallery-loading>
-                            <button ng-if="!loadingFollow"
-                                    ng-class="{'button-unfollow': user.follow, 'button-follow': !user.follow}"
-                                    ng-click="follow()"
-
-                                    class="button">
-                                <span ng-show="!user.follow"
-                                      translate>Follow</span>
-                                <span ng-show="user.follow"
-                                      translate>Following</span>
+                            <button ng-if="!loadingFollow" ng-class="{'button-unfollow': user.follow, 'button-follow': !user.follow}" ng-click="follow()" class="button">
+                                <span ng-show="!user.follow" translate>Follow</span>
+                                <span ng-show="user.follow" translate>Following</span>
                             </button>
                         </div>
                     </div>
@@ -61,15 +49,13 @@
             </div>
 
         </div>
-        <div class="item item-divider"
-             translate>Recent
+        <div class="item item-divider" translate>Recent
         </div>
         <div class="profile-view">
             <gallery-loading loading="loadingGallery"></gallery-loading>
 
             <!--  Photo List-->
-            <div class="list card animated fadeIn"
-                 ng-repeat="gallery in data ">
+            <div class="list card animated fadeIn" ng-repeat="gallery in data ">
 
                 <div class="item item-avatar">
                     <img ng-src="{{gallery.user.src}}">
@@ -80,34 +66,23 @@
                     <span>{{gallery.created | amTimeAgo}}</span>
                 </div>
 
-                <div class="item item-body"
-                     ng-click="like = !like">
-                    <i class="icon"
-                       ng-if="like"></i> <img cache-src="{{gallery.src}}">
+                <div class="item item-body" ng-click="like = !like">
+                    <i class="icon" ng-if="like"></i> <img cache-src="{{gallery.src}}">
                 </div>
                 <div class="item item-buttons">
                     <div class="row">
                         <div class="col col-75">
-                            <button gallery-like
-                                    ng-model="gallery"
-                                    ng-class="(gallery.liked ===1) ? 'ion-ios-heart' : 'ion-ios-heart-outline' "
-                                    class="button-clear button-icon button-heart"></button>
-                            <button gallery-comment
-                                    ng-model="gallery"
-                                    class="button-clear button-icon ion-ios-chatbubble-outline"></button>
+                            <button gallery-like ng-model="gallery" ng-class="(gallery.liked ===1) ? 'ion-ios-heart' : 'ion-ios-heart-outline' " class="button-clear button-icon button-heart"></button>
+                            <button gallery-comment ng-model="gallery" class="button-clear button-icon ion-ios-chatbubble-outline"></button>
                         </div>
                         <div class="col text-right">
-                            <button gallery-photo-feedback
-                                    gallery="{{ gallery.id }}"
-                                    class="button-clear button-icon ion-android-more-vertical"></button>
+                            <button gallery-photo-feedback gallery="{{ gallery.id }}" class="button-clear button-icon ion-android-more-vertical"></button>
                         </div>
                     </div>
                 </div>
                 <div class="padding">
 
-        <span class="likes"
-              gallery-like
-              gallery="{{ gallery }}"><i class="icon ion-ios-heart"></i>
+                    <span class="likes" gallery-like gallery="{{ gallery }}"><i class="icon ion-ios-heart"></i>
                     {{ gallery.qtdLike + ' ' }} {{  'Likes' | translate }}</span>
 
 
@@ -116,16 +91,13 @@
                             <span class="username">{{ gallery.user.name }}</span>
                             <span class="comment">{{ gallery.item.title }}</span>
                         </div>
-                        <div class="comment-item"
-                             ng-repeat="item in gallery.comments">
+                        <div class="comment-item" ng-repeat="item in gallery.comments">
                             <span class="username">{{ item.user.name }}</span>
                             <span class="comment">{{ item.text }}</span>
                         </div>
                     </div>
 
-                    <button class="button button-block button-clear button-comment "
-                            gallery-comment
-                            ng-model="gallery">{{ 'Add comment' | translate }}
+                    <button class="button button-block button-clear button-comment " gallery-comment ng-model="gallery">{{ 'Add comment' | translate }}
                     </button>
                 </div>
             </div>

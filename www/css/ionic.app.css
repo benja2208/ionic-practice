@@ -10730,215 +10730,6 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
-.map-container {
-  min-height: 200px;
-  height: 100%;
-  width: 100%;
-  margin: 0px;
-  position: relative;
-  display: block; }
-  .map-container .angular-google-map-container {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background: #ddd; }
-
-input[disabled], select[disabled], textarea[disabled], input[readonly]:not(.cloned-text-input), textarea[readonly]:not(.cloned-text-input), select[readonly] {
-  background-color: #fff;
-  color: #999; }
-
-form .input-select, .formly .input-select {
-  background-color: #fff;
-  background-image: url("../img/icons/arrow_expand.svg");
-  background-repeat: no-repeat;
-  background-position: 98% 50%;
-  background-size: 20px 20px;
-  border: none;
-  -webkit-box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.25);
-  -o-box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.25);
-  box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.25);
-  filter: progid:DXImageTransform.Microsoft.Shadow(color=#cfcfcf, Direction=180, Strength=2);
-  color: #909090;
-  font-size: 14px;
-  font-weight: 600;
-  height: 40px;
-  width: 100%;
-  padding-left: 10px;
-  -webkit-appearance: none;
-  margin: 15px 0px; }
-
-form i.icon.error, .formly i.icon.error {
-  color: #ef4e3a; }
-
-form input + i.icon.error, .formly input + i.icon.error {
-  display: none;
-  margin-left: 8px; }
-
-form.ng-submitted input.ng-invalid + i.icon.error, .formly.ng-submitted input.ng-invalid + i.icon.error {
-  display: block; }
-
-form .has-error, .formly .has-error {
-  border-left: 3px solid #cc2511 !important;
-  border-right: 3px solid #cc2511 !important; }
-
-form .has-success, .formly .has-success {
-  border-left: 3px solid #3d8b3d !important;
-  border-right: 3px solid #3d8b3d !important; }
-
-form.ng-submitted input.ng-valid + i.icon.error, .formly.ng-submitted input.ng-valid + i.icon.error {
-  display: none; }
-
-form .item, .formly .item {
-  border: none;
-  border-bottom: 1px solid #eee !important;
-  margin-bottom: 1px;
-  background-color: #fff;
-  color: #444;
-  position: relative;
-  z-index: 2;
-  display: block;
-  margin: -1px;
-  padding: 16px;
-  border-width: 1px;
-  border-style: solid;
-  font-size: 16px; }
-
-form .item-input, .formly .item-input {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  padding: 6px 0 5px 16px;
-  border: none;
-  margin-bottom: 1px; }
-
-form .item:first-child, .formly .item:first-child {
-  border-top: none;
-  padding-top: 10px;
-  padding-bottom: 10px; }
-
-.item-floating-label {
-  display: block;
-  background-color: transparent;
-  box-shadow: none; }
-
-.button-white {
-  background-color: #fff;
-  color: #000 !important;
-  border-width: 0px;
-  margin: 0px !important; }
-
-.icon-vermelho {
-  color: red; }
-
-.icon-verde {
-  color: green; }
-
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-  color: #aaa;
-  text-indent: 0; }
-
-@font-face {
-  font-family: 'icomoon';
-  src: url("../fonts/icomoon.eot?jmwoa9");
-  src: url("../fonts/icomoon.eot?#iefixjmwoa9") format("embedded-opentype"), url("../fonts/icomoon.ttf?jmwoa9") format("truetype"), url("../fonts/icomoon.woff?jmwoa9") format("woff"), url("../fonts/icomoon.svg?jmwoa9#icomoon") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-[class^="icon2-"], [class*=" icon2-"] {
-  font-family: 'icomoon';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-.icon2-logo:before {
-  content: "\e600"; }
-
-.icon2-camera:before {
-  content: "\e601"; }
-
-.ionic-contrib-blur {
-  overflow: hidden;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  -webkit-filter: blur(20px);
-  opacity: .25;
-  z-index: 1; }
-
-.bar-frosted {
-  background-color: #f7f7f7; }
-
-.platform-android .has-header {
-  top: 56px; }
-
-.platform-android .has-tab ion-header-bar, .platform-android .has-tab .bar {
-  border: none;
-  box-shadow: none; }
-
-.platform-android .nav-bar-tabs-top .bar.bar-header, .platform-android .tabs-bottom .bar.bar-header {
-  border: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none; }
-
-.platform-android .nav-bar-tabs-top .scroll-content, .platform-android .tabs-bottom .scroll-content {
-  bottom: 50px;
-  top: 56px; }
-
-.platform-android .view-tab .scroll-content {
-  top: 93px; }
-
-.platform-android .bar.bar-header {
-  height: 56px; }
-
-.platform-android .bar.bar-header .title {
-  left: 0;
-  right: 45px;
-  line-height: 56px;
-  height: 56px;
-  display: block; }
-  .platform-android .bar.bar-header .title .nav-bar-title {
-    display: block;
-    height: 56px;
-    padding: 10px 0; }
-    .platform-android .bar.bar-header .title .nav-bar-title img {
-      margin-top: 6px; }
-
-.platform-android .modal .bar.bar-header .button:last-child {
-  top: 0;
-  right: 0;
-  width: 56px;
-  height: 56px;
-  color: white; }
-
-.bar-dark.bar.bar-header .buttons, .bar-dark.bar.bar-header .button:last-child {
-  top: 0;
-  right: 0;
-  width: 44px;
-  height: 44px;
-  color: white; }
-
 /*
     Example usage:
     @include animation(fadeInDown, 1s, .5s)
@@ -11057,355 +10848,30 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   animation-fill-mode: both;
   backface-visibility: hidden; }
 
-.view-intro .scroll-content {
-  background-image: url("../img/bg.jpg");
-  background-size: cover;
-  background-color: #009688;
-  height: 100%;
-  color: #fff;
-  margin: 0; }
-  .view-intro .scroll-content button.button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: #fff;
-    z-index: 3;
-    padding: 0 20px; }
-  .view-intro .scroll-content .intro-slider {
-    display: block;
-    height: 100%; }
-    .view-intro .scroll-content .intro-slider .content {
-      position: relative;
-      height: 100%; }
-      .view-intro .scroll-content .intro-slider .content span.top {
-        color: #fff;
-        display: block;
-        text-align: center;
-        font-size: 20px;
-        padding: 0;
-        margin: 25px 15px;
-        height: 14%;
-        position: relative;
-        -o-animation-name: fadeInDown;
-        -o-animation-delay: 0.5s;
-        -o-animation-duration: 1s;
-        -o-animation-timing-function: ease;
-        -o-animation-fill-mode: both;
-        -moz-animation-name: fadeInDown;
-        -moz-animation-delay: 0.5s;
-        -moz-animation-duration: 1s;
-        -moz-animation-timing-function: ease;
-        -moz-animation-fill-mode: both;
-        -webkit-animation-name: fadeInDown;
-        -webkit-animation-delay: 0.5s;
-        -webkit-animation-duration: 1s;
-        -webkit-animation-timing-function: ease;
-        -webkit-animation-fill-mode: both;
-        -webkit-backface-visibility: hidden;
-        animation-name: fadeInDown;
-        animation-delay: 0.5s;
-        animation-duration: 1s;
-        animation-timing-function: ease;
-        animation-fill-mode: both;
-        backface-visibility: hidden; }
-      .view-intro .scroll-content .intro-slider .content .phone {
-        position: relative;
-        width: 80%;
-        height: 736px;
-        max-width: 414px;
-        margin: 0 auto;
-        -o-animation-name: fadeInUp;
-        -o-animation-delay: 0.1s;
-        -o-animation-duration: 1s;
-        -o-animation-timing-function: ease;
-        -o-animation-fill-mode: both;
-        -moz-animation-name: fadeInUp;
-        -moz-animation-delay: 0.1s;
-        -moz-animation-duration: 1s;
-        -moz-animation-timing-function: ease;
-        -moz-animation-fill-mode: both;
-        -webkit-animation-name: fadeInUp;
-        -webkit-animation-delay: 0.1s;
-        -webkit-animation-duration: 1s;
-        -webkit-animation-timing-function: ease;
-        -webkit-animation-fill-mode: both;
-        -webkit-backface-visibility: hidden;
-        animation-name: fadeInUp;
-        animation-delay: 0.1s;
-        animation-duration: 1s;
-        animation-timing-function: ease;
-        animation-fill-mode: both;
-        backface-visibility: hidden; }
-        .view-intro .scroll-content .intro-slider .content .phone.iphone {
-          background-image: url("../img/devices/iphone.png");
-          background-repeat: no-repeat;
-          background-size: contain;
-          width: 98%;
-          max-width: 407px;
-          min-width: 330px; }
-          .view-intro .scroll-content .intro-slider .content .phone.iphone img {
-            display: block;
-            margin: 0 auto;
-            position: relative;
-            width: 79%;
-            top: 11.1%; }
-        .view-intro .scroll-content .intro-slider .content .phone.android {
-          background-image: url("../img/devices/android.png");
-          background-repeat: no-repeat;
-          background-size: contain;
-          width: 98%;
-          max-width: 376px;
-          min-width: 330px; }
-          .view-intro .scroll-content .intro-slider .content .phone.android img {
-            display: block;
-            margin: 0 auto;
-            position: relative;
-            width: 90%;
-            top: 8%; }
-    .view-intro .scroll-content .intro-slider .slider {
-      display: block;
-      height: 100%;
-      padding-top: 30px; }
-    .view-intro .scroll-content .intro-slider .slider-pager, .view-intro .scroll-content .intro-slider button.button {
-      -o-animation-name: fadeInDown;
-      -o-animation-delay: 0.1s;
-      -o-animation-duration: 1s;
-      -o-animation-timing-function: ease;
-      -o-animation-fill-mode: both;
-      -moz-animation-name: fadeInDown;
-      -moz-animation-delay: 0.1s;
-      -moz-animation-duration: 1s;
-      -moz-animation-timing-function: ease;
-      -moz-animation-fill-mode: both;
-      -webkit-animation-name: fadeInDown;
-      -webkit-animation-delay: 0.1s;
-      -webkit-animation-duration: 1s;
-      -webkit-animation-timing-function: ease;
-      -webkit-animation-fill-mode: both;
-      -webkit-backface-visibility: hidden;
-      animation-name: fadeInDown;
-      animation-delay: 0.1s;
-      animation-duration: 1s;
-      animation-timing-function: ease;
-      animation-fill-mode: both;
-      backface-visibility: hidden; }
-    .view-intro .scroll-content .intro-slider .slider-pager {
-      top: 15px; }
-      .view-intro .scroll-content .intro-slider .slider-pager span.slider-pager-page {
-        top: 15px;
-        color: #fff !important; }
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot?jmwoa9");
+  src: url("../fonts/icomoon.eot?#iefixjmwoa9") format("embedded-opentype"), url("../fonts/icomoon.ttf?jmwoa9") format("truetype"), url("../fonts/icomoon.woff?jmwoa9") format("woff"), url("../fonts/icomoon.svg?jmwoa9#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 
-.button {
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease; }
+[class^="icon2-"], [class*=" icon2-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
-.modal-profile button.button-follow {
-  border: 1px solid #009688;
-  background-color: #fff; }
+.icon2-logo:before {
+  content: "\e600"; }
 
-.modal-profile img.avatar {
-  display: block;
-  width: 91%;
-  border-radius: 50%;
-  margin: 10px; }
-
-.view-avatar .row .col img {
-  border-radius: 50%;
-  display: block;
-  margin: 0 auto;
-  width: 130px;
-  height: 130px; }
-
-.view-avatar .step2 {
-  margin-top: 20px; }
-
-.view-login .scroll-content {
-  padding: 0; }
-
-.view-login .scroll {
-  height: 100%;
-  background-color: #fff; }
-
-.view-login .user-head {
-  background-color: #009688;
-  background-position: 20%;
-  background: url("../img/bg.jpg");
-  background-size: cover;
-  position: relative;
-  height: 200px; }
-  .view-login .user-head .logo2 {
-    position: relative;
-    display: block;
-    margin: 20px auto;
-    width: 250px; }
-    .view-login .user-head .logo2 img {
-      position: absolute;
-      top: 0px;
-      left: 0;
-      width: 80px; }
-    .view-login .user-head .logo2 span.icon2-logo {
-      font-size: 45pt;
-      color: #fff;
-      display: block;
-      margin: 22px;
-      text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
-      position: absolute;
-      top: 0px;
-      left: 20%; }
-  .view-login .user-head h2 {
-    color: #fff;
-    font-size: 16px;
-    text-align: center;
-    display: block;
-    position: absolute;
-    width: 95%;
-    margin: 0 auto;
-    height: 48px;
-    text-shadow: -2px 1px 2px rgba(0, 0, 0, 0.8);
-    top: 130px; }
-  .view-login .user-head .tabs-top {
-    position: absolute;
-    bottom: 0px;
-    z-index: 2;
-    left: 0px;
-    display: block;
-    width: 100%;
-    height: 49px; }
-    .view-login .user-head .tabs-top .tab-nav.tabs {
-      position: relative;
-      top: 0;
-      background: none;
-      border: none; }
-      .view-login .user-head .tabs-top .tab-nav.tabs a.tab-item {
-        -webkit-transition: all 0.5s ease;
-        -moz-transition: all 0.5s ease;
-        -ms-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        transition: all 0.5s ease; }
-      .view-login .user-head .tabs-top .tab-nav.tabs a.tab-item.tab-item-active {
-        font-weight: bold;
-        font-size: 18px;
-        border-bottom: 2px solid #fff; }
-
-.button-facebook {
-  background: none repeat scroll 0 0 #3f569b !important;
-  border: 1px solid #222e52;
-  color: #fff !important;
-  position: relative;
-  width: 100%; }
-  .button-facebook i {
-    border-right: 1px solid rgba(255, 255, 255, 0.3);
-    left: 20px;
-    padding-right: 10px;
-    position: absolute; }
-
-.line {
-  display: block;
-  margin: 0 auto;
-  position: relative;
-  text-align: center;
-  width: 85%; }
-  .line span {
-    font-size: 20px;
-    color: #666; }
-  .line .left {
-    background: #eee;
-    display: block;
-    height: 1px;
-    position: absolute;
-    top: 50%;
-    width: 40%; }
-  .line .right {
-    background: #eee;
-    display: block;
-    height: 1px;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    width: 40%; }
-
-.button-clear.button-right {
-  border-color: transparent;
-  background: none;
-  box-shadow: none;
-  margin-top: 0;
-  color: #b2b2b2;
-  text-align: right; }
-
-.platform-ios.platform-cordova:not(.fullscreen) .form-login .tabs-top > .tabs {
-  top: 0px !important; }
-
-.profile img.avatar {
-  display: block;
-  width: 91%;
-  border-radius: 50%;
-  margin: 10px; }
-
-.profile .banner {
-  background-color: #009688;
-  display: block;
-  height: 220px;
-  position: relative; }
-  .profile .banner .body {
-    display: block;
-    position: absolute;
-    top: 25px;
-    width: 100%;
-    z-index: 1; }
-    .profile .banner .body .avatar {
-      display: block;
-      position: relative;
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 100px; }
-      .profile .banner .body .avatar img {
-        background-color: #fff;
-        border: 2px solid #fff;
-        border-radius: 50%;
-        display: block;
-        top: 10px;
-        z-index: 7;
-        max-width: 100px; }
-      .profile .banner .body .avatar i {
-        display: block;
-        position: absolute;
-        background-color: #4fd1c1;
-        color: #fff;
-        border-radius: 100%;
-        height: 25px;
-        width: 25px;
-        font-size: 26px;
-        bottom: -4px;
-        right: 10px; }
-    .profile .banner .body h3 {
-      display: block;
-      font-size: 20px;
-      margin: 0;
-      position: relative;
-      top: 25px; }
-    .profile .banner .body h4 {
-      color: #fff;
-      display: block;
-      font-size: 15px;
-      opacity: 0.9;
-      position: relative;
-      top: 14px; }
-
-.profile .background {
-  background-position: 0 50%;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  display: block;
-  height: 100%;
-  left: 0;
-  opacity: 0.5;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  -webkit-filter: blur(3px); }
+.icon2-camera:before {
+  content: "\e601"; }
 
 .photogram {
   font-family: -apple-system, 'Helvetica Neue', 'Segoe WP', sans-serif !important;
@@ -11416,9 +10882,13 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
     background-color: rgba(5, 58, 53, 0.7); }
   .photogram .popup-container .popup {
     border-radius: 10px; }
+  .photogram .modal label.item-input-wrapper {
+    background-color: #ffffff; }
   .photogram .card {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0); }
+  .photogram .no-padding, .photogram .nopadding {
+    padding: 0; }
   .photogram gallery-photo-grid .row .col {
     height: 150px;
     position: relative;
@@ -11431,12 +10901,410 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
       left: 0;
       min-width: 150px;
       min-height: 150px; }
-  .photogram .item {
-    border: none; }
+  .photogram .modal-capture .capture-legend {
+    padding: 0; }
+    .photogram .modal-capture .capture-legend .item-input {
+      border: none;
+      display: block;
+      top: 20px; }
+  .photogram .modal-capture .capture-photo img {
+    display: block;
+    width: 100%; }
+  .photogram .modal-comment .scroll {
+    height: 100%; }
+  .photogram .modal-comment .form {
+    border: 1px solid #ccc;
+    padding: 1px;
+    display: block;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 50px; }
+    .photogram .modal-comment .form label.item.item-input {
+      display: block;
+      float: left;
+      width: 88%;
+      border: none; }
+    .photogram .modal-comment .form button {
+      padding: 7px;
+      height: 50px;
+      top: -1px;
+      position: absolute;
+      right: -1px;
+      border: none; }
+    .photogram .modal-comment .form form .item, .photogram .modal-comment .form .formly .item {
+      border-bottom: none; }
+  .photogram .view-intro .scroll-content {
+    background-image: url("../img/bg.jpg");
+    background-size: cover;
+    background-color: #009688;
+    height: 100%;
+    color: #fff;
+    margin: 0; }
+    .photogram .view-intro .scroll-content .intro-slider {
+      display: block;
+      height: 100%; }
+      .photogram .view-intro .scroll-content .intro-slider .content {
+        position: relative;
+        height: 100%; }
+        .photogram .view-intro .scroll-content .intro-slider .content .last .logo2 {
+          position: absolute;
+          display: block;
+          margin: 20px auto;
+          width: 250px;
+          height: 100px;
+          top: 30%;
+          left: 0;
+          right: 0; }
+          .photogram .view-intro .scroll-content .intro-slider .content .last .logo2 img {
+            position: absolute;
+            top: 0px;
+            left: 0;
+            width: 80px; }
+          .photogram .view-intro .scroll-content .intro-slider .content .last .logo2 span.icon2-logo {
+            font-size: 45pt;
+            color: #fff;
+            display: block;
+            margin: 22px;
+            position: absolute;
+            top: 0px;
+            left: 20%; }
+        .photogram .view-intro .scroll-content .intro-slider .content .last button.button {
+          position: absolute;
+          color: #fff;
+          border: 1px solid #fff;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          width: 90%;
+          bottom: 10%; }
+        .photogram .view-intro .scroll-content .intro-slider .content span.top {
+          display: block;
+          padding: 0;
+          margin: 10px 15px;
+          height: 14%;
+          position: relative;
+          -o-animation-name: fadeInDown;
+          -o-animation-delay: 0.5s;
+          -o-animation-duration: 1s;
+          -o-animation-timing-function: ease;
+          -o-animation-fill-mode: both;
+          -moz-animation-name: fadeInDown;
+          -moz-animation-delay: 0.5s;
+          -moz-animation-duration: 1s;
+          -moz-animation-timing-function: ease;
+          -moz-animation-fill-mode: both;
+          -webkit-animation-name: fadeInDown;
+          -webkit-animation-delay: 0.5s;
+          -webkit-animation-duration: 1s;
+          -webkit-animation-timing-function: ease;
+          -webkit-animation-fill-mode: both;
+          -webkit-backface-visibility: hidden;
+          animation-name: fadeInDown;
+          animation-delay: 0.5s;
+          animation-duration: 1s;
+          animation-timing-function: ease;
+          animation-fill-mode: both;
+          backface-visibility: hidden; }
+          .photogram .view-intro .scroll-content .intro-slider .content span.top h2 {
+            display: block;
+            position: absolute;
+            text-align: center;
+            color: #fff;
+            bottom: 0px;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-size: 19pt;
+            line-height: 19pt; }
+        .photogram .view-intro .scroll-content .intro-slider .content .phone {
+          position: relative;
+          width: 80%;
+          height: 736px;
+          max-width: 414px;
+          margin: 0 auto;
+          -o-animation-name: fadeInUp;
+          -o-animation-delay: 0.1s;
+          -o-animation-duration: 1s;
+          -o-animation-timing-function: ease;
+          -o-animation-fill-mode: both;
+          -moz-animation-name: fadeInUp;
+          -moz-animation-delay: 0.1s;
+          -moz-animation-duration: 1s;
+          -moz-animation-timing-function: ease;
+          -moz-animation-fill-mode: both;
+          -webkit-animation-name: fadeInUp;
+          -webkit-animation-delay: 0.1s;
+          -webkit-animation-duration: 1s;
+          -webkit-animation-timing-function: ease;
+          -webkit-animation-fill-mode: both;
+          -webkit-backface-visibility: hidden;
+          animation-name: fadeInUp;
+          animation-delay: 0.1s;
+          animation-duration: 1s;
+          animation-timing-function: ease;
+          animation-fill-mode: both;
+          backface-visibility: hidden; }
+          .photogram .view-intro .scroll-content .intro-slider .content .phone.iphone {
+            background-image: url("../img/devices/iphone.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 98%;
+            max-width: 407px;
+            min-width: 325px; }
+            .photogram .view-intro .scroll-content .intro-slider .content .phone.iphone img {
+              display: block;
+              margin: 0 auto;
+              position: relative;
+              width: 79%;
+              top: 11.1%; }
+          .photogram .view-intro .scroll-content .intro-slider .content .phone.android {
+            background-image: url("../img/devices/android.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 98%;
+            max-width: 340px;
+            min-width: 330px; }
+            .photogram .view-intro .scroll-content .intro-slider .content .phone.android img {
+              display: block;
+              margin: 0 auto;
+              position: relative;
+              width: 90%;
+              top: 7.1%; }
+      .photogram .view-intro .scroll-content .intro-slider .slider {
+        display: block;
+        height: 100%;
+        padding-top: 30px; }
+      .photogram .view-intro .scroll-content .intro-slider .slider-pager, .photogram .view-intro .scroll-content .intro-slider button.button {
+        -o-animation-name: fadeInDown;
+        -o-animation-delay: 0.1s;
+        -o-animation-duration: 1s;
+        -o-animation-timing-function: ease;
+        -o-animation-fill-mode: both;
+        -moz-animation-name: fadeInDown;
+        -moz-animation-delay: 0.1s;
+        -moz-animation-duration: 1s;
+        -moz-animation-timing-function: ease;
+        -moz-animation-fill-mode: both;
+        -webkit-animation-name: fadeInDown;
+        -webkit-animation-delay: 0.1s;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-timing-function: ease;
+        -webkit-animation-fill-mode: both;
+        -webkit-backface-visibility: hidden;
+        animation-name: fadeInDown;
+        animation-delay: 0.1s;
+        animation-duration: 1s;
+        animation-timing-function: ease;
+        animation-fill-mode: both;
+        backface-visibility: hidden; }
+      .photogram .view-intro .scroll-content .intro-slider .slider-pager {
+        top: 15px; }
+        .photogram .view-intro .scroll-content .intro-slider .slider-pager span.slider-pager-page {
+          top: 15px;
+          color: #fff !important; }
+  .photogram .profile img.avatar {
+    display: block;
+    width: 91%;
+    border-radius: 50%;
+    margin: 10px; }
+  .photogram .profile .banner {
+    background-color: #009688;
+    display: block;
+    height: 220px;
+    position: relative; }
+    .photogram .profile .banner .body {
+      display: block;
+      position: absolute;
+      top: 25px;
+      width: 100%;
+      z-index: 1; }
+      .photogram .profile .banner .body .avatar {
+        display: block;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100px; }
+        .photogram .profile .banner .body .avatar img {
+          background-color: #fff;
+          border: 2px solid #fff;
+          border-radius: 50%;
+          display: block;
+          top: 10px;
+          z-index: 7;
+          max-width: 100px; }
+        .photogram .profile .banner .body .avatar i {
+          display: block;
+          position: absolute;
+          background-color: #4fd1c1;
+          color: #fff;
+          border-radius: 100%;
+          height: 25px;
+          width: 25px;
+          font-size: 26px;
+          bottom: -4px;
+          right: 10px; }
+      .photogram .profile .banner .body h3 {
+        display: block;
+        font-size: 20px;
+        margin: 0;
+        position: relative;
+        top: 25px; }
+      .photogram .profile .banner .body h4 {
+        color: #fff;
+        display: block;
+        font-size: 15px;
+        opacity: 0.9;
+        position: relative;
+        top: 14px; }
+  .photogram .profile .background {
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    -webkit-filter: blur(3px); }
+  .photogram .button {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
+  .photogram .modal-profile button.button-follow {
+    border: 1px solid #009688;
+    background-color: #fff; }
+  .photogram .modal-profile img.avatar {
+    display: block;
+    width: 91%;
+    border-radius: 50%;
+    margin: 10px; }
+  .photogram .view-avatar .row .col img {
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    width: 130px;
+    height: 130px; }
+  .photogram .view-avatar .step2 {
+    margin-top: 20px; }
+  .photogram .view-login .scroll-content {
+    padding: 0; }
+  .photogram .view-login .scroll {
+    height: 100%;
+    background-color: #fff; }
+  .photogram .view-login .user-head {
+    background-color: #009688;
+    background-position: 20%;
+    background: url("../img/bg.jpg");
+    background-size: cover;
+    position: relative;
+    height: 200px; }
+    .photogram .view-login .user-head .logo2 {
+      position: relative;
+      display: block;
+      margin: 20px auto;
+      width: 250px; }
+      .photogram .view-login .user-head .logo2 img {
+        position: absolute;
+        top: 0px;
+        left: 0;
+        width: 80px; }
+      .photogram .view-login .user-head .logo2 span.icon2-logo {
+        font-size: 45pt;
+        color: #fff;
+        display: block;
+        margin: 22px;
+        position: absolute;
+        top: 0px;
+        left: 20%; }
+    .photogram .view-login .user-head h2 {
+      color: #fff;
+      font-size: 16px;
+      text-align: center;
+      display: block;
+      position: absolute;
+      width: 95%;
+      margin: 0 auto;
+      height: 48px;
+      top: 130px; }
+    .photogram .view-login .user-head .tabs-top {
+      position: absolute;
+      bottom: 0px;
+      z-index: 2;
+      left: 0px;
+      display: block;
+      width: 100%;
+      height: 49px; }
+      .photogram .view-login .user-head .tabs-top .tab-nav.tabs {
+        position: relative;
+        top: 0;
+        background: none;
+        border: none; }
+        .photogram .view-login .user-head .tabs-top .tab-nav.tabs a.tab-item {
+          -webkit-transition: all 0.5s ease;
+          -moz-transition: all 0.5s ease;
+          -ms-transition: all 0.5s ease;
+          -o-transition: all 0.5s ease;
+          transition: all 0.5s ease; }
+        .photogram .view-login .user-head .tabs-top .tab-nav.tabs a.tab-item.tab-item-active {
+          font-weight: bold;
+          font-size: 18px;
+          border-bottom: 2px solid #fff; }
+  .photogram .button-facebook {
+    background: none repeat scroll 0 0 #3f569b !important;
+    border: 1px solid #222e52;
+    color: #fff !important;
+    position: relative;
+    width: 100%; }
+    .photogram .button-facebook i {
+      border-right: 1px solid rgba(255, 255, 255, 0.3);
+      left: 20px;
+      padding-right: 10px;
+      position: absolute; }
+  .photogram .line {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    width: 85%; }
+    .photogram .line span {
+      font-size: 20px;
+      color: #666; }
+    .photogram .line .left {
+      background: #eee;
+      display: block;
+      height: 1px;
+      position: absolute;
+      top: 50%;
+      width: 40%; }
+    .photogram .line .right {
+      background: #eee;
+      display: block;
+      height: 1px;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 40%; }
+  .photogram .button-clear.button-right {
+    border-color: transparent;
+    background: none;
+    box-shadow: none;
+    margin-top: 0;
+    color: #b2b2b2;
+    text-align: right; }
+  .photogram .platform-ios.platform-cordova:not(.fullscreen) .form-login .tabs-top > .tabs {
+    top: 0px !important; }
+  .photogram .view-home .scroll-content {
+    background-color: #f1f1f1; }
   .photogram .view-loading {
+    background-image: url("../img/bg.jpg");
     background-color: #009688;
     background-position: 15%;
-    background: url("../img/intro1.jpg");
     background-size: cover; }
     .photogram .view-loading .scroll-content {
       height: 100%;
@@ -11474,6 +11342,488 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
         animation-timing-function: ease;
         animation-fill-mode: both;
         backface-visibility: hidden; }
+  .photogram .gallery-profile .scroll-content {
+    background-color: #fff; }
+  .photogram .gallery-profile .profile-top {
+    display: block;
+    position: relative; }
+    .photogram .gallery-profile .profile-top img {
+      display: inline;
+      min-width: 85px;
+      min-height: 85px;
+      max-width: 85px;
+      border-radius: 50%;
+      margin: 6px;
+      background-color: #ddd; }
+    .photogram .gallery-profile .profile-top .col-statics {
+      margin-left: 5px; }
+      .photogram .gallery-profile .profile-top .col-statics span {
+        font-weight: bold;
+        color: #000;
+        display: block;
+        text-align: center;
+        font-size: 20px; }
+      .photogram .gallery-profile .profile-top .col-statics h3 {
+        font-size: 14px;
+        color: #888;
+        margin: 5px 0px;
+        display: block;
+        font-variant: small-caps;
+        text-align: center;
+        text-transform: lowercase;
+        white-space: nowrap; }
+    .photogram .gallery-profile .profile-top .col-edit {
+      padding: 0; }
+      .photogram .gallery-profile .profile-top .col-edit .button {
+        font-size: 14px;
+        padding: 0px;
+        background: #edeeee;
+        border: none;
+        color: #53575c;
+        text-transform: uppercase;
+        width: 97%;
+        line-height: 10px;
+        min-height: 27px;
+        max-height: 10px;
+        font-weight: bold;
+        margin: 0 auto;
+        display: block; }
+        .photogram .gallery-profile .profile-top .col-edit .button.button-follow {
+          border: 1px solid #009688;
+          background-color: #fff; }
+          .photogram .gallery-profile .profile-top .col-edit .button.button-follow span {
+            color: #009688;
+            font-size: 14px; }
+        .photogram .gallery-profile .profile-top .col-edit .button.button-unfollow {
+          border: 1px solid #009688;
+          background-color: #009688; }
+          .photogram .gallery-profile .profile-top .col-edit .button.button-unfollow span {
+            color: #fff;
+            font-size: 14px; }
+    .photogram .gallery-profile .profile-top .tabs-light {
+      background: #fff;
+      height: 50px;
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      display: block;
+      position: inherit; }
+      .photogram .gallery-profile .profile-top .tabs-light .tab-nav.tabs .tab-item {
+        -webkit-transform: all 0.5s ease;
+        -moz-transform: all 0.5s ease;
+        -ms-transform: all 0.5s ease;
+        -o-transform: all 0.5s ease;
+        transform: all 0.5s ease; }
+      .photogram .gallery-profile .profile-top .tabs-light .tab-nav.tabs .tab-item.tab-item-active, .photogram .gallery-profile .profile-top .tabs-light .tab-nav.tabs .instagram ion-tabs.tabs-dark.tabs-photogram .tab-item.active, .photogram .gallery-profile .profile-top .tabs-light .tab-nav.tabs .instagram ion-tabs.tabs-dark.tabs-photogram .tab-item.activated {
+        background-color: #fff;
+        border: none;
+        color: #009688; }
+  .photogram .gallery-profile .profile-view {
+    display: block;
+    overflow: hidden;
+    background-color: #f1f1f1; }
+    .photogram .gallery-profile .profile-view .row {
+      padding: 0; }
+      .photogram .gallery-profile .profile-view .row .col {
+        padding: 2px;
+        margin: 0; }
+  .photogram .profile img.avatar {
+    display: block;
+    width: 91%;
+    border-radius: 50%;
+    margin: 10px; }
+  .photogram .profile .banner {
+    background-color: #009688;
+    display: block;
+    height: 220px;
+    position: relative; }
+    .photogram .profile .banner .body {
+      display: block;
+      position: absolute;
+      top: 25px;
+      width: 100%;
+      z-index: 1; }
+      .photogram .profile .banner .body .avatar {
+        display: block;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100px; }
+        .photogram .profile .banner .body .avatar img {
+          background-color: #fff;
+          border: 2px solid #fff;
+          border-radius: 50%;
+          display: block;
+          top: 10px;
+          z-index: 7;
+          max-width: 100px; }
+        .photogram .profile .banner .body .avatar i {
+          display: block;
+          position: absolute;
+          background-color: #4fd1c1;
+          color: #fff;
+          border-radius: 100%;
+          height: 25px;
+          width: 25px;
+          font-size: 26px;
+          bottom: -4px;
+          right: 10px; }
+      .photogram .profile .banner .body h3 {
+        display: block;
+        font-size: 20px;
+        margin: 0;
+        position: relative;
+        top: 25px; }
+      .photogram .profile .banner .body h4 {
+        color: #fff;
+        display: block;
+        font-size: 15px;
+        opacity: 0.9;
+        position: relative;
+        top: 14px; }
+  .photogram .profile .background {
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    -webkit-filter: blur(3px); }
+  .photogram .heart {
+    width: 20px;
+    height: 20px;
+    margin: 200px auto;
+    transform: translateZ(0);
+    color: #aaa;
+    font-size: 3em;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease; }
+    .photogram .heart:hover {
+      animation: pulse 0.6s linear; }
+    .photogram .heart:before {
+      content: "❤";
+      position: absolute;
+      color: #A12B2B;
+      opacity: 0; }
+    .photogram .heart.happy {
+      color: #A12B2B; }
+      .photogram .heart.happy:before {
+        opacity: 0;
+        transform: translateY(-30px) rotateZ(5deg);
+        animation: fly 1s ease; }
+    .photogram .heart.broken {
+      color: #aaa;
+      position: relative;
+      transition: all 0.3s ease; }
+      .photogram .heart.broken:before, .photogram .heart.broken:after {
+        content: "❤";
+        opacity: 1;
+        color: #ccc;
+        position: absolute;
+        top: -150px;
+        transform: scale(3) rotateZ(0); }
+      .photogram .heart.broken:before {
+        clip: rect(0, 20px, 200px, 0);
+        animation: break-left 1s ease forwards; }
+      .photogram .heart.broken:after {
+        clip: rect(0, 50px, 200px, 25px);
+        animation: break-right 1s ease forwards; }
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.1); } }
+
+@keyframes fly {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) rotateZ(15deg); }
+  50% {
+    opacity: .75;
+    transform: scale(4) translateY(-30px) rotateZ(-15deg); }
+  100% {
+    opacity: 0;
+    transform: scale(4) translateY(-50px) rotateZ(15deg); } }
+
+@keyframes break-left {
+  0% {
+    opacity: 1;
+    transform: scale(3) rotateZ(0); }
+  20% {
+    opacity: .5;
+    transform: scale(3) translateX(-10px) rotateZ(-20deg) translateY(0); }
+  50% {
+    opacity: .5;
+    transform: scale(3) translateX(-10px) rotateZ(-20deg) translateY(0); }
+  100% {
+    opacity: 0;
+    transform: scale(3) translateX(-30px) rotateZ(-25deg) translateY(50px); } }
+
+@keyframes break-right {
+  0% {
+    opacity: 1;
+    transform: scale(3) rotateZ(0); }
+  20% {
+    opacity: .5;
+    transform: scale(3) translateX(10px) rotateZ(20deg) translateY(0); }
+  50% {
+    opacity: .5;
+    transform: scale(3) translateX(10px) rotateZ(20deg) translateY(0); }
+  100% {
+    opacity: 0;
+    transform: scale(3) translateX(30px) rotateZ(25deg) translateY(50px); } }
+  .photogram .map-container {
+    min-height: 200px;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    position: relative;
+    display: block; }
+    .photogram .map-container .angular-google-map-container {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background: #ddd; }
+  .photogram .ionic-contrib-blur {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    -webkit-filter: blur(20px);
+    opacity: .25;
+    z-index: 1; }
+  .photogram .bar-frosted {
+    background-color: #f7f7f7; }
+  .photogram .platform-android .has-header {
+    top: 56px; }
+  .photogram .platform-android .has-tab ion-header-bar, .photogram .platform-android .has-tab .bar {
+    border: none;
+    box-shadow: none; }
+  .photogram .platform-android .nav-bar-tabs-top .bar.bar-header, .photogram .platform-android .tabs-bottom .bar.bar-header {
+    border: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none; }
+  .photogram .platform-android .nav-bar-tabs-top .scroll-content, .photogram .platform-android .tabs-bottom .scroll-content {
+    bottom: 50px;
+    top: 56px; }
+  .photogram .platform-android .view-tab .scroll-content {
+    top: 93px; }
+  .photogram .platform-android .bar.bar-header {
+    height: 56px; }
+  .photogram .platform-android .bar.bar-header .title {
+    left: 0;
+    right: 45px;
+    line-height: 56px;
+    height: 56px;
+    display: block; }
+    .photogram .platform-android .bar.bar-header .title .nav-bar-title {
+      display: block;
+      height: 56px;
+      padding: 10px 0; }
+      .photogram .platform-android .bar.bar-header .title .nav-bar-title img {
+        margin-top: 6px; }
+  .photogram .platform-android .modal .bar.bar-header .button:last-child {
+    top: 0;
+    right: 0;
+    width: 56px;
+    height: 56px;
+    color: white; }
+  .photogram .bar-dark.bar.bar-header .buttons, .photogram .bar-dark.bar.bar-header .button:last-child {
+    top: 0;
+    right: 0;
+    width: 44px;
+    height: 44px;
+    color: white; }
+  .photogram .action-sheet .button {
+    color: #009688; }
+  .photogram .spinner svg {
+    stroke: #009688;
+    fill: #009688; }
+  .photogram input[disabled], .photogram select[disabled], .photogram textarea[disabled], .photogram input[readonly]:not(.cloned-text-input), .photogram textarea[readonly]:not(.cloned-text-input), .photogram select[readonly] {
+    background-color: #fff;
+    color: #999; }
+  .photogram form .input-select, .photogram .formly .input-select {
+    background-color: #fff;
+    background-image: url("../img/icons/arrow_expand.svg");
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+    background-size: 20px 20px;
+    border: none;
+    -webkit-box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.25);
+    -o-box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.25);
+    filter: progid:DXImageTransform.Microsoft.Shadow(color=#cfcfcf, Direction=180, Strength=2);
+    color: #909090;
+    font-size: 14px;
+    font-weight: 600;
+    height: 40px;
+    width: 100%;
+    padding-left: 10px;
+    -webkit-appearance: none;
+    margin: 15px 0px; }
+  .photogram form i.icon.error, .photogram .formly i.icon.error {
+    color: #ef4e3a; }
+  .photogram form input + i.icon.error, .photogram .formly input + i.icon.error {
+    display: none;
+    margin-left: 8px; }
+  .photogram form.ng-submitted input.ng-invalid + i.icon.error, .photogram .formly.ng-submitted input.ng-invalid + i.icon.error {
+    display: block; }
+  .photogram form .has-error, .photogram .formly .has-error {
+    border-left: 3px solid #cc2511 !important;
+    border-right: 3px solid #cc2511 !important; }
+  .photogram form .has-success, .photogram .formly .has-success {
+    border-left: 3px solid #3d8b3d !important;
+    border-right: 3px solid #3d8b3d !important; }
+  .photogram form.ng-submitted input.ng-valid + i.icon.error, .photogram .formly.ng-submitted input.ng-valid + i.icon.error {
+    display: none; }
+  .photogram form .item, .photogram .formly .item {
+    border: none;
+    border-bottom: 1px solid #eee !important;
+    margin-bottom: 1px;
+    background-color: #fff;
+    color: #444;
+    position: relative;
+    z-index: 2;
+    display: block;
+    margin: -1px;
+    padding: 16px;
+    border-width: 1px;
+    border-style: solid;
+    font-size: 16px; }
+  .photogram form .item-input, .photogram .formly .item-input {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 6px 0 5px 16px;
+    border: none;
+    margin-bottom: 1px; }
+  .photogram form .item:first-child, .photogram .formly .item:first-child {
+    border-top: none;
+    padding-top: 10px;
+    padding-bottom: 10px; }
+  .photogram .item-floating-label {
+    display: block;
+    background-color: transparent;
+    box-shadow: none; }
+  .photogram .button-white {
+    background-color: #fff;
+    color: #000 !important;
+    border-width: 0px;
+    margin: 0px !important; }
+  .photogram .icon-vermelho {
+    color: red; }
+  .photogram .icon-verde {
+    color: green; }
+  .photogram input::-webkit-input-placeholder, .photogram textarea::-webkit-input-placeholder {
+    color: #aaa;
+    text-indent: 0; }
+  .photogram ion-nav-bar.bar.nav-bar-container.nav-bar-tabs-top {
+    border: none !important;
+    box-shadow: none !important; }
+  .photogram .has-tab ion-header-bar {
+    border: none !important;
+    box-shadow: none !important; }
+  .photogram .menu .bar.bar-header {
+    height: 150px !important;
+    position: relative;
+    overflow: hidden; }
+  .photogram .menu .background {
+    background-color: #000;
+    background-size: cover;
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+    background-position: 0 50%;
+    opacity: 0.1; }
+  .photogram .menu .avatar {
+    border: 2px solid white;
+    border-radius: 50%;
+    clear: both;
+    display: block;
+    height: 80px;
+    position: absolute;
+    margin-left: 27%;
+    width: 80px;
+    top: 15px; }
+  .photogram .menu i {
+    display: block;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    font-size: 20px;
+    color: #fff; }
+  .photogram .menu h1 {
+    color: #fff;
+    font-size: 16px;
+    margin: 0px;
+    position: absolute;
+    top: 110px;
+    text-align: center;
+    left: 0;
+    width: 87%; }
+  .photogram .menu h2 {
+    clear: both;
+    display: block;
+    font-size: 16px;
+    position: absolute;
+    text-align: center;
+    top: 89px;
+    width: 100%; }
+  .photogram .menu .side-menu-header {
+    background: #009688 !important;
+    color: #fff;
+    padding: 15px;
+    padding-top: 25px; }
+    .photogram .menu .side-menu-header h3 {
+      color: #fff; }
+    .photogram .menu .side-menu-header .stat-title {
+      color: #feccd1; }
+    .photogram .menu .side-menu-header .stat-divider {
+      border-right: 1px solid #feccd1;
+      display: inline-block;
+      height: 34px;
+      margin-right: 12px;
+      width: 12px; }
+  .photogram .menu .item {
+    border: none;
+    color: #333; }
+    .photogram .menu .item.active {
+      background: none;
+      color: #009688;
+      font-weight: bold; }
+      .photogram .menu .item.active .item-content {
+        border: none;
+        background-color: #eee; }
+    .photogram .menu .item i {
+      background: none;
+      color: #009688;
+      font-size: 25px;
+      left: 10px; }
+  .photogram .item {
+    border: none; }
   .photogram .map-container {
     min-height: 200px;
     height: 100%;
@@ -11567,13 +11917,11 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
     height: 40px;
     display: block;
     margin-left: 0;
-    text-align: left;
-    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5); }
+    text-align: left; }
   .photogram .nav-bar-title span.icon2-logo {
     font-size: 34px;
     display: block;
-    margin-top: 6px;
-    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5); }
+    margin-top: 6px; }
   .photogram .tab-item.middle {
     background-color: #009688;
     color: #fff;
@@ -11618,31 +11966,6 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
       text-align: left;
       display: block;
       width: 100%; }
-  .photogram .modal-comment .scroll {
-    height: 100%; }
-  .photogram .modal-comment .form {
-    border: 1px solid #ccc;
-    padding: 1px;
-    display: block;
-    width: 100%;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    height: 50px; }
-    .photogram .modal-comment .form label.item.item-input {
-      display: block;
-      float: left;
-      width: 88%;
-      border: none; }
-    .photogram .modal-comment .form button {
-      padding: 7px;
-      height: 50px;
-      top: -1px;
-      position: absolute;
-      right: -1px;
-      border: none; }
-    .photogram .modal-comment .form form .item, .photogram .modal-comment .form .formly .item {
-      border-bottom: none; }
   .photogram .tab-item {
     transition: all ease 0.5s;
     -webkit-transition: all ease 0.5s; }
@@ -11656,98 +11979,6 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   .photogram ion-tabs.tabs-dark.tabs-photogram .tabs-top .tab-item.tab-item-active, .photogram ion-tabs.tabs-dark.tabs-photogram .tabs-top .tab-item.active, .photogram ion-tabs.tabs-dark.tabs-photogram .tabs-top .tab-item.activated {
     background: none;
     border-bottom: 5px solid #fff; }
-  .photogram .modal-capture .capture-legend {
-    padding: 0; }
-    .photogram .modal-capture .capture-legend .item-input {
-      border: none;
-      display: block;
-      top: 20px; }
-  .photogram .modal-capture .capture-photo img {
-    display: block;
-    width: 100%; }
-  .photogram .gallery-profile .scroll-content {
-    background-color: #fff; }
-  .photogram .gallery-profile .profile-top {
-    display: block;
-    position: relative; }
-    .photogram .gallery-profile .profile-top img {
-      display: inline;
-      min-width: 85px;
-      min-height: 85px;
-      max-width: 85px;
-      border-radius: 50%;
-      margin: 6px;
-      background-color: #ddd; }
-    .photogram .gallery-profile .profile-top .col-statics {
-      margin-left: 5px; }
-      .photogram .gallery-profile .profile-top .col-statics span {
-        font-weight: bold;
-        color: #000;
-        display: block;
-        text-align: center;
-        font-size: 20px; }
-      .photogram .gallery-profile .profile-top .col-statics h3 {
-        font-size: 14px;
-        color: #888;
-        margin: 5px 0px;
-        display: block;
-        font-variant: small-caps;
-        text-align: center;
-        text-transform: lowercase;
-        white-space: nowrap; }
-    .photogram .gallery-profile .profile-top .col-edit {
-      padding: 0; }
-      .photogram .gallery-profile .profile-top .col-edit .button {
-        font-size: 14px;
-        padding: 0px;
-        background: #edeeee;
-        border: none;
-        color: #53575c;
-        text-transform: uppercase;
-        width: 97%;
-        line-height: 10px;
-        min-height: 27px;
-        max-height: 10px;
-        font-weight: bold;
-        margin: 0 auto;
-        display: block; }
-        .photogram .gallery-profile .profile-top .col-edit .button.button-follow {
-          border: 1px solid #009688;
-          background-color: #fff; }
-          .photogram .gallery-profile .profile-top .col-edit .button.button-follow span {
-            color: #009688;
-            font-size: 14px; }
-        .photogram .gallery-profile .profile-top .col-edit .button.button-unfollow {
-          border: 1px solid #009688;
-          background-color: #009688; }
-          .photogram .gallery-profile .profile-top .col-edit .button.button-unfollow span {
-            color: #fff;
-            font-size: 14px; }
-    .photogram .gallery-profile .profile-top .tabs-light {
-      background: #fff;
-      height: 50px;
-      border-top: 1px solid #ccc;
-      border-bottom: 1px solid #ccc;
-      display: block;
-      position: inherit; }
-      .photogram .gallery-profile .profile-top .tabs-light .tab-nav.tabs .tab-item {
-        -webkit-transform: all 0.5s ease;
-        -moz-transform: all 0.5s ease;
-        -ms-transform: all 0.5s ease;
-        -o-transform: all 0.5s ease;
-        transform: all 0.5s ease; }
-      .photogram .gallery-profile .profile-top .tabs-light .tab-nav.tabs .tab-item.tab-item-active, .photogram .gallery-profile .profile-top .tabs-light .tab-nav.tabs .instagram ion-tabs.tabs-dark.tabs-photogram .tab-item.active, .photogram .gallery-profile .profile-top .tabs-light .tab-nav.tabs .instagram ion-tabs.tabs-dark.tabs-photogram .tab-item.activated {
-        background-color: #fff;
-        border: none;
-        color: #009688; }
-  .photogram .gallery-profile .profile-view {
-    display: block;
-    overflow: hidden; }
-    .photogram .gallery-profile .profile-view .row {
-      padding: 0; }
-      .photogram .gallery-profile .profile-view .row .col {
-        padding: 2px;
-        margin: 0; }
   .photogram .gallery-search .row {
     padding: 0; }
     .photogram .gallery-search .row .col {
@@ -11805,67 +12036,3 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
     display: block;
     text-align: center;
     color: #ddd; }
-
-.spinner svg {
-  stroke: #009688;
-  fill: #009688; }
-
-.action-sheet .button {
-  color: #009688; }
-
-.no-padding, .nopadding {
-  padding: 0; }
-
-.has-tabs-top {
-  bottom: 49px; }
-
-.bar .title img {
-  max-height: 40px;
-  margin-top: 0px; }
-
-.separator {
-  display: block;
-  border-top: solid 1px rgba(0, 0, 0, 0.12);
-  min-height: 0;
-  line-height: 0;
-  margin: 0;
-  padding: 0; }
-
-.button-assertive {
-  background: none repeat scroll 0 0 #fff;
-  border: 1px solid #ccc !important;
-  box-shadow: 2px 2px 2px #ccc;
-  width: 100%; }
-
-.bg-content {
-  background-color: whitesmoke !important; }
-
-.noborder ion-header-bar {
-  border: none !important;
-  box-shadow: none !important; }
-
-.hidden {
-  visibility: hidden; }
-
-ion-nav-bar.bar.bar-positive.bar-none.nav-bar-container {
-  background: none;
-  border: none; }
-
-.tabs-top .bar-subheader {
-  top: 93px; }
-
-.search-wrapper-light {
-  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
-  background: none;
-  border-radius: 0;
-  margin-left: 5px;
-  margin-right: 5px;
-  height: 90%; }
-  .search-wrapper-light input, .search-wrapper-light input::-webkit-input-placeholder {
-    color: #fff;
-    width: 100%;
-    background: none;
-    margin-left: 10px; }
-
-pre {
-  color: #333; }

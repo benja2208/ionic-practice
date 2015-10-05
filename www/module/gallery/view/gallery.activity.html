@@ -4,6 +4,10 @@
         <h1 class="title">{{ 'Activities' | translate }}</h1>
     </ion-nav-title>
 
+    <ion-nav-buttons side="right">
+        <button ng-click="GalleryActivity.openShare()" class="button button-icon icon ion-android-share-alt"></button>
+    </ion-nav-buttons>
+
     <ion-content overflow-scroll="true">
 
         <gallery-loading loading="GalleryActivity.loading" icon="android"></gallery-loading>

@@ -2,7 +2,7 @@
   'use strict';
   angular
     .module('module.gallery')
-    .controller('GalleryActivityCtrl', function ($scope, Gallery) {
+    .controller('GalleryActivityCtrl', function ($scope, Gallery, GalleryShare) {
       var vm = this;
       vm.loading = true;
 
@@ -19,6 +19,8 @@
         console.log('Load More');
         vm.load(force);
       };
+
+      vm.openShare = GalleryShare.open;
 
       vm.load = function (force) {
 

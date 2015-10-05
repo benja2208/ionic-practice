@@ -1,31 +1,27 @@
-<ion-view>
+<ion-view class="view-home">
     <ion-nav-title>
         <span class="icon2-logo"></span>
     </ion-nav-title>
 
     <ion-nav-buttons side="right">
-        <button ng-click="GalleryHome.openShare()"
-                class="button button-icon icon ion-android-share-alt"></button>
+        <button class="button button-icon ion-card" ng-click="GalleryHome.buySource()"></button>
+
     </ion-nav-buttons>
 
     <ion-content overflow-scroll="true">
-        <ion-refresher ng-if="!GalleryHome.loading"
-                       on-refresh="loadMore(true)"></ion-refresher>
+        <ion-refresher ng-if="!GalleryHome.loading" on-refresh="loadMore(true)"></ion-refresher>
 
         <gallery-loading loading="GalleryHome.loading"></gallery-loading>
 
-        <gallery-photo-list gallery="GalleryHome.data"
-                            loading="GalleryHome.loading"></gallery-photo-list>
+        <gallery-photo-list gallery="GalleryHome.data" loading="GalleryHome.loading"></gallery-photo-list>
 
-        <div class="center-ico"
-             ng-if="GalleryHome.empty">
+        <div class="center-ico" ng-if="GalleryHome.empty">
             <i class="icon ion-ios-camera"></i>
 
             <h1 translate>Nenhuma foto postagem por perto</h1>
         </div>
 
-        <ion-infinite-scroll ng-if="!GalleryHome.loadMore&&GalleryHome.more"
-                             on-infinite="loadMore()"></ion-infinite-scroll>
+        <ion-infinite-scroll ng-if="!GalleryHome.loadMore&&GalleryHome.more" on-infinite="loadMore()"></ion-infinite-scroll>
 
     </ion-content>
 </ion-view>

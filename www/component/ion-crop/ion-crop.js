@@ -1,2 +1,2 @@
 'use strict';
-angular.module ('ion-crop', []);
+angular.module('ion-crop', []);

@@ -1,10 +1,14 @@
-(function (window, angular, device, ParsePushPlugin, undefined) {
+(function (window, angular, parsePlugin, undefined) {
   'use strict';
   /*
    *
-   https://github.com/avivais/phonegap-parse-plugin
 
-   https://github.com/taivo/parse-push-plugin
+   https://thinkster.io/ionic-push-notifications-tutorial
+
+   cordova plugin add https://github.com/taivo/parse-push-plugin
+
+   cordova plugin add https://github.com/fastrde/phonegap-parse-plugin --variable APP_ID=PARSE_APP_ID --variable CLIENT_KEY=PARSE_CLIENT_KEY
+   cordova plugin add https://github.com/fastrde/phonegap-parse-plugin.git --variable APP_ID=7lWT9DJntSvMKTetpoT0wL79pTG9dk4ob5pztktX --variable CLIENT_KEY=CIcH8fg5AogNNrEQ8IbmA5nujNjIvVNmuW0PyvCy
 
    Phonegap Parse.com Plugin
    Phonegap 3.0.0 plugin for Parse.com push service
@@ -25,48 +29,55 @@
 
       function init() {
         var defer = $q.defer();
-        ParsePushPlugin
-          .initialize(AppConfig.parse.applicationId, AppConfig.parse.clientKey, function () {
-            defer.resolve(true);
-          }, function (e) {
-            alert('error');
-            defer.reject(e);
-          });
+        var appId = AppConfig.parse.applicationId,
+          clientKey = AppConfig.parse.clientKey;
+
+        console.log('Init', appId, clientKey);
+
+        parsePlugin.initialize(appId, clientKey, function () {
+          console.log('Parse Push initialize');
+          on();
+          defer.resolve();
+        }, function (e) {
+          console.error('Parse Push Initialize error', e);
+          defer.reject(e);
+        });
+
         return defer.promise;
       }
 
       function on() {
-        ParsePushPlugin.on('receivePN', function (pn) {
+        parsePlugin.on('receivePN', function (pn) {
           console.log('yo i got this push notification:' + JSON.stringify(pn));
         });
 
         //customEvt can be any string of your choosing, i.e., chat, system, upvote, etc.
-        ParsePushPlugin.on('receivePN:chat', function (pn) {
+        parsePlugin.on('receivePN:chat', function (pn) {
           console.log('yo i can also use custom event to keep things like chat modularized');
         });
 
-        ParsePushPlugin.on('openPN', function (pn) {
+        parsePlugin.on('openPN', function (pn) {
           //you can do things like navigating to a different view here
           console.log('Yo, I get this when the user clicks open a notification from the tray');
         });
       }
 
 
-      function start(channel) {
+      function _start(channel) {
+        var cordova = window.cordova;
 
-        console.log(device, channel);
-        if (device) {
-          console.log('Push Start', ParsePushPlugin);
+        console.log('Parse Start', cordova, channel);
+        if (cordova) {
+          console.log('Push Start');
           init()
             .then(function () {
               console.log('Plugin Load');
-              ParsePushPlugin
+              parsePlugin
                 .subscribe(channel, function () {
-                  console.log('Enter Chanel', chanel);
-                  ParsePushPlugin
+                  console.log('Enter channel', channel);
+                  parsePlugin
                     .getInstallationId(function (id) {
-
-                      console.log('Success Push', id);
+                      console.log('Success Push', channel, id);
                       /**
                                              * Now you can construct an object and save it to your own services, or Parse, and corrilate users to parse installations
                                              *
@@ -76,6 +87,7 @@
                                        }
                                              *
                                              */
+                      on();
 
                     }, function (e) {
                       alert('error');
@@ -91,20 +103,59 @@
         }
       }
 
+      function start(channel) {
+        var cordova = window.cordova;
+
+        console.log('Parse Start', cordova, channel);
+        if (cordova) {
+          console.log('Push Start');
+          console.log('Plugin Load');
+          parsePlugin
+            .subscribe(channel, function () {
+              console.log('Enter channel', channel);
+              parsePlugin
+                .getInstallationId(function (id) {
+                  console.log('Success Push', channel, id);
+                  /**
+                   * Now you can construct an object and save it to your own services, or Parse, and corrilate users to parse installations
+                   *
+                   var install_data = {
+                        installation_id: id,
+                        channels: ['SampleChannel']
+                     }
+                   *
+                   */
+                  on();
+
+                }, function (e) {
+                  alert('error');
+                });
+
+            }, function (e) {
+              alert('error');
+            });
+
+
+        }
+      }
+
       function getInstall() {
         var defer = $q.defer();
-        ParsePushPlugin.getInstallationId(function (id) {
-          defer.resolve(id);
-        }, function (e) {
-          alert('error');
-          defer.reject(e);
-        });
+        console.log('getInstall');
+        parsePlugin
+          .getInstallationId(function (id) {
+            console.log('getInstall', id);
+            defer.resolve(id);
+          }, function (e) {
+            console.error('getInstall', e);
+            defer.reject(e);
+          });
         return defer.promise;
       }
 
       function getSubscriptions() {
         var defer = $q.defer();
-        ParsePushPlugin.getSubscriptions(function (subscriptions) {
+        parsePlugin.getSubscriptions(function (subscriptions) {
           alert(subscriptions);
           defer.resolve(subscriptions);
         }, function (e) {
@@ -114,26 +165,32 @@
         return defer.promise;
       }
 
-      function postSubscribe(chanel) {
+      function postSubscribe(channel) {
         var defer = $q.defer();
-        ParsePushPlugin.subscribe(chanel, function () {
-          alert('OK');
-          defer.resolve(true);
-        }, function (e) {
-          alert('error');
-          defer.reject(e);
-        });
+        console.log('postSubscribe', channel);
+        parsePlugin
+          .subscribe(channel, function (resp) {
+            console.log('postSubscribe', channel, resp);
+            defer.resolve(true);
+          }, function (e) {
+            console.log('postSubscribe', channel, e);
+            defer.reject(e);
+          });
         return defer.promise;
       }
 
       function postUnSubscribe(channel) {
         var defer = $q.defer();
-        ParsePushPlugin.unsubscribe(channel, function (msg) {
-          defer.resolve(msg);
-        }, function (e) {
-          alert('error');
-          defer.reject(e);
-        });
+        console.log('postUnSubscribe', channel);
+        parsePlugin
+          .unsubscribe(channel, function (msg) {
+            console.log('postUnSubscribe', channel, msg);
+            defer.resolve(msg);
+          }, function (e) {
+            console.log('postUnSubscribe', channel, e);
+            alert('error');
+            defer.reject(e);
+          });
         return defer.promise;
       }
 
@@ -146,5 +203,4 @@
       };
 
     });
-})
-(window, window.angular, window.cordova, window.ParsePushPlugin);
+})(window, window.angular, window.parsePlugin);
