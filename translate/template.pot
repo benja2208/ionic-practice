@@ -238,7 +238,7 @@ msgstr ""
 msgid "My Location"
 msgstr ""
 
-#: gallery/view/gallery.home.html:20
+#: gallery/view/gallery.home.html:21
 #: gallery/view/gallery.popular.html:20
 msgid "Nenhuma foto postagem por perto"
 msgstr ""

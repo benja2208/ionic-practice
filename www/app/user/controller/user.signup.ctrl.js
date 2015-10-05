@@ -2,7 +2,7 @@
   'use strict';
   angular
     .module('module.user')
-    .controller('UserSignupCtrl', function ($state, UserForm, $filter, Notify, Gallery, User) {
+    .controller('UserSignupCtrl', function ($state, UserForm, $filter, Notify, Loading, Gallery, User) {
       var vm = this;
 
       function init() {
@@ -19,6 +19,7 @@
       vm.submitRegister = function (rForm, data) {
 
         if (rForm.$valid) {
+          Loading.start();
           var form = angular.copy(data);
           User
             .register(form)
@@ -39,12 +40,14 @@
                 .then(function (data) {
                   console.log(data);
                   User.init();
+                  Loading.end();
                   $state.go('useravatar', {
                     clear: true
                   });
                 })
                 .catch(function (resp) {
                   console.log(resp);
+                  Loading.end();
                   Notify.alert({
                     title: 'Ops',
                     text: resp.message
@@ -53,6 +56,7 @@
             })
             .catch(function (resp) {
               console.log(resp);
+              Loading.end();
               Notify.alert({
                 title: 'Ops',
                 text: resp.message
