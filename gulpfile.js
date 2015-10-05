@@ -45,11 +45,12 @@ gulp.task('default', [
 
 gulp.task('dev', function (cb) {
     runSequence(
-        // 'bower',
+        'install',
         'sass',
         'translate',
         'copy:font',
         'inject',
+        'prettify',
         cb);
 });
 
