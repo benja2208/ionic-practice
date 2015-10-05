@@ -8,15 +8,6 @@
     color: #fff;
     margin: 0;
 
-    button.button {
-      position: absolute;
-      top: 0;
-      right: 0;
-      color: #fff;
-      z-index: 3;
-      padding: 0 20px;
-    }
-
     .intro-slider {
       display: block;
       height: 100%;
@@ -25,15 +16,67 @@
         position: relative;
         height: 100%;
 
+        .last {
+
+          .logo2 {
+            position: absolute;
+            display: block;
+            margin: 20px auto;
+            width: 250px;
+            height: 100px;
+            top: 30%;
+            left: 0;
+            right: 0;
+
+            img {
+              position: absolute;
+              top: 0px;
+              left: 0;
+              width: 80px;
+            }
+
+            span.icon2-logo {
+              font-size: 45pt;
+              color: #fff;
+              display: block;
+              margin: 22px;
+              position: absolute;
+              top: 0px;
+              left: 20%;
+            }
+          }
+
+          button.button {
+            position: absolute;
+            color: #fff;
+            border: 1px solid #fff;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 90%;
+            bottom: 10%;
+          }
+        }
+
         span.top {
-          color: #fff;
           display: block;
-          text-align: center;
-          font-size: 20px;
           padding: 0;
-          margin: 25px 15px;
+          margin: 10px 15px;
           height: 14%;
           position: relative;
+
+          h2 {
+            display: block;
+            position: absolute;
+            text-align: center;
+            color: #fff;
+            bottom: 0px;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-size: 19pt;
+            line-height: 19pt;
+          }
 
           //  animation
           @include animate(fadeInDown, 1s, .5s);
@@ -53,7 +96,7 @@
             background-size: contain;
             width: 98%;
             max-width: 407px;
-            min-width: 330px;
+            min-width: 325px;
 
             img {
               display: block;
@@ -69,7 +112,7 @@
             background-repeat: no-repeat;
             background-size: contain;
             width: 98%;
-            max-width: 376px;
+            max-width: 340px;
             min-width: 330px;
 
             img {
@@ -77,7 +120,7 @@
               margin: 0 auto;
               position: relative;
               width: 90%;
-              top: 8%;
+              top: 7.1%;
             }
           }
 

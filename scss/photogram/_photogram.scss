@@ -1,3 +1,5 @@
+@import "interface/font";
+
 .photogram {
 
   //General Resets
@@ -18,66 +20,43 @@
     }
   }
 
+  // Modal
+  .modal {
+    label.item-input-wrapper {
+      background-color: #ffffff;
+    }
+  }
+
   .card {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
 
-  gallery-photo-grid {
-
-    .row {
-
-      .col {
-
-        height: 150px;
-        position: relative;
-        overflow: hidden;
-        background-color: #f1f1f1;
-        border: 2px solid #fff;
-
-        img {
-          position: absolute;
-          top: 0;
-          left: 0;
-          min-width: 150px;
-          min-height: 150px;
-        }
-
-      }
-    }
-
+  .no-padding, .nopadding {
+    padding: 0;
   }
+
+
+  @import "directive/gallery.photo.grid";
+  @import "modal/capture";
+  @import "modal/comment";
+  @import "view/intro";
+  @import "view/profile";
+  @import "view/user";
+  @import "view/home";
+  @import "view/loading";
+  @import "view/gallery.profile";
+  @import "view/profile";
+  @import "interface/heart";
+  @import "interface/map";
+  @import "interface/platform";
+  @import "interface/actionsheet";
+  @import "interface/spinner";
+  @import "interface/form";
+  @import "interface/sidemenu";
+
   .item {
     border: none;
-  }
-
-  // Loading
-  .view-loading {
-    background-color: $positive;
-    background-position: 15%;
-    background: url('../img/intro1.jpg');
-    background-size: cover;
-
-    .scroll-content {
-      height: 100%;
-      width: 100%;
-      display: block;
-      position: relative;
-
-      img {
-        display: block;
-        position: absolute;
-        max-width: 50%;
-        min-width: 200px;
-
-        top: 30%;
-        left: 50%;
-        margin-top: -0px;
-        margin-left: -100px;
-
-        @include animate(fadeIn, 1s, 0.1s);
-      }
-    }
   }
 
   // View Map
@@ -219,14 +198,12 @@
       display: block;
       margin-left: 0;
       text-align: left;
-      text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
     }
 
     span.icon2-logo {
       font-size: 34px;
       display: block;
       margin-top: 6px;
-      text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
     }
   }
 
@@ -289,44 +266,6 @@
     }
   }
 
-  // Modal Comment Directive
-  .modal-comment {
-
-    .scroll {
-      height: 100%;
-    }
-
-    .form {
-      border: 1px solid #ccc;
-      padding: 1px;
-      display: block;
-      width: 100%;
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      height: 50px;
-
-      label.item.item-input {
-        display: block;
-        float: left;
-        width: 88%;
-        border: none;
-      }
-      button {
-        padding: 7px;
-        height: 50px;
-        top: -1px;
-        position: absolute;
-        right: -1px;
-        border: none;
-      }
-      form .item, .formly .item {
-        border-bottom: none;
-      }
-    }
-
-  }
-
   .tab-item {
     transition: all ease 0.5s;
     -webkit-transition: all ease 0.5s;
@@ -352,147 +291,6 @@
       .tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
         background: none;
         border-bottom: 5px solid #fff;
-      }
-    }
-  }
-
-  // Capture View
-  .modal-capture {
-    .capture-legend {
-      padding: 0;
-
-      .item-input {
-        border: none;
-        display: block;
-        top: 20px;
-      }
-    }
-    .capture-photo {
-      img {
-        display: block;
-        width: 100%;
-      }
-    }
-  }
-
-  // Profile View
-  .gallery-profile {
-
-    .scroll-content {
-      background-color: #fff;
-    }
-    .profile-top {
-      display: block;
-      position: relative;
-
-      img {
-        display: inline;
-        min-width: 85px;
-        min-height: 85px;
-        max-width: 85px;
-        border-radius: 50%;
-        margin: 6px;
-        background-color: #ddd;
-      }
-
-      .col-statics {
-        margin-left: 5px;
-        span {
-          font-weight: bold;
-          color: #000;
-          display: block;
-          text-align: center;
-          font-size: 20px;
-        }
-        h3 {
-          font-size: 14px;
-          color: #888;
-          margin: 5px 0px;
-          display: block;
-          font-variant: small-caps;
-          text-align: center;
-          text-transform: lowercase;
-          white-space: nowrap;
-        }
-      }
-
-      .col-edit {
-        padding: 0;
-        .button {
-          font-size: 14px;
-          padding: 0px;
-          background: #edeeee;
-          border: none;
-          color: #53575c;
-          text-transform: uppercase;
-          width: 97%;
-          line-height: 10px;
-          min-height: 27px;
-          max-height: 10px;
-          font-weight: bold;
-          margin: 0 auto;
-          display: block;
-
-          &.button-follow {
-            border: 1px solid $positive;
-            background-color: #fff;
-            span {
-              color: $positive;
-              font-size: 14px;
-            }
-
-          }
-
-          &.button-unfollow {
-            border: 1px solid $positive;
-            background-color: $positive;
-            span {
-              color: #fff;
-              font-size: 14px;
-            }
-          }
-
-        }
-      }
-
-      .tabs-light {
-        background: #fff;
-        height: 50px;
-        border-top: 1px solid #ccc;
-        border-bottom: 1px solid #ccc;
-        display: block;
-        position: inherit;
-
-        .tab-nav.tabs {
-          .tab-item {
-            -webkit-transform: all .5s ease;
-            -moz-transform: all .5s ease;
-            -ms-transform: all .5s ease;
-            -o-transform: all .5s ease;
-            transform: all .5s ease;
-          }
-
-          .tab-item.tab-item-active, .instagram ion-tabs.tabs-dark.tabs-photogram .tab-item.active, .instagram ion-tabs.tabs-dark.tabs-photogram .tab-item.activated {
-            background-color: #fff;
-            border: none;
-            color: $positive;
-          }
-        }
-
-      }
-
-    }
-
-    .profile-view {
-      display: block;
-      overflow: hidden;
-
-      .row {
-        padding: 0;
-        .col {
-          padding: 2px;
-          margin: 0;
-        }
       }
     }
   }

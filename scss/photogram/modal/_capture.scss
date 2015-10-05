@@ -1,0 +1,18 @@
+// Capture View
+.modal-capture {
+  .capture-legend {
+    padding: 0;
+
+    .item-input {
+      border: none;
+      display: block;
+      top: 20px;
+    }
+  }
+  .capture-photo {
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}
