@@ -69,11 +69,11 @@
               break;
             }
           })
-          .catch(function () {
+          .catch(function (resp) {
             Loading.end();
             Notify.alert({
               title: 'Ops',
-              text: gettextCatalog.getString('Facebook error')
+              text: gettextCatalog.getString('Facebook error') + ' ' + resp
             });
           });
       }

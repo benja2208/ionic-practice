@@ -139,16 +139,17 @@
         var defer = $q.defer();
 
         //facebook.logout();
-        console.log('facebook login');
+        console.info('facebook login', device, facebook);
 
         facebook
           .login(['email'])
           .then(function (response) {
 
-              console.log('facebook login', response);
+              console.warn('facebook login response', response);
               if (response.status === undefined) {
                 defer.reject('reject');
               }
+
               //Pega o Status do Login
               console.log('facebook status', response);
               facebook
@@ -168,7 +169,7 @@
                           console.log('Já existe um cadastro com esse email', user);
                           if (user.get('facebook_complete') == Boolean(true)) {
 
-                            facebookLogIn(response)
+                            loginFacebook(response)
                               .then(function (resp) {
                                 console.log('Logado', resp);
 
@@ -213,7 +214,7 @@
                           console.log('Novo usuário');
 
                           // Crio uma conta no parse com o Facebook
-                          facebookLogIn(response)
+                          loginFacebook(response)
                             .then(function (newuser) {
 
                               console.log(newuser);
@@ -255,8 +256,8 @@
                 });;
             },
             function (response) {
-              alert(JSON.stringify(response));
-              defer.reject(response);
+              //alert(JSON.stringify(response));
+              defer.reject(JSON.stringify(response));
 
             });
 
@@ -731,7 +732,7 @@
         return defer.promise;
       }
 
-      function facebookLogIn(response) {
+      function loginFacebook(response) {
         var defer = $q.defer();
 
         var data = new Date(new Date().getTime() + response['authResponse']['expiresIn'] * 1000);
