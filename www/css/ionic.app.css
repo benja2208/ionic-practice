@@ -11016,7 +11016,7 @@ a.button {
             position: absolute;
             text-align: center;
             color: #fff;
-            bottom: 0px;
+            bottom: 25%;
             width: 100%;
             margin: 0;
             padding: 0;
@@ -11067,9 +11067,10 @@ a.button {
             background-image: url("../img/devices/android.png");
             background-repeat: no-repeat;
             background-size: contain;
-            width: 98%;
+            width: 90%;
             max-width: 340px;
-            min-width: 330px; }
+            min-width: 330px;
+            margin-top: 10px; }
             .photogram .view-intro .scroll-content .intro-slider .content .phone.android img {
               display: block;
               margin: 0 auto;

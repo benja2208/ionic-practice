@@ -135,6 +135,117 @@
         return defer.promise;
       }
 
+      function loginFacebook2(response) {
+        var defer = $q.defer();
+        console.log('Facebook api');
+        facebook
+          .api('me/?fields=id,name,email,gender,bio', ['public_profile'])
+          .then(function (dados) {
+            console.log('facebook api', dados);
+
+            var query = new Parse.Query(Parse.User);
+            query
+              .equalTo('email', dados.email)
+              .first({
+                success: function (user) {
+                  console.log(user);
+
+                  if (user) {
+                    console.log('Já existe um cadastro com esse email', user);
+                    if (user.get('facebook_complete') == Boolean(true)) {
+
+                      loginFacebook(response)
+                        .then(function (resp) {
+                          console.log('Logado', resp);
+
+                          if (user.attributes.name === '') {
+                            console.info('User sem nome', user, dados);
+                            var updateUser = user.attributes;
+                            updateUser.name = dados.name;
+
+                            update(updateUser)
+                              .then(function () {
+                                defer.resolve({
+                                  status: 0
+                                });
+                              });
+                          } else {
+
+                            loadProfile(user);
+
+                            defer.resolve({
+                              status: 0
+                            });
+                          }
+
+                        });
+                    } else {
+                      console.log('Se ainda não está completo, manda completar o perfil', dados,
+                        response);
+
+                      $rootScope.tempUser = processImg(user.attributes);
+                      $rootScope.tempUser.src = 'https://graph.facebook.com/' + dados.id +
+                        '/picture?width=250&height=250';
+
+                      console.log($rootScope.tempUser);
+                      defer.resolve({
+                        status: 2
+                      });
+
+                    }
+
+                  } else {
+                    // Se não encontrar nenhum usuário
+                    console.log('Novo usuário');
+
+                    // Crio uma conta no parse com o Facebook
+                    loginFacebook(response)
+                      .then(function (newuser) {
+
+                        console.log(newuser);
+
+                        // Atualizo o novo perfil
+                        var form = {
+                          name: dados.name,
+                          facebook: dados.id,
+                          email: dados.email,
+                          gender: dados.gender,
+                          facebook_complete: Boolean(true),
+                          facebookimg: 'https://graph.facebook.com/' + dados.id +
+                            '/picture?width=250&height=250'
+                        };
+
+                        update(form)
+                          .then(function (resp) {
+                            console.warn('me response', resp);
+
+                            defer.resolve({
+                              status: 1
+                            });
+                          })
+
+
+                      });
+
+
+                  }
+
+                },
+                error: function (error) {
+                  alert('Sem conexão');
+                  defer.reject(error);
+
+                }
+              });
+
+          }, function (resp) {
+            console.log('Facebook Error', resp);
+            defer.reject(resp);
+          });
+
+        return defer.promise;
+      }
+
       function facebookLogin() {
         var defer = $q.defer();
 
@@ -142,124 +253,46 @@
         console.info('facebook login', device, facebook);
 
         facebook
-          .login(['email'])
-          .then(function (response) {
+          .getLoginStatus()
+          .then(function (respStatus) {
 
-              console.warn('facebook login response', response);
-              if (response.status === undefined) {
-                defer.reject('reject');
-              }
+            if (respStatus.status === 'connected') {
+              loginFacebook2(respStatus)
+                .then(function (deferStatus) {
+                  defer.resolve(deferStatus);
+                });
+            } else {
 
-              //Pega o Status do Login
-              console.log('facebook status', response);
               facebook
-                .api('me/?fields=id,name,email,gender,bio', ['user_birthday'])
-                .then(function (dados) {
-                  console.log('facebook api', dados);
+                .login([
+                  'public_profile',
+                  'email'
+                ])
+                .then(function (response) {
 
+                    console.warn('facebook login response', response);
+                    if (response.status === undefined) {
+                      defer.reject('reject');
+                    }
 
-                  var query = new Parse.Query(Parse.User);
-                  query
-                    .equalTo('email', dados.email)
-                    .first({
-                      success: function (user) {
-                        console.log(user);
+                    //Pega o Status do Login
+                    console.log('facebook status', response);
+                    loginFacebook2(response)
+                      .then(function (deferStatus) {
+                        defer.resolve(deferStatus);
+                      });;
+                  },
+                  function (response) {
+                    //alert(JSON.stringify(response));
+                    console.log('Facebook Error', response);
+                    defer.reject(JSON.stringify(response));
 
-                        if (user) {
-                          console.log('Já existe um cadastro com esse email', user);
-                          if (user.get('facebook_complete') == Boolean(true)) {
+                  });
 
-                            loginFacebook(response)
-                              .then(function (resp) {
-                                console.log('Logado', resp);
+            }
 
-                                if (user.attributes.name === '') {
-                                  console.info('User sem nome', user, dados);
-                                  var updateUser = user.attributes;
-                                  updateUser.name = dados.name;
+          })
 
-                                  update(updateUser)
-                                    .then(function () {
-                                      defer.resolve({
-                                        status: 0
-                                      });
-                                    });
-                                } else {
-
-                                  loadProfile(user);
-
-                                  defer.resolve({
-                                    status: 0
-                                  });
-                                }
-
-                              });
-                          } else {
-                            console.log('Se ainda não está completo, manda completar o perfil', dados,
-                              response);
-
-                            $rootScope.tempUser = processImg(user.attributes);
-                            $rootScope.tempUser.src = 'https://graph.facebook.com/' + dados.id +
-                              '/picture?width=250&height=250';
-
-                            console.log($rootScope.tempUser);
-                            defer.resolve({
-                              status: 2
-                            });
-
-                          }
-
-                        } else {
-                          // Se não encontrar nenhum usuário
-                          console.log('Novo usuário');
-
-                          // Crio uma conta no parse com o Facebook
-                          loginFacebook(response)
-                            .then(function (newuser) {
-
-                              console.log(newuser);
-
-                              // Atualizo o novo perfil
-                              var form = {
-                                name: dados.name,
-                                facebook: dados.id,
-                                email: dados.email,
-                                gender: dados.gender,
-                                facebook_complete: Boolean(true),
-                                facebookimg: 'https://graph.facebook.com/' + dados.id +
-                                  '/picture?width=250&height=250'
-                              };
-
-                              update(form)
-                                .then(function (resp) {
-                                  console.warn('me response', resp);
-
-                                  defer.resolve({
-                                    status: 1
-                                  });
-                                })
-
-
-                            });
-
-
-                        }
-
-                      },
-                      error: function (error) {
-                        alert('Sem conexão');
-                        defer.reject(error);
-
-                      }
-                    });
-
-                });;
-            },
-            function (response) {
-              //alert(JSON.stringify(response));
-              defer.reject(JSON.stringify(response));
-
-            });
 
         return defer.promise;
       }

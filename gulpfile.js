@@ -44,13 +44,13 @@ gulp.task('default', [
 ]);
 
 gulp.task('dev', function (cb) {
-    runSequence(
+    return runSequence(
         'install',
         'sass',
         'translate',
         'copy:font',
         'inject',
-        'prettify',
+        //'prettify',
         cb);
 });
 

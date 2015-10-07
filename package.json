@@ -1,6 +1,6 @@
 {
   "name": "Photogram",
-  "version": "1.2.12",
+  "version": "1.2.14",
   "description": "Share your photos",
   "scripts": {
     "postinstall": "bower install && gulp inject"
@@ -74,17 +74,10 @@
     "com.ionic.keyboard",
     "cordova-plugin-file",
     "cordova-plugin-file-transfer",
-    {
-      "locator": "https://github.com/phonegap/phonegap-facebook-plugin.git",
-      "id": "phonegap-facebook-plugin",
-      "variables": {
-        "APP_ID": "1024016557617380",
-        "APP_NAME": "Photogram"
-      }
-    },
     "cordova-plugin-inappbrowser"
   ],
   "cordovaPlatforms": [
-    "ios"
+    "ios",
+    "android"
   ]
 }
