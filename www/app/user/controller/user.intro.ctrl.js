@@ -6,9 +6,11 @@
       var vm = this;
 
       var currentPlatform = ionic.Platform.platform();
+      console.log(currentPlatform);
 
       if (currentPlatform) {
-        vm.device = (currentPlatform == 'android') ? 'android' : 'iphone';
+        //vm.device = (currentPlatform == 'android') ? 'android' : 'iphone';
+        vm.device = 'android';
       } else {
         vm.device = 'android';
       }
