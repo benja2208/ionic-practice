@@ -75,7 +75,7 @@ msgstr ""
 msgid "Connect your Facebook"
 msgstr ""
 
-#: user/controller/user.intro.ctrl.js:31
+#: user/controller/user.intro.ctrl.js:29
 msgid "Create your Social Photo Share with Ionic Framework!"
 msgstr ""
 
@@ -96,7 +96,7 @@ msgstr ""
 msgid "Enabled your camera"
 msgstr ""
 
-#: user/controller/user.intro.ctrl.js:28
+#: user/controller/user.intro.ctrl.js:26
 msgid "Enjoy the most amazing photos"
 msgstr ""
 
@@ -116,7 +116,7 @@ msgstr ""
 msgid "Facebook"
 msgstr ""
 
-#: user/controller/user.intro.ctrl.js:77
+#: user/controller/user.intro.ctrl.js:75
 #: user/controller/user.signin.ctrl.js:91
 msgid "Facebook error"
 msgstr ""
@@ -129,7 +129,7 @@ msgstr ""
 msgid "Fill out the fields in red"
 msgstr ""
 
-#: user/controller/user.intro.ctrl.js:25
+#: user/controller/user.intro.ctrl.js:23
 msgid "Find people around you and enjoy your photos"
 msgstr ""
 
@@ -141,7 +141,7 @@ msgstr ""
 msgid "Follow Users"
 msgstr ""
 
-#: user/controller/user.intro.ctrl.js:22
+#: user/controller/user.intro.ctrl.js:20
 msgid "Follow your friends and relive their moments"
 msgstr ""
 
@@ -361,7 +361,7 @@ msgstr ""
 msgid "Share Photo"
 msgstr ""
 
-#: user/controller/user.intro.ctrl.js:19
+#: user/controller/user.intro.ctrl.js:17
 #: user/view/user.tabs.html:11
 msgid "Share your most amazing moments"
 msgstr ""
